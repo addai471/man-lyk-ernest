@@ -58,6 +58,14 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.05);
             z-index: -1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
+            25% { transform: translate(30px, 30px) rotate(90deg); opacity: 0.7; }
+            50% { transform: translate(60px, -30px) rotate(180deg); opacity: 0.5; }
+            75% { transform: translate(-30px, 60px) rotate(270deg); opacity: 0.7; }
         }
 
         /* Header */
@@ -71,6 +79,11 @@
             z-index: 1000;
             box-shadow: var(--shadow);
             border-bottom: 2px solid rgba(42, 45, 124, 0.5);
+            transition: var(--transition);
+        }
+
+        .header-scrolled {
+            padding: 1rem 5%;
         }
 
         .container {
@@ -91,6 +104,7 @@
             color: var(--light-color);
             display: flex;
             align-items: center;
+            text-decoration: none;
         }
 
         .logo span {
@@ -120,7 +134,8 @@
             border-radius: 5px;
         }
 
-        nav ul li a:hover {
+        nav ul li a:hover,
+        nav ul li a.active {
             color: var(--secondary-color);
             background-color: rgba(0, 201, 255, 0.1);
         }
@@ -130,6 +145,8 @@
             font-size: 1.5rem;
             color: var(--light-color);
             cursor: pointer;
+            background: none;
+            border: none;
         }
 
         /* Hero Section */
@@ -138,12 +155,17 @@
             text-align: center;
             color: var(--light-color);
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            animation: fadeInUp 1s ease;
         }
 
         .hero h1 span {
@@ -155,6 +177,7 @@
             max-width: 700px;
             margin: 0 auto 2rem;
             color: #ccc;
+            animation: fadeInUp 1s ease 0.2s both;
         }
 
         .hero-buttons {
@@ -162,11 +185,14 @@
             justify-content: center;
             gap: 1rem;
             margin-top: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
         }
 
         /* Buttons */
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 600;
@@ -175,6 +201,7 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            gap: 0.5rem;
         }
 
         .btn-primary {
@@ -199,6 +226,17 @@
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
 
+        .btn-email {
+            background-color: #ea4335;
+            color: white;
+        }
+
+        .btn-email:hover {
+            background-color: #d23c2f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(234, 67, 53, 0.3);
+        }
+
         .btn-secondary {
             background-color: transparent;
             color: var(--light-color);
@@ -220,6 +258,19 @@
         .section-title h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
         }
 
         .section-title p {
@@ -251,6 +302,13 @@
             color: var(--light-color);
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .card:hover {
@@ -263,6 +321,11 @@
             font-size: 2.5rem;
             color: var(--secondary-color);
             margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.2);
         }
 
         .card h3 {
@@ -298,6 +361,14 @@
 
         .about-content {
             flex: 1;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .about-content.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .about-image {
@@ -305,6 +376,14 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease 0.3s;
+        }
+
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .about-image img {
@@ -316,6 +395,64 @@
 
         .about-image:hover img {
             transform: scale(1.05);
+        }
+
+        /* Contact Options */
+        .contact-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .contact-option i {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        /* WhatsApp Contact Card */
+        .whatsapp-contact {
+            background: rgba(37, 211, 102, 0.1);
+            border: 2px solid rgba(37, 211, 102, 0.3);
+            text-align: center;
+        }
+
+        .whatsapp-contact .card-icon {
+            color: #25D366;
+        }
+
+        .whatsapp-contact .btn-whatsapp {
+            margin-top: 1rem;
+        }
+
+        /* Email Contact Card */
+        .email-contact {
+            background: rgba(234, 67, 53, 0.1);
+            border: 2px solid rgba(234, 67, 53, 0.3);
+            text-align: center;
+        }
+
+        .email-contact .card-icon {
+            color: #ea4335;
+        }
+
+        .email-contact .btn-email {
+            margin-top: 1rem;
         }
 
         /* Floating WhatsApp Button */
@@ -337,10 +474,44 @@
             justify-content: center;
             transition: var(--transition);
             text-decoration: none;
+            animation: pulse 2s infinite;
         }
 
         .whatsapp-float:hover {
             background-color: #1da851;
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Email Float Button */
+        .email-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background-color: #ea4335;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .email-float:hover {
+            background-color: #d23c2f;
             transform: scale(1.1);
         }
 
@@ -402,28 +573,17 @@
             padding-left: 5px;
         }
 
-        .social-links {
+        .contact-info {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
         }
 
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--light-color);
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
+        .contact-info i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            margin-top: 3px;
+            min-width: 20px;
         }
 
         .footer-bottom {
@@ -439,6 +599,76 @@
             font-weight: 600;
         }
 
+        /* Contact Methods in Footer */
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-method i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: #00b7e6;
+            transform: translateY(-3px);
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
@@ -452,6 +682,10 @@
             .about-image, .about-content {
                 width: 100%;
             }
+            
+            .floating-element {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -461,10 +695,11 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: rgba(15, 17, 35, 0.95);
+                background-color: rgba(15, 17, 35, 0.98);
                 flex-direction: column;
                 padding: 1rem 0;
                 text-align: center;
+                z-index: 1000;
             }
             
             nav ul.active {
@@ -473,6 +708,11 @@
             
             nav ul li {
                 margin: 0.5rem 0;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 0.8rem;
             }
             
             .mobile-menu {
@@ -497,6 +737,70 @@
             .cards-container {
                 grid-template-columns: 1fr;
             }
+            
+            .email-float {
+                bottom: 100px;
+                right: 20px;
+            }
+            
+            .whatsapp-float {
+                bottom: 30px;
+                right: 20px;
+            }
+            
+            .back-to-top {
+                left: 20px;
+                bottom: 100px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .email-float {
+                bottom: 100px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .whatsapp-float {
+                bottom: 30px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .back-to-top {
+                left: 15px;
+                bottom: 100px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -510,19 +814,19 @@
     <div class="floating-element" id="float3"></div>
     
     <!-- Header -->
-    <header>
+    <header id="mainHeader">
         <div class="container nav-container">
-            <div class="logo">
+            <a href="#home" class="logo">
                 <i class="fas fa-robot"></i> Ernest <span>Addai</span>
-            </div>
+            </a>
             
-            <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu" id="mobileMenu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
             
             <nav>
                 <ul id="navMenu">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -537,8 +841,12 @@
             <h1>Tech Solutions For <span>Modern Businesses</span></h1>
             <p>I provide cutting-edge technology services including WhatsApp automation, Heroku deployment, account management, and billing solutions to help your business thrive in the digital age.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#services" class="btn btn-secondary">Explore Services</a>
+                <a href="mailto:addaiernest35@gmail.com?subject=Tech Services Inquiry&body=Hi Ernest, I'm interested in your services" class="btn btn-email">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20your%20tech%20services" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Now
+                </a>
             </div>
         </div>
     </section>
@@ -560,7 +868,9 @@
                     <div class="card-badge">Most Popular</div>
                     <h3>WhatsApp Business Bot</h3>
                     <p>Automate customer support, marketing, and sales with a custom WhatsApp bot. Increase engagement and save time with 24/7 automated responses.</p>
-                    <a href="#contact" class="btn btn-whatsapp">Get WhatsApp Bot</a>
+                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20a%20WhatsApp%20bot" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Order WhatsApp Bot
+                    </a>
                 </div>
                 
                 <!-- Heroku Account Card -->
@@ -570,7 +880,14 @@
                     </div>
                     <h3>Heroku Account Setup & Deployment</h3>
                     <p>Professional Heroku account setup, app deployment, and maintenance. I ensure your applications run smoothly on Heroku's cloud platform.</p>
-                    <a href="#contact" class="btn btn-secondary">Deploy Now</a>
+                    <div class="contact-options">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20help%20with%20Heroku%20deployment" class="btn btn-secondary" target="_blank" style="flex: 1;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Heroku Deployment Help&body=Hi Ernest, I need help with Heroku deployment for my application" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
                 </div>
                 
                 <!-- Billing Solutions Card -->
@@ -580,7 +897,14 @@
                     </div>
                     <h3>Account Billing Solutions</h3>
                     <p>Streamline your billing processes with automated payment systems, invoice management, and financial tracking solutions.</p>
-                    <a href="#contact" class="btn btn-primary">Optimize Billing</a>
+                    <div class="contact-options">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20billing%20solutions%20for%20my%20business" class="btn btn-primary" target="_blank" style="flex: 1;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Billing Solutions Inquiry&body=Hi Ernest, I need billing solutions for my business. Can you help?" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
                 </div>
                 
                 <!-- Tech Consultation Card -->
@@ -590,7 +914,41 @@
                     </div>
                     <h3>Tech Consultation</h3>
                     <p>Get expert advice on technology stack, digital transformation, and IT infrastructure to grow your business efficiently.</p>
-                    <a href="#contact" class="btn btn-secondary">Consult Now</a>
+                    <div class="contact-options">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20tech%20consultation%20for%20my%20business" class="btn btn-secondary" target="_blank" style="flex: 1;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Tech Consultation Request&body=Hi Ernest, I would like to schedule a tech consultation for my business" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Cards -->
+            <div class="cards-container">
+                <div class="card whatsapp-contact">
+                    <div class="card-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>Direct WhatsApp Contact</h3>
+                    <p>For immediate assistance or inquiries about any of my services, message me directly on WhatsApp. I typically respond within 1-2 hours during business days.</p>
+                    <p><strong>Phone:</strong> +233 533 230 608</p>
+                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20your%20services" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Message Me on WhatsApp
+                    </a>
+                </div>
+                
+                <div class="card email-contact">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Contact</h3>
+                    <p>For detailed inquiries, project proposals, or formal communication, feel free to email me. I check my email regularly and respond within 24 hours.</p>
+                    <p><strong>Email:</strong> addaiernest35@gmail.com</p>
+                    <a href="mailto:addaiernest35@gmail.com?subject=Tech Services Inquiry&body=Hi Ernest, I'm interested in your services. Please provide more information." class="btn btn-email">
+                        <i class="fas fa-envelope"></i> Send Email
+                    </a>
                 </div>
             </div>
         </div>
@@ -604,7 +962,32 @@
                 <p>I am a technology entrepreneur specializing in providing innovative solutions for modern businesses. With years of experience in automation, cloud deployment, and digital systems, I help businesses leverage technology to improve efficiency and drive growth.</p>
                 <p>My expertise includes creating custom WhatsApp bots for customer engagement, managing Heroku deployments for seamless app hosting, and implementing secure billing systems for various business models.</p>
                 <p>I believe in delivering practical, scalable tech solutions that solve real business problems and provide measurable ROI for my clients.</p>
-                <a href="#contact" class="btn btn-primary" style="margin-top: 1.5rem;">Work With Me</a>
+                
+                <div class="contact-options" style="margin-top: 2rem;">
+                    <div class="contact-option">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p>+233 533 230 608</p>
+                        </div>
+                    </div>
+                    <div class="contact-option">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>addaiernest35@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons" style="justify-content: flex-start; margin-top: 2rem;">
+                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20work%20with%20you" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp to Collaborate
+                    </a>
+                    <a href="mailto:addaiernest35@gmail.com?subject=Collaboration Request&body=Hi Ernest, I would like to collaborate with you on a project" class="btn btn-email">
+                        <i class="fas fa-envelope"></i> Email for Collaboration
+                    </a>
+                </div>
             </div>
             <div class="about-image">
                 <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Tech Entrepreneur">
@@ -613,8 +996,18 @@
     </section>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/1234567890?text=Hi%20Ernest,%20I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" id="whatsappFloat">
         <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Floating Email Button -->
+    <a href="mailto:addaiernest35@gmail.com?subject=Website Inquiry&body=Hi Ernest, I'm visiting your website and would like to inquire about your services" class="email-float" id="emailFloat">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
     </a>
 
     <!-- Footer -->
@@ -624,98 +1017,122 @@
                 <div class="footer-column">
                     <h3>Ernest Addai</h3>
                     <p>Providing innovative tech solutions for businesses of all sizes. Specializing in WhatsApp automation, cloud deployment, and billing systems.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p>+233 533 230 608</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>addaiernest35@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+233 533 230 608</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="#">WhatsApp Business Bot</a></li>
-                        <li><a href="#">Heroku Account Setup</a></li>
-                        <li><a href="#">Billing Solutions</a></li>
-                        <li><a href="#">Tech Consultation</a></li>
-                        <li><a href="#">App Deployment</a></li>
+                        <li><a href="#services">WhatsApp Business Bot</a></li>
+                        <li><a href="#services">Heroku Account Setup</a></li>
+                        <li><a href="#services">Billing Solutions</a></li>
+                        <li><a href="#services">Tech Consultation</a></li>
+                        <li><a href="#services">App Deployment</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Tech Hub, Accra, Ghana</p>
-                    <p><i class="fas fa-phone"></i> +233 123 456 789</p>
-                    <p><i class="fas fa-envelope"></i> ernest@techsolutions.com</p>
-                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +233 123 456 789</p>
+                    <h3>Quick Contact</h3>
+                    <p>Get in touch with me directly for any inquiries or service requests.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem;">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20services" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Message
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Website Inquiry&body=Hi Ernest, I'm visiting your website and would like to inquire about your services" class="btn btn-email">
+                            <i class="fas fa-envelope"></i> Send Email
+                        </a>
+                        <a href="tel:+233533230608" class="btn btn-primary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; <span id="currentYear"></span> Ernest Addai Tech Solutions. All rights reserved.</p>
-                <p>Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for the tech community</p>
+                <p>Professional tech solutions for modern businesses</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                    <strong>Contact:</strong> WhatsApp: +233 533 230 608 | Email: addaiernest35@gmail.com
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.getElementById('mobileMenu');
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobileMenu');
         const navMenu = document.getElementById('navMenu');
-        
-        mobileMenu.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenu.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
+        const navLinks = document.querySelectorAll('nav a');
+        const header = document.getElementById('mainHeader');
+        const backToTopBtn = document.getElementById('backToTop');
+        const cards = document.querySelectorAll('.card');
+        const aboutContent = document.querySelector('.about-content');
+        const aboutImage = document.querySelector('.about-image');
         
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Create floating elements
-        function createFloatingElements() {
-            const bg = document.getElementById('animated-bg');
-            
-            for (let i = 1; i <= 3; i++) {
-                const float = document.getElementById(`float${i}`);
-                const size = Math.random() * 100 + 50;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const delay = Math.random() * 5;
-                
-                float.style.width = `${size}px`;
-                float.style.height = `${size}px`;
-                float.style.left = `${posX}%`;
-                float.style.top = `${posY}%`;
-                float.style.animation = `float ${15 + Math.random() * 10}s ease-in-out ${delay}s infinite alternate`;
-                
-                // Add CSS for floating animation
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes float {
-                        0% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
-                        25% { transform: translate(${Math.random() * 50}px, ${Math.random() * 50}px) rotate(90deg); opacity: 0.7; }
-                        50% { transform: translate(${Math.random() * 100}px, ${Math.random() * 100}px) rotate(180deg); opacity: 0.5; }
-                        75% { transform: translate(${Math.random() * 50}px, ${Math.random() * 50}px) rotate(270deg); opacity: 0.7; }
-                        100% { transform: translate(0, 0) rotate(360deg); opacity: 0.5; }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-        }
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
         
-        // Initialize floating elements
-        window.addEventListener('load', createFloatingElements);
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+            
+            // Back to top button visibility
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+            
+            // Active nav link based on scroll position
+            updateActiveNavLink();
+            
+            // Animate cards on scroll
+            animateOnScroll();
+        });
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -723,34 +1140,216 @@
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
+                if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
+                    // Calculate offset based on header height
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
             });
         });
         
-        // Card hover effect enhancement
-        document.querySelectorAll('.card').forEach(card => {
+        // Update active nav link based on scroll position
+        function updateActiveNavLink() {
+            const scrollPosition = window.scrollY + 100;
+            
+            // Get all sections
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    // Remove active class from all links
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Add active class to corresponding link
+                    const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        // Animate elements on scroll
+        function animateOnScroll() {
+            // Animate cards
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (cardPosition < screenPosition) {
+                    card.classList.add('visible');
+                }
+            });
+            
+            // Animate about section
+            const aboutPosition = aboutContent.getBoundingClientRect().top;
+            const aboutScreenPosition = window.innerHeight / 1.3;
+            
+            if (aboutPosition < aboutScreenPosition) {
+                aboutContent.classList.add('visible');
+                aboutImage.classList.add('visible');
+            }
+        }
+        
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            // Animate floating elements
+            createFloatingElements();
+            
+            // Initial animation check
+            animateOnScroll();
+            
+            // Set initial active nav link
+            updateActiveNavLink();
+        });
+        
+        // Create floating elements with random properties
+        function createFloatingElements() {
+            const floatingElements = document.querySelectorAll('.floating-element');
+            
+            floatingElements.forEach((element, index) => {
+                // Random size between 50-150px
+                const size = Math.random() * 100 + 50;
+                
+                // Random position
+                const posX = Math.random() * 90;
+                const posY = Math.random() * 90;
+                
+                // Random animation delay
+                const delay = Math.random() * 5;
+                
+                // Random animation duration
+                const duration = 15 + Math.random() * 15;
+                
+                // Apply styles
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                element.style.left = `${posX}%`;
+                element.style.top = `${posY}%`;
+                element.style.animationDelay = `${delay}s`;
+                element.style.animationDuration = `${duration}s`;
+                
+                // Add pulsing effect to some elements
+                if (index === 0) {
+                    element.style.background = 'rgba(0, 201, 255, 0.1)';
+                } else if (index === 1) {
+                    element.style.background = 'rgba(255, 107, 107, 0.1)';
+                }
+            });
+        }
+        
+        // Card hover effect
+        cards.forEach(card => {
             card.addEventListener('mouseenter', function() {
                 const icon = this.querySelector('.card-icon i');
-                if(icon) {
+                if (icon) {
                     icon.style.transform = 'scale(1.2)';
-                    icon.style.transition = 'transform 0.3s ease';
                 }
             });
             
             card.addEventListener('mouseleave', function() {
                 const icon = this.querySelector('.card-icon i');
-                if(icon) {
+                if (icon) {
                     icon.style.transform = 'scale(1)';
                 }
             });
+        });
+        
+        // Floating buttons hover effect
+        const floatingButtons = document.querySelectorAll('.whatsapp-float, .email-float');
+        floatingButtons.forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Back to top button functionality
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Prevent form submission (if any forms added later)
+        document.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+        
+        // Initialize all contact information
+        function initializeContactInfo() {
+            const emailAddress = 'addaiernest35@gmail.com';
+            const whatsappNumber = '233533230608';
+            const phoneNumber = '+233533230608';
+            
+            // Update all email links
+            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                if (link.href.includes('mailto:')) {
+                    // Ensure correct email is used
+                    if (!link.href.includes(emailAddress)) {
+                        link.href = link.href.replace(/mailto:[^?]+/, `mailto:${emailAddress}`);
+                    }
+                }
+            });
+            
+            // Update all WhatsApp links
+            document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+                if (link.href.includes('wa.me')) {
+                    // Ensure correct WhatsApp number is used
+                    if (!link.href.includes(whatsappNumber)) {
+                        const url = new URL(link.href);
+                        url.pathname = `/${whatsappNumber}`;
+                        link.href = url.toString();
+                    }
+                }
+            });
+            
+            // Update phone links
+            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+                link.href = `tel:${phoneNumber}`;
+            });
+        }
+        
+        // Initialize contact info on load
+        initializeContactInfo();
+        
+        // Handle image loading errors
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                // Fallback image or hide element
+                this.style.display = 'none';
+            });
+        });
+        
+        // Add keyboard navigation for accessibility
+        document.addEventListener('keydown', (e) => {
+            // Tab key navigation focus styles
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+        
+        document.addEventListener('click', () => {
+            document.body.classList.remove('keyboard-navigation');
         });
     </script>
 </body>
