@@ -318,7 +318,7 @@
 
         .card-image {
             width: 100%;
-            height: 200px;
+            height: 220px;
             overflow: hidden;
             position: relative;
         }
@@ -340,7 +340,7 @@
 
         .card-icon {
             position: absolute;
-            top: 170px;
+            top: 190px;
             right: 20px;
             width: 60px;
             height: 60px;
@@ -391,6 +391,43 @@
             display: flex;
             gap: 0.8rem;
             margin-top: 1rem;
+        }
+
+        /* WhatsApp Bot Features List */
+        .features-list {
+            margin: 1.5rem 0;
+            padding-left: 1.2rem;
+        }
+
+        .features-list li {
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: #25D366;
+            font-weight: bold;
+            position: absolute;
+            left: -1.2rem;
+        }
+
+        /* Feature Highlight */
+        .feature-highlight {
+            background: rgba(37, 211, 102, 0.1);
+            border-left: 4px solid #25D366;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .feature-highlight h4 {
+            color: #25D366;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
         /* About Section */
@@ -807,11 +844,11 @@
             }
             
             .card-image {
-                height: 180px;
+                height: 200px;
             }
             
             .card-icon {
-                top: 150px;
+                top: 170px;
                 width: 50px;
                 height: 50px;
                 font-size: 1.5rem;
@@ -859,12 +896,16 @@
             }
             
             .card-image {
-                height: 160px;
+                height: 180px;
             }
             
             .card-icon {
-                top: 140px;
+                top: 150px;
                 right: 15px;
+            }
+            
+            .features-list li {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -929,20 +970,45 @@
                 <div class="card">
                     <div class="card-badge">Most Popular</div>
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="WhatsApp Bot Automation">
+                        <!-- Using your custom WhatsApp bot image -->
+                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="WhatsApp Bot Automation"
+                             onerror="this.src='https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="card-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="card-content">
-                        <h3>WhatsApp Business Bot</h3>
-                        <p>Automate customer support, marketing, and sales with a custom WhatsApp bot. Increase engagement and save time with 24/7 automated responses, order processing, and customer queries.</p>
+                        <h3>Advanced WhatsApp Business Bot</h3>
+                        <p>Supercharge your WhatsApp with our advanced bot that offers incredible features beyond basic automation.</p>
+                        
+                        <div class="feature-highlight">
+                            <h4>Premium Features Include:</h4>
+                        </div>
+                        
+                        <ul class="features-list">
+                            <li>Monitor all statuses even when offline (no data bundle needed)</li>
+                            <li>Save view-once media directly to gallery</li>
+                            <li>Download songs and music lyrics using WhatsApp commands</li>
+                            <li>Show online status even when sleeping</li>
+                            <li>Save WhatsApp statuses automatically</li>
+                            <li>Tag all members in a group with one command</li>
+                            <li>Play interactive games within WhatsApp</li>
+                            <li>Create custom stickers and wallpapers</li>
+                            <li>Save videos without watermarks or app logos</li>
+                            <li>AI-powered homework assistance with GPT-4 integration</li>
+                            <li>Automated customer responses 24/7</li>
+                            <li>Order processing and tracking</li>
+                            <li>Multi-language support</li>
+                            <li>Scheduled messaging and reminders</li>
+                        </ul>
+                        
                         <div class="card-actions">
-                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20a%20WhatsApp%20bot" class="btn btn-whatsapp" target="_blank" style="flex: 1;">
-                                <i class="fab fa-whatsapp"></i> Order Bot
+                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20your%20Advanced%20WhatsApp%20Bot" class="btn btn-whatsapp" target="_blank" style="flex: 1;">
+                                <i class="fab fa-whatsapp"></i> Order Now
                             </a>
-                            <a href="mailto:addaiernest35@gmail.com?subject=WhatsApp Bot Inquiry&body=Hi Ernest, I'm interested in your WhatsApp bot services" class="btn btn-email" style="flex: 1;">
-                                <i class="fas fa-envelope"></i> Email
+                            <a href="mailto:addaiernest35@gmail.com?subject=Advanced WhatsApp Bot Inquiry&body=Hi Ernest, I'm interested in your Advanced WhatsApp Bot with all the premium features" class="btn btn-email" style="flex: 1;">
+                                <i class="fas fa-envelope"></i> Get Details
                             </a>
                         </div>
                     </div>
@@ -1060,7 +1126,7 @@
             <div class="about-content">
                 <h2>About Ernest Addai</h2>
                 <p>I am a technology entrepreneur specializing in providing innovative solutions for modern businesses. With years of experience in automation, cloud deployment, and digital systems, I help businesses leverage technology to improve efficiency and drive growth.</p>
-                <p>My expertise includes creating custom WhatsApp bots for customer engagement, managing Heroku deployments for seamless app hosting, and implementing secure billing systems for various business models.</p>
+                <p>My expertise includes creating custom WhatsApp bots with advanced features, managing Heroku deployments for seamless app hosting, and implementing secure billing systems for various business models.</p>
                 <p>I believe in delivering practical, scalable tech solutions that solve real business problems and provide measurable ROI for my clients.</p>
                 
                 <div class="contact-options" style="margin-top: 2rem;">
@@ -1081,7 +1147,7 @@
                 </div>
                 
                 <div class="hero-buttons" style="justify-content: flex-start; margin-top: 2rem;">
-                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20work%20with%20you" class="btn btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20work%20with%20you%20on%20a%20WhatsApp%20Bot%20project" class="btn btn-whatsapp" target="_blank">
                         <i class="fab fa-whatsapp"></i> WhatsApp to Collaborate
                     </a>
                     <a href="mailto:addaiernest35@gmail.com?subject=Collaboration Request&body=Hi Ernest, I would like to collaborate with you on a project" class="btn btn-email">
@@ -1096,12 +1162,12 @@
     </section>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" id="whatsappFloat">
+    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20your%20Advanced%20WhatsApp%20Bot%20services" class="whatsapp-float" target="_blank" id="whatsappFloat">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Floating Email Button -->
-    <a href="mailto:addaiernest35@gmail.com?subject=Website Inquiry&body=Hi Ernest, I'm visiting your website and would like to inquire about your services" class="email-float" id="emailFloat">
+    <a href="mailto:addaiernest35@gmail.com?subject=Advanced WhatsApp Bot Inquiry&body=Hi Ernest, I'm interested in your Advanced WhatsApp Bot with all the premium features" class="email-float" id="emailFloat">
         <i class="fas fa-envelope"></i>
     </a>
 
@@ -1146,7 +1212,7 @@
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="#services">WhatsApp Business Bot</a></li>
+                        <li><a href="#services">Advanced WhatsApp Bot</a></li>
                         <li><a href="#services">Heroku Account Setup</a></li>
                         <li><a href="#services">Billing Solutions</a></li>
                         <li><a href="#services">Tech Consultation</a></li>
@@ -1159,10 +1225,10 @@
                     <p>Get in touch with me directly for any inquiries or service requests.</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem;">
-                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20services" class="btn btn-whatsapp" target="_blank">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20Advanced%20WhatsApp%20Bot" class="btn btn-whatsapp" target="_blank">
                             <i class="fab fa-whatsapp"></i> WhatsApp Message
                         </a>
-                        <a href="mailto:addaiernest35@gmail.com?subject=Website Inquiry&body=Hi Ernest, I'm visiting your website and would like to inquire about your services" class="btn btn-email">
+                        <a href="mailto:addaiernest35@gmail.com?subject=Advanced WhatsApp Bot Inquiry&body=Hi Ernest, I'm visiting your website and would like to inquire about your Advanced WhatsApp Bot" class="btn btn-email">
                             <i class="fas fa-envelope"></i> Send Email
                         </a>
                         <a href="tel:+233533230608" class="btn btn-primary">
@@ -1320,6 +1386,9 @@
             
             // Initialize images with error handling
             initializeImages();
+            
+            // Preload WhatsApp bot image
+            preloadWhatsAppBotImage();
         });
         
         // Create floating elements with random properties
@@ -1363,18 +1432,38 @@
             const fallbackImage = 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80';
             
             images.forEach(img => {
-                // Store original src
-                const originalSrc = img.src;
-                
                 // Add error handling
                 img.addEventListener('error', function() {
-                    console.log(`Image failed to load: ${originalSrc}`);
+                    console.log(`Image failed to load: ${this.src}`);
                     this.src = fallbackImage;
                 });
                 
                 // Add loading attribute for better performance
                 img.setAttribute('loading', 'lazy');
             });
+        }
+        
+        // Preload WhatsApp bot image
+        function preloadWhatsAppBotImage() {
+            // If you have your actual IMG_0025.jpeg file, replace the URL below
+            const customImageUrl = 'IMG_0025.jpeg'; // Local file path
+            const img = new Image();
+            
+            img.onload = function() {
+                console.log('WhatsApp bot image loaded successfully');
+                // Replace the WhatsApp bot image with your custom image
+                const whatsappBotImage = document.querySelector('.card:first-child .card-image img');
+                if (whatsappBotImage) {
+                    whatsappBotImage.src = customImageUrl;
+                    whatsappBotImage.alt = 'Advanced WhatsApp Bot Features';
+                }
+            };
+            
+            img.onerror = function() {
+                console.log('Custom WhatsApp bot image not found, using default image');
+            };
+            
+            img.src = customImageUrl;
         }
         
         // Card hover effect
@@ -1475,6 +1564,27 @@
         
         document.addEventListener('click', () => {
             document.body.classList.remove('keyboard-navigation');
+        });
+        
+        // Feature list animation
+        document.querySelectorAll('.features-list li').forEach((li, index) => {
+            li.style.animationDelay = `${index * 0.1}s`;
+            li.style.animation = 'fadeInUp 0.5s ease forwards';
+            li.style.opacity = '0';
+            
+            // Trigger animation when card is visible
+            const card = li.closest('.card');
+            if (card) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            li.style.animation = `fadeInUp 0.5s ease ${li.style.animationDelay} forwards`;
+                        }
+                    });
+                });
+                
+                observer.observe(card);
+            }
         });
     </script>
 </body>
