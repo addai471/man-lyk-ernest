@@ -286,8 +286,8 @@
 
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
@@ -295,13 +295,12 @@
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            padding: 2rem;
+            overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--light-color);
             position: relative;
-            overflow: hidden;
             opacity: 0;
             transform: translateY(30px);
         }
@@ -317,37 +316,81 @@
             border-color: var(--secondary-color);
         }
 
+        .card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
         .card-icon {
-            font-size: 2.5rem;
+            position: absolute;
+            top: 170px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--dark-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
             color: var(--secondary-color);
-            margin-bottom: 1.5rem;
+            border: 3px solid var(--secondary-color);
             transition: var(--transition);
         }
 
         .card:hover .card-icon {
-            transform: scale(1.2);
+            transform: scale(1.1) rotate(10deg);
+            background: var(--secondary-color);
+            color: var(--dark-color);
         }
 
         .card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            margin-top: 0.5rem;
         }
 
         .card p {
             color: #ccc;
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .card-badge {
             position: absolute;
             top: 20px;
-            right: 20px;
+            left: 20px;
             background-color: var(--accent-color);
             color: white;
-            padding: 0.3rem 0.8rem;
+            padding: 0.3rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
+            z-index: 1;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
         }
 
         /* About Section */
@@ -434,6 +477,7 @@
 
         .whatsapp-contact .card-icon {
             color: #25D366;
+            border-color: #25D366;
         }
 
         .whatsapp-contact .btn-whatsapp {
@@ -449,6 +493,7 @@
 
         .email-contact .card-icon {
             color: #ea4335;
+            border-color: #ea4335;
         }
 
         .email-contact .btn-email {
@@ -760,6 +805,17 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .card-image {
+                height: 180px;
+            }
+            
+            .card-icon {
+                top: 150px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -798,8 +854,17 @@
                 font-size: 1.8rem;
             }
             
-            .card {
-                padding: 1.5rem;
+            .card-content {
+                padding: 1.2rem;
+            }
+            
+            .card-image {
+                height: 160px;
+            }
+            
+            .card-icon {
+                top: 140px;
+                right: 15px;
             }
         }
     </style>
@@ -862,65 +927,90 @@
             <div class="cards-container">
                 <!-- WhatsApp Bot Card -->
                 <div class="card">
+                    <div class="card-badge">Most Popular</div>
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="WhatsApp Bot Automation">
+                    </div>
                     <div class="card-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
-                    <div class="card-badge">Most Popular</div>
-                    <h3>WhatsApp Business Bot</h3>
-                    <p>Automate customer support, marketing, and sales with a custom WhatsApp bot. Increase engagement and save time with 24/7 automated responses.</p>
-                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20a%20WhatsApp%20bot" class="btn btn-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Order WhatsApp Bot
-                    </a>
+                    <div class="card-content">
+                        <h3>WhatsApp Business Bot</h3>
+                        <p>Automate customer support, marketing, and sales with a custom WhatsApp bot. Increase engagement and save time with 24/7 automated responses, order processing, and customer queries.</p>
+                        <div class="card-actions">
+                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20a%20WhatsApp%20bot" class="btn btn-whatsapp" target="_blank" style="flex: 1;">
+                                <i class="fab fa-whatsapp"></i> Order Bot
+                            </a>
+                            <a href="mailto:addaiernest35@gmail.com?subject=WhatsApp Bot Inquiry&body=Hi Ernest, I'm interested in your WhatsApp bot services" class="btn btn-email" style="flex: 1;">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Heroku Account Card -->
                 <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cloud Deployment">
+                    </div>
                     <div class="card-icon">
                         <i class="fas fa-cloud-upload-alt"></i>
                     </div>
-                    <h3>Heroku Account Setup & Deployment</h3>
-                    <p>Professional Heroku account setup, app deployment, and maintenance. I ensure your applications run smoothly on Heroku's cloud platform.</p>
-                    <div class="contact-options">
-                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20help%20with%20Heroku%20deployment" class="btn btn-secondary" target="_blank" style="flex: 1;">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                        <a href="mailto:addaiernest35@gmail.com?subject=Heroku Deployment Help&body=Hi Ernest, I need help with Heroku deployment for my application" class="btn btn-email" style="flex: 1;">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
+                    <div class="card-content">
+                        <h3>Heroku Account Setup & Deployment</h3>
+                        <p>Professional Heroku account setup, app deployment, and maintenance. I ensure your applications run smoothly on Heroku's cloud platform with optimal performance and security.</p>
+                        <div class="card-actions">
+                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20help%20with%20Heroku%20deployment" class="btn btn-secondary" target="_blank" style="flex: 1;">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="mailto:addaiernest35@gmail.com?subject=Heroku Deployment Help&body=Hi Ernest, I need help with Heroku deployment for my application" class="btn btn-email" style="flex: 1;">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Billing Solutions Card -->
                 <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Payment and Billing Solutions">
+                    </div>
                     <div class="card-icon">
                         <i class="fas fa-credit-card"></i>
                     </div>
-                    <h3>Account Billing Solutions</h3>
-                    <p>Streamline your billing processes with automated payment systems, invoice management, and financial tracking solutions.</p>
-                    <div class="contact-options">
-                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20billing%20solutions%20for%20my%20business" class="btn btn-primary" target="_blank" style="flex: 1;">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                        <a href="mailto:addaiernest35@gmail.com?subject=Billing Solutions Inquiry&body=Hi Ernest, I need billing solutions for my business. Can you help?" class="btn btn-email" style="flex: 1;">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
+                    <div class="card-content">
+                        <h3>Account Billing Solutions</h3>
+                        <p>Streamline your billing processes with automated payment systems, invoice management, and financial tracking solutions. Integrate secure payment gateways and automate recurring billing.</p>
+                        <div class="card-actions">
+                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20billing%20solutions%20for%20my%20business" class="btn btn-primary" target="_blank" style="flex: 1;">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="mailto:addaiernest35@gmail.com?subject=Billing Solutions Inquiry&body=Hi Ernest, I need billing solutions for my business. Can you help?" class="btn btn-email" style="flex: 1;">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Tech Consultation Card -->
                 <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Tech Consultation">
+                    </div>
                     <div class="card-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Tech Consultation</h3>
-                    <p>Get expert advice on technology stack, digital transformation, and IT infrastructure to grow your business efficiently.</p>
-                    <div class="contact-options">
-                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20tech%20consultation%20for%20my%20business" class="btn btn-secondary" target="_blank" style="flex: 1;">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                        <a href="mailto:addaiernest35@gmail.com?subject=Tech Consultation Request&body=Hi Ernest, I would like to schedule a tech consultation for my business" class="btn btn-email" style="flex: 1;">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
+                    <div class="card-content">
+                        <h3>Tech Consultation</h3>
+                        <p>Get expert advice on technology stack, digital transformation, and IT infrastructure to grow your business efficiently. Strategic planning for tech adoption and optimization.</p>
+                        <div class="card-actions">
+                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20tech%20consultation%20for%20my%20business" class="btn btn-secondary" target="_blank" style="flex: 1;">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="mailto:addaiernest35@gmail.com?subject=Tech Consultation Request&body=Hi Ernest, I would like to schedule a tech consultation for my business" class="btn btn-email" style="flex: 1;">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -928,27 +1018,37 @@
             <!-- Contact Cards -->
             <div class="cards-container">
                 <div class="card whatsapp-contact">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="WhatsApp Contact">
+                    </div>
                     <div class="card-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
-                    <h3>Direct WhatsApp Contact</h3>
-                    <p>For immediate assistance or inquiries about any of my services, message me directly on WhatsApp. I typically respond within 1-2 hours during business days.</p>
-                    <p><strong>Phone:</strong> +233 533 230 608</p>
-                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20your%20services" class="btn btn-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Message Me on WhatsApp
-                    </a>
+                    <div class="card-content">
+                        <h3>Direct WhatsApp Contact</h3>
+                        <p>For immediate assistance or inquiries about any of my services, message me directly on WhatsApp. I typically respond within 1-2 hours during business days.</p>
+                        <p><strong>Phone:</strong> +233 533 230 608</p>
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20your%20services" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Message Me on WhatsApp
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="card email-contact">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1611605698325-9b5b3b5bc7f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Email Contact">
+                    </div>
                     <div class="card-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h3>Email Contact</h3>
-                    <p>For detailed inquiries, project proposals, or formal communication, feel free to email me. I check my email regularly and respond within 24 hours.</p>
-                    <p><strong>Email:</strong> addaiernest35@gmail.com</p>
-                    <a href="mailto:addaiernest35@gmail.com?subject=Tech Services Inquiry&body=Hi Ernest, I'm interested in your services. Please provide more information." class="btn btn-email">
-                        <i class="fas fa-envelope"></i> Send Email
-                    </a>
+                    <div class="card-content">
+                        <h3>Email Contact</h3>
+                        <p>For detailed inquiries, project proposals, or formal communication, feel free to email me. I check my email regularly and respond within 24 hours.</p>
+                        <p><strong>Email:</strong> addaiernest35@gmail.com</p>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Tech Services Inquiry&body=Hi Ernest, I'm interested in your services. Please provide more information." class="btn btn-email">
+                            <i class="fas fa-envelope"></i> Send Email
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1196,12 +1296,14 @@
             });
             
             // Animate about section
-            const aboutPosition = aboutContent.getBoundingClientRect().top;
-            const aboutScreenPosition = window.innerHeight / 1.3;
-            
-            if (aboutPosition < aboutScreenPosition) {
-                aboutContent.classList.add('visible');
-                aboutImage.classList.add('visible');
+            if (aboutContent && aboutImage) {
+                const aboutPosition = aboutContent.getBoundingClientRect().top;
+                const aboutScreenPosition = window.innerHeight / 1.3;
+                
+                if (aboutPosition < aboutScreenPosition) {
+                    aboutContent.classList.add('visible');
+                    aboutImage.classList.add('visible');
+                }
             }
         }
         
@@ -1215,6 +1317,9 @@
             
             // Set initial active nav link
             updateActiveNavLink();
+            
+            // Initialize images with error handling
+            initializeImages();
         });
         
         // Create floating elements with random properties
@@ -1252,19 +1357,39 @@
             });
         }
         
+        // Initialize images with fallbacks
+        function initializeImages() {
+            const images = document.querySelectorAll('img');
+            const fallbackImage = 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80';
+            
+            images.forEach(img => {
+                // Store original src
+                const originalSrc = img.src;
+                
+                // Add error handling
+                img.addEventListener('error', function() {
+                    console.log(`Image failed to load: ${originalSrc}`);
+                    this.src = fallbackImage;
+                });
+                
+                // Add loading attribute for better performance
+                img.setAttribute('loading', 'lazy');
+            });
+        }
+        
         // Card hover effect
         cards.forEach(card => {
             card.addEventListener('mouseenter', function() {
                 const icon = this.querySelector('.card-icon i');
                 if (icon) {
-                    icon.style.transform = 'scale(1.2)';
+                    icon.style.transform = 'scale(1.2) rotate(10deg)';
                 }
             });
             
             card.addEventListener('mouseleave', function() {
                 const icon = this.querySelector('.card-icon i');
                 if (icon) {
-                    icon.style.transform = 'scale(1)';
+                    icon.style.transform = 'scale(1) rotate(0deg)';
                 }
             });
         });
@@ -1335,8 +1460,8 @@
         // Handle image loading errors
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener('error', function() {
-                // Fallback image or hide element
-                this.style.display = 'none';
+                // Fallback image
+                this.src = 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80';
             });
         });
         
