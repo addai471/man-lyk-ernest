@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ernest Addai | Tech Solutions</title>
+    <title>Ernest Addai | Tech Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -20,9 +20,10 @@
         body {
             color: #fff;
             overflow-x: hidden;
+            background-color: #000;
         }
 
-        /* --- THE ALIVE BACKGROUND --- */
+        /* --- ALIVE BACKGROUND --- */
         .alive-bg {
             position: fixed;
             top: 0;
@@ -30,12 +31,13 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+            /* Deep Tech Gradient */
+            background: linear-gradient(-45deg, #020024, #090979, #00d4ff, #4b134f);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
         }
 
-        /* Adds moving particles/stars effect */
+        /* Floating particles effect */
         .alive-bg::before {
             content: "";
             position: absolute;
@@ -49,8 +51,8 @@
                 radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
             background-size: 550px 550px, 350px 350px, 250px 250px;
             background-position: 0 0, 40px 60px, 130px 270px;
-            animation: starMove 100s linear infinite;
-            opacity: 0.6;
+            animation: starMove 60s linear infinite;
+            opacity: 0.4;
         }
 
         @keyframes gradientBG {
@@ -61,7 +63,7 @@
 
         @keyframes starMove {
             from { transform: translateY(0); }
-            to { transform: translateY(-1000px); }
+            to { transform: translateY(-500px); }
         }
 
         /* --- NAVIGATION --- */
@@ -70,7 +72,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
@@ -81,9 +83,9 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #00d2ff; /* Tech Cyan */
+            color: #00d2ff;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .nav-links a {
@@ -92,36 +94,36 @@
             margin-left: 30px;
             font-weight: 500;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
 
-        .nav-links a:hover {
-            color: #00d2ff;
-        }
+        .nav-links a:hover { color: #00d2ff; }
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 100px 20px 50px 20px;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            background: -webkit-linear-gradient(#fff, #00d2ff);
+            background: linear-gradient(to right, #fff, #00d2ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-            color: #e0e0e0;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            color: #ddd;
         }
 
         /* --- BUTTONS --- */
@@ -130,138 +132,168 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
-            color: white;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+            gap: 8px;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-whatsapp {
-            background: linear-gradient(45deg, #25D366, #128C7E);
+            background: #25D366;
             color: white;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
-            margin-left: 15px;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
         }
 
-        .btn:hover {
+        .btn-whatsapp:hover {
+            background: #1ebc57;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
 
-        /* --- SERVICES SECTION (CARDS) --- */
+        .btn-card {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 0.85rem;
+            padding: 8px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-card:hover {
+            background: #00d2ff;
+            border-color: #00d2ff;
+            color: #000;
+        }
+
+        /* --- SERVICES GRID --- */
         .services {
-            padding: 100px 50px;
-            max-width: 1200px;
+            padding: 50px 5%;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
             color: #fff;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #00d2ff;
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            justify-content: center;
         }
 
+        /* --- COOL CARDS --- */
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 20px;
             transition: 0.4s ease;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
             position: relative;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
             border-color: #00d2ff;
-            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.15);
+        }
+
+        /* Tag for numbering */
+        .card-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #00d2ff;
+            font-weight: bold;
         }
 
         .card-image {
             width: 100%;
-            height: 200px;
+            height: 160px;
             object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
-            color: #00d2ff;
+            color: #fff;
         }
 
         .card p {
-            color: #ccc;
+            color: #aaa;
+            font-size: 0.9rem;
             margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.5;
+            flex-grow: 1; /* Pushes button to bottom */
         }
 
         .card-footer {
+            margin-top: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 15px;
-        }
-
-        .price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #fff;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         /* --- FOOTER --- */
         footer {
             background: rgba(0, 0, 0, 0.8);
-            padding: 40px 0;
+            padding: 50px 0;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 80px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .footer-content h2 {
-            margin-bottom: 10px;
-            color: #fff;
+        .social-icons {
+            margin: 20px 0;
         }
-
-        .footer-content p {
-            color: #888;
-            margin-bottom: 20px;
-        }
-
+        
         .social-icons a {
             color: #fff;
             font-size: 1.5rem;
             margin: 0 15px;
             transition: 0.3s;
         }
-
-        .social-icons a:hover {
-            color: #00d2ff;
-        }
+        
+        .social-icons a:hover { color: #00d2ff; }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            nav { padding: 20px; flex-direction: column; gap: 10px; }
-            .nav-links a { margin: 0 10px; }
-            .btn { width: 100%; margin: 10px 0 0 0; justify-content: center; }
+            .hero h1 { font-size: 2.2rem; }
+            nav { padding: 15px; flex-direction: column; gap: 15px; }
+            .nav-links { display: flex; gap: 20px; }
+            .nav-links a { margin: 0; }
         }
     </style>
 </head>
@@ -272,74 +304,111 @@
     <nav>
         <div class="logo">Ernest Addai</div>
         <div class="nav-links">
-            <a href="#home">Home</a>
             <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="https://wa.me/1234567890" target="_blank">Contact</a>
         </div>
     </nav>
 
-    <header class="hero" id="home">
-        <h1>Tech Solutions for Business</h1>
-        <p>I provide high-quality WhatsApp automation, Heroku cloud configuration, and secure billing account services. Upgrade your digital workflow today.</p>
-        <div>
-            <a href="#services" class="btn btn-primary">View Products</a>
-            <a href="https://wa.me/1234567890" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-        </div>
-    </header>
+    <section class="hero">
+        <h1>Digital Business <br> & Tech Solutions</h1>
+        <p>Premium automation, social boosting, verified accounts, and streaming services. Everything you need to scale your business.</p>
+        <a href="#services" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Chat with Ernest
+        </a>
+    </section>
 
     <section class="services" id="services">
-        <h2 class="section-title">What I Offer</h2>
-        
+        <h2 class="section-title">My Services</h2>
+
         <div class="card-container">
-            
+
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="WhatsApp Bot" class="card-image">
-                <h3>WhatsApp Automation Bots</h3>
-                <p>Custom-coded bots to handle your customer service, auto-replies, and business logic 24/7 without downtime.</p>
+                <span class="card-number">01</span>
+                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1000&auto=format&fit=crop" alt="WhatsApp Bot" class="card-image">
+                <h3>WhatsApp Bot</h3>
+                <p>Advanced bots for auto-replies, business management, and 24/7 customer engagement.</p>
                 <div class="card-footer">
-                    <span class="price">From $50</span>
-                    <a href="https://wa.me/1234567890?text=I%20need%20a%20WhatsApp%20Bot" class="btn btn-whatsapp" style="padding: 8px 15px; font-size:0.9rem;">Order Now</a>
+                    <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20a%20WhatsApp%20Bot" class="btn btn-card">Order Now</a>
                 </div>
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1558494949-ef526b0042a0?q=80&w=1000&auto=format&fit=crop" alt="Server Tech" class="card-image">
-                <h3>Heroku Verified Accounts</h3>
-                <p>Fully verified Heroku accounts ready for deployment. Perfect for hosting your bots, APIs, and web applications.</p>
+                <span class="card-number">02</span>
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1000&auto=format&fit=crop" alt="Credit Card" class="card-image">
+                <h3>Heroku Credit Card</h3>
+                <p>Working credit cards specifically for verifying Heroku accounts and managing billing.</p>
                 <div class="card-footer">
-                    <span class="price">From $25</span>
-                    <a href="https://wa.me/1234567890?text=I%20need%20a%20Heroku%20Account" class="btn btn-whatsapp" style="padding: 8px 15px; font-size:0.9rem;">Buy Now</a>
+                    <a href="https://wa.me/1234567890?text=I%20need%20a%20Heroku%20Credit%20Card" class="btn btn-card">Get Card</a>
                 </div>
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1000&auto=format&fit=crop" alt="Billing" class="card-image">
-                <h3>Billing & Tech Support</h3>
-                <p>Secure account billing setups and general technical troubleshooting for your digital business assets.</p>
+                <span class="card-number">03</span>
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="Social Media" class="card-image">
+                <h3>Social Media Boost</h3>
+                <p>Boost likes, followers, and views on Instagram, TikTok, Facebook, and Twitter instantly.</p>
                 <div class="card-footer">
-                    <span class="price">Custom</span>
-                    <a href="https://wa.me/1234567890?text=I%20need%20billing%20support" class="btn btn-whatsapp" style="padding: 8px 15px; font-size:0.9rem;">Inquire</a>
+                    <a href="https://wa.me/1234567890?text=I%20want%20to%20boost%20my%20social%20media" class="btn btn-card">Boost Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-number">04</span>
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop" alt="AI Video" class="card-image">
+                <h3>AI Video Ads</h3>
+                <p>Professional AI-generated video advertisements for any business niche to attract customers.</p>
+                <div class="card-footer">
+                    <a href="https://wa.me/1234567890?text=I%20need%20an%20AI%20Video%20Ad" class="btn btn-card">Create Video</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-number">05</span>
+                <img src="https://images.unsplash.com/photo-1512428559087-560fa5ce7d87?q=80&w=1000&auto=format&fit=crop" alt="Foreign Numbers" class="card-image">
+                <h3>Foreign Numbers</h3>
+                <p>USA, UK, and other foreign numbers available for OTP verification on any app.</p>
+                <div class="card-footer">
+                    <a href="https://wa.me/1234567890?text=I%20need%20a%20foreign%20number%20for%20verification" class="btn btn-card">Get Number</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-number">06</span>
+                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1000&auto=format&fit=crop" alt="Streaming" class="card-image">
+                <h3>Streaming Accounts</h3>
+                <p>Netflix, Prime Video, Apple TV, DSTV, and more. Premium entertainment accounts.</p>
+                <div class="card-footer">
+                    <a href="https://wa.me/1234567890?text=I%20need%20a%20Netflix/Streaming%20account" class="btn btn-card">Buy Account</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-number">07</span>
+                <img src="https://images.unsplash.com/photo-1606229338681-6f7bf3808850?q=80&w=1000&auto=format&fit=crop" alt="Cloud Storage" class="card-image">
+                <h3>Premium & Cloud</h3>
+                <p>iCloud storage upgrades, Snapchat Plus, Apple Music, and other premium subscriptions.</p>
+                <div class="card-footer">
+                    <a href="https://wa.me/1234567890?text=I%20need%20iCloud/Snapchat%20service" class="btn btn-card">Upgrade</a>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <h2>Ernest Addai</h2>
-            <p>Premium Tech Services & Digital Assets</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-            <br>
-            <p style="font-size: 0.8rem; opacity: 0.5;">&copy; 2024 Ernest Addai. All rights reserved.</p>
+    <footer>
+        <h2 style="color:#00d2ff; margin-bottom:10px;">Ernest Addai</h2>
+        <p style="color: #aaa;">Your trusted partner for Tech & Digital Assets.</p>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
+
+        <p style="font-size: 0.8rem; opacity: 0.6; margin-top:20px;">
+            &copy; 2024 Ernest Addai. All rights reserved.
+        </p>
     </footer>
 
 </body>
