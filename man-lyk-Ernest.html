@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Man-Lyk-Ernest-Hub | Tech Services</title>
+    <title>Man-lyk-Ernest-hub | Digital Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -20,7 +20,7 @@
         body {
             color: #fff;
             overflow-x: hidden;
-            background-color: #000;
+            background-color: #050505;
         }
 
         /* --- ALIVE BACKGROUND --- */
@@ -31,13 +31,11 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            /* Deep Tech Gradient */
-            background: linear-gradient(-45deg, #020024, #090979, #00d4ff, #4b134f);
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
         }
 
-        /* Floating particles effect */
         .alive-bg::before {
             content: "";
             position: absolute;
@@ -52,7 +50,7 @@
             background-size: 550px 550px, 350px 350px, 250px 250px;
             background-position: 0 0, 40px 60px, 130px 270px;
             animation: starMove 60s linear infinite;
-            opacity: 0.4;
+            opacity: 0.5;
         }
 
         @keyframes gradientBG {
@@ -72,7 +70,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
@@ -81,7 +79,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: #00d2ff;
             text-transform: uppercase;
@@ -101,13 +99,13 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            min-height: 80vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 100px 20px 50px 20px;
+            padding: 120px 20px 50px 20px;
         }
 
         .hero h1 {
@@ -121,97 +119,82 @@
 
         .hero p {
             font-size: 1.1rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            color: #ddd;
+            margin-bottom: 40px;
+            max-width: 800px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         /* --- BUTTONS --- */
         .btn {
-            padding: 12px 30px;
+            padding: 12px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            border: none;
-            cursor: pointer;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
         }
 
         .btn-whatsapp {
             background: #25D366;
             color: white;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
         }
 
-        .btn-whatsapp:hover {
-            background: #1ebc57;
+        .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            filter: brightness(1.1);
         }
 
-        .btn-card {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            font-size: 0.85rem;
-            padding: 8px 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            text-decoration: none;
-            border-radius: 50px;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .btn-card:hover {
-            background: #00d2ff;
-            border-color: #00d2ff;
-            color: #000;
-        }
-
-        /* --- SERVICES GRID --- */
+        /* --- SERVICES SECTION --- */
         .services {
-            padding: 50px 5%;
+            padding: 80px 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
             color: #fff;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
         }
         
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: #00d2ff;
-            margin: 10px auto 0;
-            border-radius: 2px;
+        .section-subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 60px;
         }
 
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             justify-content: center;
         }
 
-        /* --- COOL CARDS --- */
+        /* --- CARD DESIGN --- */
         .card {
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 20px;
+            padding: 0;
             transition: 0.4s ease;
             overflow: hidden;
             display: flex;
@@ -221,104 +204,174 @@
 
         .card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.12);
             border-color: #00d2ff;
-            box-shadow: 0 0 30px rgba(0, 210, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        /* Number Tag */
-        .card-number {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(0,0,0,0.5);
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            color: #00d2ff;
-            font-weight: bold;
-        }
-
-        .card-image {
+        .card-img-wrapper {
             width: 100%;
-            height: 160px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
             color: #fff;
         }
 
+        .price-tag {
+            color: #00d2ff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
         .card p {
-            color: #aaa;
-            font-size: 0.9rem;
+            color: #bbb;
+            font-size: 0.95rem;
             margin-bottom: 20px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Bot Feature List */
-        .bot-list {
+        .feature-list {
             list-style: none;
-            margin-bottom: 20px;
-            text-align: left;
+            margin-bottom: 25px;
         }
 
-        .bot-list li {
-            font-size: 0.85rem;
+        .feature-list li {
             color: #ddd;
+            font-size: 0.9rem;
             margin-bottom: 8px;
             display: flex;
-            align-items: start;
+            align-items: flex-start;
         }
 
-        .bot-list li i {
+        .feature-list li i {
             color: #00d2ff;
-            margin-right: 8px;
-            margin-top: 3px;
-            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-top: 4px;
         }
 
-        .card-footer {
+        .card-buttons {
             margin-top: auto;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            gap: 10px;
+        }
+
+        .btn-card {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-card-primary {
+            background: #00d2ff;
+            color: #000;
+        }
+
+        .btn-card-outline {
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+        }
+
+        .btn-card:hover {
+            opacity: 0.8;
+        }
+
+        /* --- SPECIAL GRID SPAN FOR MAIN BOT --- */
+        @media (min-width: 768px) {
+            .span-row {
+                grid-row: span 2;
+            }
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+
+        .about h2 {
+            color: #00d2ff;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ccc;
+            line-height: 1.8;
         }
 
         /* --- FOOTER --- */
         footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 50px 0;
+            background: #000;
+            padding: 60px 20px;
             text-align: center;
-            margin-top: 80px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid #222;
         }
 
-        .social-icons {
-            margin: 20px 0;
+        .footer-logo {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
-        
+
+        .footer-contact {
+            color: #888;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
         .social-icons a {
             color: #fff;
             font-size: 1.5rem;
             margin: 0 15px;
             transition: 0.3s;
         }
-        
-        .social-icons a:hover { color: #00d2ff; }
 
-        /* --- RESPONSIVE --- */
+        .social-icons a:hover {
+            color: #00d2ff;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Tweaks */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             nav { padding: 15px; flex-direction: column; gap: 15px; }
-            .nav-links { display: flex; gap: 20px; }
-            .nav-links a { margin: 0; }
         }
     </style>
 </head>
@@ -327,124 +380,177 @@
     <div class="alive-bg"></div>
 
     <nav>
-        <div class="logo">Man-Lyk-Ernest-Hub</div>
+        <div class="logo">Man-lyk-Ernest-hub</div>
         <div class="nav-links">
+            <a href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#about">About</a>
-            <a href="https://wa.me/1234567890" target="_blank">Contact</a>
+            <a href="https://wa.me/233533230608" target="_blank">Contact</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Digital Business <br> & Tech Solutions</h1>
-        <p>Premium automation, social boosting, verified accounts, and streaming services. Everything you need to scale your business.</p>
-        <a href="#services" class="btn btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> Chat with Ernest
-        </a>
+    <section class="hero" id="home">
+        <h1>Your Ultimate <br> Digital Solutions Provider</h1>
+        <p>Welcome to Man-lyk-Ernest-hub, your one-stop destination for comprehensive digital solutions including WhatsApp automation, social media boosting, AI videos, verification services, streaming accounts, and premium subscriptions.</p>
+        
+        <div class="hero-buttons">
+            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub%20Services" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Email Me
+            </a>
+            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20Man-lyk-Ernest-hub%20services" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp Now
+            </a>
+        </div>
     </section>
 
     <section class="services" id="services">
         <h2 class="section-title">My Services</h2>
+        <p class="section-subtitle">Comprehensive digital solutions covering automation, AI, and premium accounts.</p>
 
         <div class="card-container">
 
-            <div class="card" style="grid-row: span 2;">
-                <span class="card-number">01</span>
-                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1000&auto=format&fit=crop" alt="WhatsApp Bot" class="card-image">
-                <h3>WhatsApp Ultimate Bot</h3>
-                <ul class="bot-list">
-                    <li><i class="fas fa-check-circle"></i> View all status offline (No data needed)</li>
-                    <li><i class="fas fa-check-circle"></i> Save 'View Once' media to gallery</li>
-                    <li><i class="fas fa-check-circle"></i> Download songs & lyrics instantly</li>
-                    <li><i class="fas fa-check-circle"></i> Shows you online even when sleeping</li>
-                    <li><i class="fas fa-check-circle"></i> Auto-save WhatsApp statuses</li>
-                    <li><i class="fas fa-check-circle"></i> Tag all group members at once</li>
-                    <li><i class="fas fa-check-circle"></i> Play games directly in WhatsApp</li>
-                    <li><i class="fas fa-check-circle"></i> Create custom stickers & wallpapers</li>
-                    <li><i class="fas fa-check-circle"></i> Save videos without app logos</li>
-                    <li><i class="fas fa-check-circle"></i> GPT-4 AI homework helper</li>
-                </ul>
-                <div class="card-footer">
-                    <a href="https://wa.me/1234567890?text=I%20want%20the%20Ultimate%20WhatsApp%20Bot" class="btn btn-card" style="width:100%; text-align:center;">Get Bot Now</a>
+            <div class="card span-row">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=800&q=80" alt="WhatsApp Bot" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Advanced WhatsApp Bot</h3>
+                    <span class="price-tag">GH₵ 25 (One-time)</span>
+                    <p>Supercharge your WhatsApp with our advanced bot features. Lifetime access included.</p>
+                    
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Monitor statuses offline</li>
+                        <li><i class="fas fa-check"></i> Save 'view once' media</li>
+                        <li><i class="fas fa-check"></i> Download songs & lyrics</li>
+                        <li><i class="fas fa-check"></i> Tag all group members</li>
+                        <li><i class="fas fa-check"></i> Custom stickers & wallpapers</li>
+                        <li><i class="fas fa-check"></i> In-chat games</li>
+                        <li><i class="fas fa-check"></i> No-watermark video saver</li>
+                        <li><i class="fas fa-check"></i> AI GPT-4 Assistant</li>
+                        <li><i class="fas fa-check"></i> 24/7 Auto-reply</li>
+                    </ul>
+
+                    <div class="card-buttons">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20BUY%20your%20WhatsApp%20Bot%20for%20GH₵25" class="btn-card btn-card-primary">Order Bot</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="card-number">02</span>
-                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1000&auto=format&fit=crop" alt="Credit Card" class="card-image">
-                <h3>Heroku Credit Card</h3>
-                <p>Working credit cards specifically for verifying Heroku accounts and managing billing.</p>
-                <div class="card-footer">
-                    <a href="https://wa.me/1234567890?text=I%20need%20a%20Heroku%20Credit%20Card" class="btn btn-card">Get Card</a>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="Heroku" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Heroku Credit Card</h3>
+                    <p>Verified Heroku accounts with working credit cards for seamless cloud deployment.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Verified Accounts</li>
+                        <li><i class="fas fa-check"></i> Working Credit Cards</li>
+                        <li><i class="fas fa-check"></i> Ready for Deploy</li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20a%20Heroku%20account" class="btn-card btn-card-primary">Get Account</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="card-number">03</span>
-                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop" alt="Social Media" class="card-image">
-                <h3>Social Media Boost</h3>
-                <p>Boost likes, followers, and views on Instagram, TikTok, Facebook, and Twitter instantly.</p>
-                <div class="card-footer">
-                    <a href="https://wa.me/1234567890?text=I%20want%20to%20boost%20my%20social%20media" class="btn btn-card">Boost Now</a>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&w=800&q=80" alt="Social Media" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Social Media Boost</h3>
+                    <p>Increase followers, likes, and engagement on Facebook, Instagram, TikTok, YouTube & more.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real Growth</li>
+                        <li><i class="fas fa-check"></i> Target Audience</li>
+                        <li><i class="fas fa-check"></i> All Platforms</li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20boost%20my%20social%20media" class="btn-card btn-card-primary">Boost Now</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="card-number">04</span>
-                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop" alt="AI Video" class="card-image">
-                <h3>AI Video Ads</h3>
-                <p>Professional AI-generated video advertisements for any business niche to attract customers.</p>
-                <div class="card-footer">
-                    <a href="https://wa.me/1234567890?text=I%20need%20an%20AI%20Video%20Ad" class="btn btn-card">Create Video</a>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="AI Video" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>AI Video Ads</h3>
+                    <p>Professional AI-generated videos for business promotions, explainers, and marketing.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Custom Voiceovers</li>
+                        <li><i class="fas fa-check"></i> Professional Animation</li>
+                        <li><i class="fas fa-check"></i> Quick Turnaround</li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20AI%20video%20for%20my%20business" class="btn-card btn-card-primary">Create Video</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="card-number">05</span>
-                <img src="https://images.unsplash.com/photo-1512428559087-560fa5ce7d87?q=80&w=1000&auto=format&fit=crop" alt="Foreign Numbers" class="card-image">
-                <h3>Foreign Numbers</h3>
-                <p>USA, UK, and other foreign numbers available for OTP verification on any app.</p>
-                <div class="card-footer">
-                    <a href="https://wa.me/1234567890?text=I%20need%20a%20foreign%20number%20for%20verification" class="btn btn-card">Get Number</a>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Foreign Numbers" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Foreign Numbers</h3>
+                    <p>Get verified numbers (USA, UK, Canada, etc.) for WhatsApp, Telegram, and App verifications.</p>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20foreign%20numbers" class="btn-card btn-card-primary">Get Number</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="card-number">06</span>
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1000&auto=format&fit=crop" alt="Streaming" class="card-image">
-                <h3>Streaming Accounts</h3>
-                <p>Netflix, Prime Video, Apple TV, DSTV, and more. Premium entertainment accounts.</p>
-                <div class="card-footer">
-                    <a href="https://wa.me/1234567890?text=I%20need%20a%20Netflix/Streaming%20account" class="btn btn-card">Buy Account</a>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=800&q=80" alt="Streaming" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Streaming Accounts</h3>
+                    <p>Netflix, Prime, DSTV, Apple TV+, Hulu, Disney+, Spotify Premium & more.</p>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20buy%20streaming%20accounts" class="btn-card btn-card-primary">Buy Account</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="card-number">07</span>
-                <img src="https://images.unsplash.com/photo-1606229338681-6f7bf3808850?q=80&w=1000&auto=format&fit=crop" alt="Cloud Storage" class="card-image">
-                <h3>Premium & Cloud</h3>
-                <p>iCloud storage upgrades, Snapchat Plus, Apple Music, and other premium subscriptions.</p>
-                <div class="card-footer">
-                    <a href="https://wa.me/1234567890?text=I%20need%20iCloud/Snapchat%20service" class="btn btn-card">Upgrade</a>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=800&q=80" alt="Cloud" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Cloud & Apps</h3>
+                    <p>iCloud Storage, Snapchat Plus, Apple Music, Google One, Dropbox, Adobe Creative Cloud.</p>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20premium%20subscriptions" class="btn-card btn-card-primary">Upgrade</a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <footer>
-        <h2 style="color:#00d2ff; margin-bottom:10px;">Man-Lyk-Ernest-Hub</h2>
-        <p style="color: #aaa;">Your trusted partner for Tech & Digital Assets.</p>
+    <section class="about" id="about">
+        <h2>About Man-lyk-Ernest-hub</h2>
+        <p>Founded by Ernest Addai, we specialize in providing cutting-edge technology services. Our mission is to empower clients with innovative digital solutions that enhance efficiency and provide access to premium digital resources at affordable prices.</p>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-logo">Man-lyk-Ernest-hub</div>
+        <p class="footer-contact">
+            Email: addaiernest35@gmail.com <br>
+            WhatsApp: +233 533 230 608
+        </p>
         
         <div class="social-icons">
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="https://wa.me/233533230608"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:addaiernest35@gmail.com"><i class="fas fa-envelope"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
 
-        <p style="font-size: 0.8rem; opacity: 0.6; margin-top:20px;">
-            &copy; 2024 Man-Lyk-Ernest-Hub. All rights reserved.
-        </p>
+        <p class="copyright">&copy; 2024 Man-lyk-Ernest-hub Digital Solutions. All rights reserved.</p>
     </footer>
 
 </body>
