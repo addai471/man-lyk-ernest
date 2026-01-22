@@ -31,13 +31,11 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            /* Deep Tech Gradient */
             background: linear-gradient(-45deg, #020024, #090979, #00d4ff, #4b134f);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
         }
 
-        /* Floating particles effect */
         .alive-bg::before {
             content: "";
             position: absolute;
@@ -158,6 +156,10 @@
             font-size: 0.85rem;
             padding: 8px 20px;
             border: 1px solid rgba(255,255,255,0.2);
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            transition: 0.3s;
         }
 
         .btn-card:hover {
@@ -196,7 +198,7 @@
 
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             justify-content: center;
         }
@@ -222,7 +224,7 @@
             box-shadow: 0 0 30px rgba(0, 210, 255, 0.15);
         }
 
-        /* Tag for numbering */
+        /* Number Tag */
         .card-number {
             position: absolute;
             top: 15px;
@@ -254,7 +256,28 @@
             font-size: 0.9rem;
             margin-bottom: 20px;
             line-height: 1.5;
-            flex-grow: 1; /* Pushes button to bottom */
+        }
+
+        /* Specific Styling for Bot Feature List */
+        .bot-list {
+            list-style: none;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .bot-list li {
+            font-size: 0.85rem;
+            color: #ddd;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: start;
+        }
+
+        .bot-list li i {
+            color: #00d2ff;
+            margin-right: 8px;
+            margin-top: 3px;
+            font-size: 0.8rem;
         }
 
         .card-footer {
@@ -323,13 +346,24 @@
 
         <div class="card-container">
 
-            <div class="card">
+            <div class="card" style="grid-row: span 2;">
                 <span class="card-number">01</span>
                 <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=1000&auto=format&fit=crop" alt="WhatsApp Bot" class="card-image">
-                <h3>WhatsApp Bot</h3>
-                <p>Advanced bots for auto-replies, business management, and 24/7 customer engagement.</p>
+                <h3>WhatsApp Ultimate Bot</h3>
+                <ul class="bot-list">
+                    <li><i class="fas fa-check-circle"></i> View all status offline (No data needed)</li>
+                    <li><i class="fas fa-check-circle"></i> Save 'View Once' media to gallery</li>
+                    <li><i class="fas fa-check-circle"></i> Download songs & lyrics instantly</li>
+                    <li><i class="fas fa-check-circle"></i> Shows you online even when sleeping</li>
+                    <li><i class="fas fa-check-circle"></i> Auto-save WhatsApp statuses</li>
+                    <li><i class="fas fa-check-circle"></i> Tag all group members at once</li>
+                    <li><i class="fas fa-check-circle"></i> Play games directly in WhatsApp</li>
+                    <li><i class="fas fa-check-circle"></i> Create custom stickers & wallpapers</li>
+                    <li><i class="fas fa-check-circle"></i> Save videos without app logos</li>
+                    <li><i class="fas fa-check-circle"></i> GPT-4 AI homework helper</li>
+                </ul>
                 <div class="card-footer">
-                    <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20a%20WhatsApp%20Bot" class="btn btn-card">Order Now</a>
+                    <a href="https://wa.me/1234567890?text=I%20want%20the%20Ultimate%20WhatsApp%20Bot" class="btn btn-card" style="width:100%; text-align:center;">Get Bot Now</a>
                 </div>
             </div>
 
