@@ -1,6 +1,3 @@
-Here's the complete, combined code with all improvements integrated:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +36,7 @@ Here's the complete, combined code with all improvements integrated:
       "telephone": "+233533230608",
       "email": "addaiernest35@gmail.com",
       "url": "https://man-lyk-ernest-hub.com",
-      "priceRange": "$$",
+      "priceRange": "GH₵25-500",
       "openingHours": "Mo-Su 09:00-21:00",
       "areaServed": "Worldwide"
     }
@@ -373,6 +370,20 @@ Here's the complete, combined code with all improvements integrated:
             transform: translateY(-3px);
         }
 
+        /* Buy Now Button */
+        .btn-buy-now {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-buy-now:hover {
+            background: linear-gradient(45deg, #FFA500, #FF8C00);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.5);
+        }
+
         /* Services Section */
         .section-title {
             text-align: center;
@@ -560,6 +571,74 @@ Here's the complete, combined code with all improvements integrated:
             display: flex;
             gap: 0.8rem;
             margin-top: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+        }
+
+        .pricing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .price-tag {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .discount-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-details {
+            margin: 0.8rem 0;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .current-price {
+            color: #FFD700;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .currency {
+            font-size: 1rem;
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .buy-now-btn {
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 700;
         }
 
         /* Features List */
@@ -1167,6 +1246,17 @@ Here's the complete, combined code with all improvements integrated:
                 font-size: 1.5rem;
             }
             
+            .pricing-header {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .price-tag {
+                font-size: 1.1rem;
+                padding: 0.4rem 1rem;
+            }
+            
             .social-icons-grid {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 0.7rem;
@@ -1249,6 +1339,24 @@ Here's the complete, combined code with all improvements integrated:
                 flex-direction: column;
             }
             
+            .pricing-section {
+                padding: 1rem;
+            }
+            
+            .price-tag {
+                font-size: 1rem;
+                padding: 0.3rem 0.8rem;
+            }
+            
+            .current-price {
+                font-size: 1.2rem;
+            }
+            
+            .buy-now-btn {
+                padding: 0.7rem;
+                font-size: 1rem;
+            }
+            
             .social-icons-grid {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 0.5rem;
@@ -1276,920 +1384,958 @@ Here's the complete, combined code with all improvements integrated:
     <!-- Floating Elements -->
     <div class="floating-element" id="float1"></div>
     <div class="floating-element" id="float2"></div>
-    <div class="floating-element" id="float3"></div>
-    
-    <!-- Header -->
-    <header id="mainHeader">
-        <div class="container nav-container">
-            <a href="#home" class="logo">
-                <i class="fas fa-hubspot" aria-hidden="true"></i> <span>Man-lyk-Ernest-hub</span>
+<div class="floating-element" id="float3"></div>
+
+<!-- Header -->
+<header id="mainHeader">
+    <div class="container nav-container">
+        <a href="#home" class="logo">
+            <i class="fas fa-hubspot" aria-hidden="true"></i> <span>Man-lyk-Ernest-hub</span>
+        </a>
+        
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        
+        <nav>
+            <ul id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="brand-name">Man-lyk-Ernest-hub</div>
+        <div class="brand-tagline">Your Ultimate Digital Solutions Provider</div>
+        <p>Welcome to Man-lyk-Ernest-hub, your one-stop destination for comprehensive digital solutions including WhatsApp automation, social media boosting, AI videos, verification services, streaming accounts, and premium subscriptions.</p>
+        <div class="hero-buttons">
+            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Services Inquiry&body=Hi Ernest, I'm interested in your services from Man-lyk-Ernest-hub" class="btn btn-email">
+                <i class="fas fa-envelope" aria-hidden="true"></i> Email Me
             </a>
-            
-            <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation menu" aria-expanded="false">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-            
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20Man-lyk-Ernest-hub%20services" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Now
+            </a>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="brand-name">Man-lyk-Ernest-hub</div>
-            <div class="brand-tagline">Your Ultimate Digital Solutions Provider</div>
-            <p>Welcome to Man-lyk-Ernest-hub, your one-stop destination for comprehensive digital solutions including WhatsApp automation, social media boosting, AI videos, verification services, streaming accounts, and premium subscriptions.</p>
-            <div class="hero-buttons">
-                <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Services Inquiry&body=Hi Ernest, I'm interested in your services from Man-lyk-Ernest-hub" class="btn btn-email">
-                    <i class="fas fa-envelope" aria-hidden="true"></i> Email Me
-                </a>
-                <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20Man-lyk-Ernest-hub%20services" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Now
-                </a>
-            </div>
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Man-lyk-Ernest-hub Services</h2>
+            <p>Comprehensive digital solutions covering automation, social media, AI, verification, and premium accounts.</p>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Man-lyk-Ernest-hub Services</h2>
-                <p>Comprehensive digital solutions covering automation, social media, AI, verification, and premium accounts.</p>
-            </div>
-            
-            <div class="cards-container">
-                <!-- 1. WhatsApp Bot Card -->
-                <div class="card">
-                    <div class="card-badge">Most Popular</div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                             alt="WhatsApp Bot Automation Service" loading="lazy">
-                    </div>
-                    <div class="card-icon whatsapp-bot-icon">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Advanced WhatsApp Bot</h3>
-                        <p>Supercharge your WhatsApp with our advanced bot that offers incredible features beyond basic automation.</p>
-                        
-                        <ul class="features-list">
-                            <li>Monitor all statuses even when offline</li>
-                            <li>Save view-once media to gallery</li>
-                            <li>Download songs and music lyrics</li>
-                            <li>Tag all members in groups instantly</li>
-                            <li>Create custom stickers and wallpapers</li>
-                            <li>Play interactive games within WhatsApp</li>
-                            <li>Save videos without watermarks</li>
-                            <li>AI-powered assistance with GPT-4</li>
-                            <li>24/7 automated customer responses</li>
-                            <li>Multi-language support</li>
-                        </ul>
-                        
-                        <div class="card-actions">
-                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20your%20WhatsApp%20Bot%20from%20Man-lyk-Ernest-hub" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="flex: 1;">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Order Bot
-                            </a>
-                            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub WhatsApp Bot&body=Hi Ernest, I'm interested in your WhatsApp Bot from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
-                                <i class="fas fa-envelope" aria-hidden="true"></i> Get Details
-                            </a>
-                        </div>
-                    </div>
+        
+        <div class="cards-container">
+            <!-- 1. WhatsApp Bot Card - WITH PRICING -->
+            <div class="card">
+                <div class="card-badge">Most Popular</div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="WhatsApp Bot Automation Service" loading="lazy">
                 </div>
-                
-                <!-- 2. Heroku Credit Card Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Heroku Credit Card Service" loading="lazy">
-                    </div>
-                    <div class="card-icon">
-                        <i class="fas fa-credit-card" aria-hidden="true"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Heroku Credit Card & Account Setup</h3>
-                        <p>Get Heroku accounts with working credit cards for seamless cloud deployment and hosting solutions.</p>
-                        
-                        <div class="service-highlight">
-                            <h4>What You Get:</h4>
-                            <p>✅ Verified Heroku accounts<br>
-                               ✅ Working credit cards attached<br>
-                               ✅ No verification required<br>
-                               ✅ Ready for immediate deployment<br>
-                               ✅ Full account access</p>
-                        </div>
-                        
-                        <div class="card-actions">
-                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20a%20Heroku%20account%20with%20credit%20card%20from%20Man-lyk-Ernest-hub" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                            </a>
-                            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Heroku Account&body=Hi Ernest, I need a Heroku account with working credit card from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
-                                <i class="fas fa-envelope" aria-hidden="true"></i> Email
-                            </a>
-                        </div>
-                    </div>
+                <div class="card-icon whatsapp-bot-icon">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
                 </div>
-                
-                <!-- 3. Social Media Boost Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Social Media Boost Service" loading="lazy">
-                    </div>
-                    <div class="card-icon social-media-icon">
-                        <i class="fas fa-rocket" aria-hidden="true"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Boost All Social Media Accounts</h3>
-                        <p>Increase your social media presence with our professional boosting services for all major platforms.</p>
-                        
-                        <!-- Social Media Icons Grid -->
-                        <div class="social-icons-grid">
-                            <div class="social-icon-item">
-                                <div class="social-icon facebook">
-                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                </div>
-                                <span class="social-icon-name">Facebook</span>
+                <div class="card-content">
+                    <h3>Advanced WhatsApp Bot</h3>
+                    <p>Supercharge your WhatsApp with our advanced bot that offers incredible features beyond basic automation.</p>
+                    
+                    <!-- PRICING SECTION -->
+                    <div class="pricing-section">
+                        <div class="pricing-header">
+                            <div class="price-tag">
+                                <span class="currency">GH₵</span>
+                                <span class="current-price">25</span>
                             </div>
-                            <div class="social-icon-item">
-                                <div class="social-icon instagram">
-                                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                                </div>
-                                <span class="social-icon-name">Instagram</span>
-                            </div>
-                            <div class="social-icon-item">
-                                <div class="social-icon twitter">
-                                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                                </div>
-                                <span class="social-icon-name">Twitter</span>
-                            </div>
-                            <div class="social-icon-item">
-                                <div class="social-icon tiktok">
-                                    <i class="fab fa-tiktok" aria-hidden="true"></i>
-                                </div>
-                                <span class="social-icon-name">TikTok</span>
-                            </div>
-                            <div class="social-icon-item">
-                                <div class="social-icon youtube">
-                                    <i class="fab fa-youtube" aria-hidden="true"></i>
-                                </div>
-                                <span class="social-icon-name">YouTube</span>
-                            </div>
-                            <div class="social-icon-item">
-                                <div class="social-icon linkedin">
-                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                </div>
-                                <span class="social-icon-name">LinkedIn</span>
-                            </div>
-                            <div class="social-icon-item">
-                                <div class="social-icon pinterest">
-                                    <i class="fab fa-pinterest-p" aria-hidden="true"></i>
-                                </div>
-                                <span class="social-icon-name">Pinterest</span>
-                            </div>
-                            <div class="social-icon-item">
-                                <div class="social-icon snapchat">
-                                    <i class="fab fa-snapchat-ghost" aria-hidden="true"></i>
-                                </div>
-                                <span class="social-icon-name">Snapchat</span>
-                            </div>
+                            <div class="discount-badge">Best Deal</div>
                         </div>
-                        
-                        <ul class="features-list">
-                            <li>Increase followers & engagement</li>
-                            <li>Boost post visibility</li>
-                            <li>Grow organic reach</li>
-                            <li>Improve profile credibility</li>
-                            <li>Target specific audiences</li>
-                            <li>Safe & sustainable growth</li>
-                        </ul>
-                        
-                        <div class="card-actions">
-                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20boost%20my%20social%20media%20accounts%20through%20Man-lyk-Ernest-hub" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                            </a>
-                            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Social Media Boosting&body=Hi Ernest, I want to boost my social media accounts through Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
-                                <i class="fas fa-envelope" aria-hidden="true"></i> Email
-                            </a>
+                        <div class="pricing-details">
+                            <p><strong>One-time payment</strong> • Lifetime access</p>
+                            <p>Instant delivery • 24/7 support included</p>
                         </div>
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20BUY%20your%20WhatsApp%20Bot%20for%20GH₵25%20from%20Man-lyk-Ernest-hub" 
+                           class="btn btn-buy-now buy-now-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-shopping-cart" aria-hidden="true"></i> BUY NOW - GH₵25
+                        </a>
                     </div>
-                </div>
-                
-                <!-- 4. AI Video Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="AI Video Creation Service" loading="lazy">
-                    </div>
-                    <div class="card-icon">
-                        <i class="fas fa-robot" aria-hidden="true"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>AI Video for Business & Advertising</h3>
-                        <p>Create professional AI-generated videos for your business, marketing, or advertising needs.</p>
-                        
-                        <div class="service-highlight">
-                            <h4>Video Types:</h4>
-                            <p>✅ Product promotions<br>
-                               ✅ Business presentations<br>
-                               ✅ Social media ads<br>
-                               ✅ Explainer videos<br>
-                               ✅ Training videos<br>
-                               ✅ YouTube content</p>
-                        </div>
-                        
-                        <ul class="features-list">
-                            <li>Custom AI voiceovers</li>
-                            <li>Professional animations</li>
-                            <li>Multiple language support</li>
-                            <li>Background music integration</li>
-                            <li>Custom branding</li>
-                            <li>Quick turnaround</li>
-                        </ul>
-                        
-                        <div class="card-actions">
-                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20AI%20video%20for%20my%20business%20from%20Man-lyk-Ernest-hub" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                            </a>
-                            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub AI Video Creation&body=Hi Ernest, I need AI video creation for my business from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
-                                <i class="fas fa-envelope" aria-hidden="true"></i> Email
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 5. Foreign Numbers Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Foreign Numbers Verification Service" loading="lazy">
-                    </div>
-                    <div class="card-icon">
-                        <i class="fas fa-globe" aria-hidden="true"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Foreign Numbers for All Verifications</h3>
-                        <p>Get verified foreign numbers for all your verification needs across different platforms and services.</p>
-                        
-                        <div class="service-highlight">
-                            <h4>Countries Available:</h4>
-                            <p>✅ USA Numbers<br>
-                               ✅ UK Numbers<br>
-                               ✅ Canada Numbers<br>
-                               ✅ Australia Numbers<br>
-                               ✅ European Numbers<br>
-                               ✅ Asian Numbers</p>
-                        </div>
-                        
-                        <ul class="features-list">
-                            <li>WhatsApp verification</li>
-                            <li>Telegram verification</li>
-                            <li>Social media verification</li>
-                            <li>Bank account verification</li>
-                            <li>App registration verification</li>
-                            <li>Website verification</li>
-                        </ul>
-                        
-                        <div class="card-actions">
-                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20foreign%20numbers%20for%20verification%20from%20Man-lyk-Ernest-hub" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                            </a>
-                            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Foreign Numbers&body=Hi Ernest, I need foreign numbers for verification from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
-                                <i class="fas fa-envelope" aria-hidden="true"></i> Email
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 6. Streaming Accounts Card -->
-                <div class="card">
-                    <div class="card-badge">Hot Deal</div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Premium Streaming Accounts Service" loading="lazy">
-                    </div>
-                    <div class="card-icon">
-                        <i class="fas fa-tv" aria-hidden="true"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Premium Streaming Accounts</h3>
-                        <p>Get access to premium streaming accounts for unlimited entertainment at affordable prices.</p>
-                        
-                        <div class="service-highlight">
-                            <h4>Available Platforms:</h4>
-                            <p>✅ Netflix<br>
-                               ✅ Prime Video<br>
-                               ✅ Apple TV+<br>
-                               ✅ DSTV<br>
-                               ✅ Hulu<br>
-                               ✅ Disney+<br>
-                               ✅ HBO Max<br>
-                               ✅ Spotify Premium</p>
-                        </div>
-                        
-                        <ul class="features-list">
-                            <li>Premium account access</li>
-                            <li>HD & 4K streaming</li>
-                            <li>Multiple profiles</li>
-                            <li>No sharing restrictions</li>
-                            <li>Long-term validity</li>
-                            <li>24/7 support</li>
-                        </ul>
-                        
-                        <div class="card-actions">
-                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20buy%20streaming%20accounts%20from%20Man-lyk-Ernest-hub" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="flex: 1;">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Order Now
-                            </a>
-                            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Streaming Accounts&body=Hi Ernest, I want to buy streaming accounts from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
-                                <i class="fas fa-envelope" aria-hidden="true"></i> Email
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 7. Premium Subscriptions Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Premium Cloud Subscriptions Service" loading="lazy">
-                    </div>
-                    <div class="card-icon">
-                        <i class="fas fa-cloud" aria-hidden="true"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Premium Cloud & App Subscriptions</h3>
-                        <p>Access premium cloud storage, music streaming, and app subscriptions at the best prices.</p>
-                        
-                        <div class="service-highlight">
-                            <h4>Available Subscriptions:</h4>
-                            <p>✅ iCloud Storage<br>
-                               ✅ Snapchat Plus<br>
-                               ✅ Apple Music<br>
-                               ✅ Google One<br>
-                               ✅ Dropbox Pro<br>
-                               ✅ Adobe Creative Cloud</p>
-                        </div>
-                        
-                        <ul class="features-list">
-                            <li>iCloud: 50GB, 200GB, 2TB plans</li>
-                            <li>Snapchat Plus with all features</li>
-                            <li>Apple Music family & individual</li>
-                            <li>Google One storage solutions</li>
-                            <li>Professional cloud backups</li>
-                            <li>Premium app features unlocked</li>
-                        </ul>
-                        
-                        <div class="card-actions">
-                            <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20premium%20subscriptions%20from%20Man-lyk-Ernest-hub" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
-                                <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                            </a>
-                            <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Premium Subscriptions&body=Hi Ernest, I want premium subscriptions from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
-                                <i class="fas fa-envelope" aria-hidden="true"></i> Email
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Contact Cards -->
-            <div class="cards-container">
-                <div class="card whatsapp-contact">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="WhatsApp Contact" loading="lazy">
-                    </div>
-                    <div class="card-icon whatsapp-contact-icon">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Direct WhatsApp Contact</h3>
-                        <p>For immediate assistance or inquiries about any Man-lyk-Ernest-hub services, message me directly on WhatsApp. I typically respond within 1-2 hours during business days.</p>
-                        <p><strong>Phone:</strong> +233 533 230 608</p>
-                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20Man-lyk-Ernest-hub%20services" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Message Me on WhatsApp
+                    
+                    <ul class="features-list">
+                        <li>Monitor all statuses even when offline</li>
+                        <li>Save view-once media to gallery</li>
+                        <li>Download songs and music lyrics</li>
+                        <li>Tag all members in groups instantly</li>
+                        <li>Create custom stickers and wallpapers</li>
+                        <li>Play interactive games within WhatsApp</li>
+                        <li>Save videos without watermarks</li>
+                        <li>AI-powered assistance with GPT-4</li>
+                        <li>24/7 automated customer responses</li>
+                        <li>Multi-language support</li>
+                    </ul>
+                    
+                    <div class="card-actions">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20your%20WhatsApp%20Bot%20from%20Man-lyk-Ernest-hub" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="flex: 1;">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Order Bot
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub WhatsApp Bot&body=Hi Ernest, I'm interested in your WhatsApp Bot from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Get Details
                         </a>
                     </div>
                 </div>
-                
-                <div class="card email-contact">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1611605698325-9b5b3b5bc7f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Email Contact" loading="lazy">
+            </div>
+            
+            <!-- 2. Heroku Credit Card Card -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Heroku Credit Card Service" loading="lazy">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-credit-card" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Heroku Credit Card & Account Setup</h3>
+                    <p>Get Heroku accounts with working credit cards for seamless cloud deployment and hosting solutions.</p>
+                    
+                    <div class="service-highlight">
+                        <h4>What You Get:</h4>
+                        <p>✅ Verified Heroku accounts<br>
+                           ✅ Working credit cards attached<br>
+                           ✅ No verification required<br>
+                           ✅ Ready for immediate deployment<br>
+                           ✅ Full account access</p>
                     </div>
-                    <div class="card-icon">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    
+                    <div class="card-actions">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20a%20Heroku%20account%20with%20credit%20card%20from%20Man-lyk-Ernest-hub" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Heroku Account&body=Hi Ernest, I need a Heroku account with working credit card from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                        </a>
                     </div>
-                    <div class="card-content">
-                        <h3>Email Contact</h3>
-                        <p>For detailed inquiries, project proposals, or formal communication about Man-lyk-Ernest-hub services, feel free to email me. I check my email regularly and respond within 24 hours.</p>
-                        <p><strong>Email:</strong> addaiernest35@gmail.com</p>
-                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Services Inquiry&body=Hi Ernest, I'm interested in Man-lyk-Ernest-hub services. Please provide more information." class="btn btn-email">
-                            <i class="fas fa-envelope" aria-hidden="true"></i> Send Email
+                </div>
+            </div>
+            
+            <!-- 3. Social Media Boost Card -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Social Media Boost Service" loading="lazy">
+                </div>
+                <div class="card-icon social-media-icon">
+                    <i class="fas fa-rocket" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Boost All Social Media Accounts</h3>
+                    <p>Increase your social media presence with our professional boosting services for all major platforms.</p>
+                    
+                    <!-- Social Media Icons Grid -->
+                    <div class="social-icons-grid">
+                        <div class="social-icon-item">
+                            <div class="social-icon facebook">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            </div>
+                            <span class="social-icon-name">Facebook</span>
+                        </div>
+                        <div class="social-icon-item">
+                            <div class="social-icon instagram">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </div>
+                            <span class="social-icon-name">Instagram</span>
+                        </div>
+                        <div class="social-icon-item">
+                            <div class="social-icon twitter">
+                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                            </div>
+                            <span class="social-icon-name">Twitter</span>
+                        </div>
+                        <div class="social-icon-item">
+                            <div class="social-icon tiktok">
+                                <i class="fab fa-tiktok" aria-hidden="true"></i>
+                            </div>
+                            <span class="social-icon-name">TikTok</span>
+                        </div>
+                        <div class="social-icon-item">
+                            <div class="social-icon youtube">
+                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                            </div>
+                            <span class="social-icon-name">YouTube</span>
+                        </div>
+                        <div class="social-icon-item">
+                            <div class="social-icon linkedin">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </div>
+                            <span class="social-icon-name">LinkedIn</span>
+                        </div>
+                        <div class="social-icon-item">
+                            <div class="social-icon pinterest">
+                                <i class="fab fa-pinterest-p" aria-hidden="true"></i>
+                            </div>
+                            <span class="social-icon-name">Pinterest</span>
+                        </div>
+                        <div class="social-icon-item">
+                            <div class="social-icon snapchat">
+                                <i class="fab fa-snapchat-ghost" aria-hidden="true"></i>
+                            </div>
+                            <span class="social-icon-name">Snapchat</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="features-list">
+                        <li>Increase followers & engagement</li>
+                        <li>Boost post visibility</li>
+                        <li>Grow organic reach</li>
+                        <li>Improve profile credibility</li>
+                        <li>Target specific audiences</li>
+                        <li>Safe & sustainable growth</li>
+                    </ul>
+                    
+                    <div class="card-actions">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20boost%20my%20social%20media%20accounts%20through%20Man-lyk-Ernest-hub" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Social Media Boosting&body=Hi Ernest, I want to boost my social media accounts through Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. AI Video Card -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="AI Video Creation Service" loading="lazy">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-robot" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <h3>AI Video for Business & Advertising</h3>
+                    <p>Create professional AI-generated videos for your business, marketing, or advertising needs.</p>
+                    
+                    <div class="service-highlight">
+                        <h4>Video Types:</h4>
+                        <p>✅ Product promotions<br>
+                           ✅ Business presentations<br>
+                           ✅ Social media ads<br>
+                           ✅ Explainer videos<br>
+                           ✅ Training videos<br>
+                           ✅ YouTube content</p>
+                    </div>
+                    
+                    <ul class="features-list">
+                        <li>Custom AI voiceovers</li>
+                        <li>Professional animations</li>
+                        <li>Multiple language support</li>
+                        <li>Background music integration</li>
+                        <li>Custom branding</li>
+                        <li>Quick turnaround</li>
+                    </ul>
+                    
+                    <div class="card-actions">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20AI%20video%20for%20my%20business%20from%20Man-lyk-Ernest-hub" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub AI Video Creation&body=Hi Ernest, I need AI video creation for my business from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 5. Foreign Numbers Card -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Foreign Numbers Verification Service" loading="lazy">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Foreign Numbers for All Verifications</h3>
+                    <p>Get verified foreign numbers for all your verification needs across different platforms and services.</p>
+                    
+                    <div class="service-highlight">
+                        <h4>Countries Available:</h4>
+                        <p>✅ USA Numbers<br>
+                           ✅ UK Numbers<br>
+                           ✅ Canada Numbers<br>
+                           ✅ Australia Numbers<br>
+                           ✅ European Numbers<br>
+                           ✅ Asian Numbers</p>
+                    </div>
+                    
+                    <ul class="features-list">
+                        <li>WhatsApp verification</li>
+                        <li>Telegram verification</li>
+                        <li>Social media verification</li>
+                        <li>Bank account verification</li>
+                        <li>App registration verification</li>
+                        <li>Website verification</li>
+                    </ul>
+                    
+                    <div class="card-actions">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20need%20foreign%20numbers%20for%20verification%20from%20Man-lyk-Ernest-hub" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Foreign Numbers&body=Hi Ernest, I need foreign numbers for verification from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. Streaming Accounts Card -->
+            <div class="card">
+                <div class="card-badge">Hot Deal</div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Premium Streaming Accounts Service" loading="lazy">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-tv" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Premium Streaming Accounts</h3>
+                    <p>Get access to premium streaming accounts for unlimited entertainment at affordable prices.</p>
+                    
+                    <div class="service-highlight">
+                        <h4>Available Platforms:</h4>
+                        <p>✅ Netflix<br>
+                           ✅ Prime Video<br>
+                           ✅ Apple TV+<br>
+                           ✅ DSTV<br>
+                           ✅ Hulu<br>
+                           ✅ Disney+<br>
+                           ✅ HBO Max<br>
+                           ✅ Spotify Premium</p>
+                    </div>
+                    
+                    <ul class="features-list">
+                        <li>Premium account access</li>
+                        <li>HD & 4K streaming</li>
+                        <li>Multiple profiles</li>
+                        <li>No sharing restrictions</li>
+                        <li>Long-term validity</li>
+                        <li>24/7 support</li>
+                    </ul>
+                    
+                    <div class="card-actions">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20buy%20streaming%20accounts%20from%20Man-lyk-Ernest-hub" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="flex: 1;">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Order Now
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Streaming Accounts&body=Hi Ernest, I want to buy streaming accounts from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 7. Premium Subscriptions Card -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Premium Cloud Subscriptions Service" loading="lazy">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-cloud" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Premium Cloud & App Subscriptions</h3>
+                    <p>Access premium cloud storage, music streaming, and app subscriptions at the best prices.</p>
+                    
+                    <div class="service-highlight">
+                        <h4>Available Subscriptions:</h4>
+                        <p>✅ iCloud Storage<br>
+                           ✅ Snapchat Plus<br>
+                           ✅ Apple Music<br>
+                           ✅ Google One<br>
+                           ✅ Dropbox Pro<br>
+                           ✅ Adobe Creative Cloud</p>
+                    </div>
+                    
+                    <ul class="features-list">
+                        <li>iCloud: 50GB, 200GB, 2TB plans</li>
+                        <li>Snapchat Plus with all features</li>
+                        <li>Apple Music family & individual</li>
+                        <li>Google One storage solutions</li>
+                        <li>Professional cloud backups</li>
+                        <li>Premium app features unlocked</li>
+                    </ul>
+                    
+                    <div class="card-actions">
+                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20premium%20subscriptions%20from%20Man-lyk-Ernest-hub" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="flex: 1;">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                        </a>
+                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Premium Subscriptions&body=Hi Ernest, I want premium subscriptions from Man-lyk-Ernest-hub" class="btn btn-email" style="flex: 1;">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Contact Cards -->
+        <div class="cards-container">
+            <div class="card whatsapp-contact">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="WhatsApp Contact" loading="lazy">
+                </div>
+                <div class="card-icon whatsapp-contact-icon">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Direct WhatsApp Contact</h3>
+                    <p>For immediate assistance or inquiries about any Man-lyk-Ernest-hub services, message me directly on WhatsApp. I typically respond within 1-2 hours during business days.</p>
+                    <p><strong>Phone:</strong> +233 533 230 608</p>
+                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20Man-lyk-Ernest-hub%20services" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Message Me on WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="card email-contact">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1611605698325-9b5b3b5bc7f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Email Contact" loading="lazy">
+                </div>
+                <div class="card-icon">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Email Contact</h3>
+                    <p>For detailed inquiries, project proposals, or formal communication about Man-lyk-Ernest-hub services, feel free to email me. I check my email regularly and respond within 24 hours.</p>
+                    <p><strong>Email:</strong> addaiernest35@gmail.com</p>
+                    <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Services Inquiry&body=Hi Ernest, I'm interested in Man-lyk-Ernest-hub services. Please provide more information." class="btn btn-email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Send Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <h2>About Man-lyk-Ernest-hub</h2>
-                <p>Man-lyk-Ernest-hub is a comprehensive digital solutions platform founded by Ernest Addai, specializing in providing cutting-edge technology services for modern businesses and individuals.</p>
-                <p>Our mission is to empower clients with innovative digital solutions that enhance efficiency, expand reach, and provide access to premium digital resources at affordable prices.</p>
-                <p>At Man-lyk-Ernest-hub, we believe in delivering reliable, high-quality services that deliver real value and measurable results for our clients across various digital domains.</p>
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <h2>About Man-lyk-Ernest-hub</h2>
+            <p>Man-lyk-Ernest-hub is a comprehensive digital solutions platform founded by Ernest Addai, specializing in providing cutting-edge technology services for modern businesses and individuals.</p>
+            <p>Our mission is to empower clients with innovative digital solutions that enhance efficiency, expand reach, and provide access to premium digital resources at affordable prices.</p>
+            <p>At Man-lyk-Ernest-hub, we believe in delivering reliable, high-quality services that deliver real value and measurable results for our clients across various digital domains.</p>
+            
+            <div class="contact-options" style="margin-top: 2rem;">
+                <div class="contact-option">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <p>+233 533 230 608</p>
+                    </div>
+                </div>
+                <div class="contact-option">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <p>addaiernest35@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-buttons" style="justify-content: flex-start; margin-top: 2rem;">
+                <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20multiple%20services%20from%20Man-lyk-Ernest-hub" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp for Services
+                </a>
+                <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Multiple Services&body=Hi Ernest, I would like to order multiple services from Man-lyk-Ernest-hub" class="btn btn-email">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> Email for Bulk Order
+                </a>
+            </div>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Man-lyk-Ernest-hub Founder" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20Man-lyk-Ernest-hub%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer" id="whatsappFloat" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Floating Email Button -->
+<a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Services Inquiry&body=Hi Ernest, I'm interested in Man-lyk-Ernest-hub services" class="email-float" id="emailFloat" aria-label="Send Email">
+    <i class="fas fa-envelope" aria-hidden="true"></i>
+</a>
+
+<!-- Back to Top Button -->
+<a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</a>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Man-lyk-Ernest-hub</h3>
+                <p>Your ultimate digital solutions provider. Specializing in automation, social media, AI, verification, streaming accounts, and premium subscriptions.</p>
                 
-                <div class="contact-options" style="margin-top: 2rem;">
-                    <div class="contact-option">
+                <div class="contact-methods">
+                    <div class="contact-method">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         <div>
                             <strong>WhatsApp</strong>
                             <p>+233 533 230 608</p>
                         </div>
                     </div>
-                    <div class="contact-option">
+                    <div class="contact-method">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
                             <strong>Email</strong>
                             <p>addaiernest35@gmail.com</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="hero-buttons" style="justify-content: flex-start; margin-top: 2rem;">
-                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I%20want%20to%20order%20multiple%20services%20from%20Man-lyk-Ernest-hub" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp for Services
-                    </a>
-                    <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Multiple Services&body=Hi Ernest, I would like to order multiple services from Man-lyk-Ernest-hub" class="btn btn-email">
-                        <i class="fas fa-envelope" aria-hidden="true"></i> Email for Bulk Order
-                    </a>
-                </div>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Man-lyk-Ernest-hub Founder" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20interested%20in%20Man-lyk-Ernest-hub%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer" id="whatsappFloat" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
-
-    <!-- Floating Email Button -->
-    <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Services Inquiry&body=Hi Ernest, I'm interested in Man-lyk-Ernest-hub services" class="email-float" id="emailFloat" aria-label="Send Email">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-    </a>
-
-    <!-- Back to Top Button -->
-    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Man-lyk-Ernest-hub</h3>
-                    <p>Your ultimate digital solutions provider. Specializing in automation, social media, AI, verification, streaming accounts, and premium subscriptions.</p>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                            <div>
-                                <strong>WhatsApp</strong>
-                                <p>+233 533 230 608</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <p>addaiernest35@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-phone" aria-hidden="true"></i>
-                            <div>
-                                <strong>Phone</strong>
-                                <p>+233 533 230 608</p>
-                            </div>
+                    <div class="contact-method">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>+233 533 230 608</p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>All Services</h3>
-                    <ul>
-                        <li><a href="#services">WhatsApp Bot</a></li>
-                        <li><a href="#services">Heroku Credit Card</a></li>
-                        <li><a href="#services">Social Media Boost</a></li>
-                        <li><a href="#services">AI Video Creation</a></li>
-                        <li><a href="#services">Foreign Numbers</a></li>
-                        <li><a href="#services">Streaming Accounts</a></li>
-                        <li><a href="#services">Premium Subscriptions</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Contact</h3>
-                    <p>Get in touch with Man-lyk-Ernest-hub directly for any inquiries or service requests.</p>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem;">
-                        <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20visiting%20Man-lyk-Ernest-hub%20website%20and%20want%20to%20order%20services" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Message
-                        </a>
-                        <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Service Order&body=Hi Ernest, I'm visiting Man-lyk-Ernest-hub website and want to order services" class="btn btn-email">
-                            <i class="fas fa-envelope" aria-hidden="true"></i> Send Email
-                        </a>
-                        <a href="tel:+233533230608" class="btn btn-primary">
-                            <i class="fas fa-phone" aria-hidden="true"></i> Call Now
-                        </a>
-                    </div>
-                </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Man-lyk-Ernest-hub Digital Solutions. All rights reserved.</p>
-                <p>Your ultimate digital solutions provider</p>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                    <strong>Contact:</strong> WhatsApp: +233 533 230 608 | Email: addaiernest35@gmail.com
-                </p>
+            <div class="footer-column">
+                <h3>All Services</h3>
+                <ul>
+                    <li><a href="#services">WhatsApp Bot - GH₵25</a></li>
+                    <li><a href="#services">Heroku Credit Card</a></li>
+                    <li><a href="#services">Social Media Boost</a></li>
+                    <li><a href="#services">AI Video Creation</a></li>
+                    <li><a href="#services">Foreign Numbers</a></li>
+                    <li><a href="#services">Streaming Accounts</a></li>
+                    <li><a href="#services">Premium Subscriptions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Contact</h3>
+                <p>Get in touch with Man-lyk-Ernest-hub directly for any inquiries or service requests.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem;">
+                    <a href="https://wa.me/233533230608?text=Hi%20Ernest,%20I'm%20visiting%20Man-lyk-Ernest-hub%20website%20and%20want%20to%20order%20services" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Message
+                    </a>
+                    <a href="mailto:addaiernest35@gmail.com?subject=Man-lyk-Ernest-hub Service Order&body=Hi Ernest, I'm visiting Man-lyk-Ernest-hub website and want to order services" class="btn btn-email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Send Email
+                    </a>
+                    <a href="tel:+233533230608" class="btn btn-primary">
+                        <i class="fas fa-phone" aria-hidden="true"></i> Call Now
+                    </a>
+                </div>
             </div>
         </div>
-    </footer>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Man-lyk-Ernest-hub Digital Solutions. All rights reserved.</p>
+            <p>Your ultimate digital solutions provider</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                <strong>Contact:</strong> WhatsApp: +233 533 230 608 | Email: addaiernest35@gmail.com
+            </p>
+        </div>
+    </div>
+</footer>
 
-    <script>
-        // DOM Elements
-        const mobileMenuBtn = document.getElementById('mobileMenu');
-        const navMenu = document.getElementById('navMenu');
-        const navLinks = document.querySelectorAll('nav a');
-        const header = document.getElementById('mainHeader');
-        const backToTopBtn = document.getElementById('backToTop');
-        const cards = document.querySelectorAll('.card');
-        const aboutContent = document.querySelector('.about-content');
-        const aboutImage = document.querySelector('.about-image');
-        const contactLinks = document.querySelectorAll('a[href^="mailto:"], a[href*="wa.me"], a[href^="tel:"]');
-        
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Initialize contact info
-        const emailAddress = 'addaiernest35@gmail.com';
-        const whatsappNumber = '233533230608';
-        const phoneNumber = '+233533230608';
-        
-        // Mobile Menu Toggle
-        mobileMenuBtn.addEventListener('click', () => {
-            const isExpanded = navMenu.classList.toggle('active');
-            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
-            mobileMenuBtn.innerHTML = isExpanded 
-                ? '<i class="fas fa-times" aria-hidden="true"></i>' 
-                : '<i class="fas fa-bars" aria-hidden="true"></i>';
+<script>
+    // DOM Elements
+    const mobileMenuBtn = document.getElementById('mobileMenu');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('nav a');
+    const header = document.getElementById('mainHeader');
+    const backToTopBtn = document.getElementById('backToTop');
+    const cards = document.querySelectorAll('.card');
+    const aboutContent = document.querySelector('.about-content');
+    const aboutImage = document.querySelector('.about-image');
+    const contactLinks = document.querySelectorAll('a[href^="mailto:"], a[href*="wa.me"], a[href^="tel:"]');
+    
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Initialize contact info
+    const emailAddress = 'addaiernest35@gmail.com';
+    const whatsappNumber = '233533230608';
+    const phoneNumber = '+233533230608';
+    
+    // Mobile Menu Toggle
+    mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = navMenu.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+        mobileMenuBtn.innerHTML = isExpanded 
+            ? '<i class="fas fa-times" aria-hidden="true"></i>' 
+            : '<i class="fas fa-bars" aria-hidden="true"></i>';
+    });
+    
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', false);
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
         });
-        
-        // Close mobile menu when clicking on a link
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', false);
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-            
-            // Back to top button visibility
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-            
-            // Active nav link based on scroll position
-            updateActiveNavLink();
-            
-            // Animate cards on scroll
-            animateOnScroll();
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Calculate offset based on header height
-                    const headerHeight = header.offsetHeight;
-                    const targetPosition = targetElement.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Update active nav link based on scroll position
-        function updateActiveNavLink() {
-            const scrollPosition = window.scrollY + 100;
-            
-            // Get all sections
-            const sections = document.querySelectorAll('section[id]');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    // Remove active class from all links
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    
-                    // Add active class to corresponding link
-                    const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('active');
-                    }
-                }
-            });
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
         }
         
-        // Animate elements on scroll
-        function animateOnScroll() {
-            // Animate cards
-            cards.forEach(card => {
-                const cardPosition = card.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (cardPosition < screenPosition) {
-                    card.classList.add('visible');
-                }
-            });
+        // Back to top button visibility
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+        
+        // Active nav link based on scroll position
+        updateActiveNavLink();
+        
+        // Animate cards on scroll
+        animateOnScroll();
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            // Animate about section
-            if (aboutContent && aboutImage) {
-                const aboutPosition = aboutContent.getBoundingClientRect().top;
-                const aboutScreenPosition = window.innerHeight / 1.3;
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Calculate offset based on header height
+                const headerHeight = header.offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
                 
-                if (aboutPosition < aboutScreenPosition) {
-                    aboutContent.classList.add('visible');
-                    aboutImage.classList.add('visible');
-                }
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
-        }
-        
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Animate floating elements
-            createFloatingElements();
-            
-            // Initial animation check
-            animateOnScroll();
-            
-            // Set initial active nav link
-            updateActiveNavLink();
-            
-            // Initialize images with error handling
-            initializeImages();
-            
-            // Animate social media icons
-            animateSocialIcons();
-            
-            // Initialize contact links
-            initializeContactLinks();
-            
-            // Add loading state to buttons
-            addButtonLoadingStates();
         });
+    });
+    
+    // Update active nav link based on scroll position
+    function updateActiveNavLink() {
+        const scrollPosition = window.scrollY + 100;
         
-        // Create floating elements with random properties
-        function createFloatingElements() {
-            const floatingElements = document.querySelectorAll('.floating-element');
-            
-            floatingElements.forEach((element, index) => {
-                // Random size between 50-150px
-                const size = Math.random() * 100 + 50;
-                
-                // Random position
-                const posX = Math.random() * 90;
-                const posY = Math.random() * 90;
-                
-                // Random animation delay
-                const delay = Math.random() * 5;
-                
-                // Random animation duration
-                const duration = 15 + Math.random() * 15;
-                
-                // Apply styles
-                element.style.width = `${size}px`;
-                element.style.height = `${size}px`;
-                element.style.left = `${posX}%`;
-                element.style.top = `${posY}%`;
-                element.style.animationDelay = `${delay}s`;
-                element.style.animationDuration = `${duration}s`;
-                
-                // Add pulsing effect to some elements
-                if (index === 0) {
-                    element.style.background = 'rgba(0, 201, 255, 0.1)';
-                } else if (index === 1) {
-                    element.style.background = 'rgba(255, 107, 107, 0.1)';
-                }
-            });
-        }
+        // Get all sections
+        const sections = document.querySelectorAll('section[id]');
         
-        // Initialize images with fallbacks
-        function initializeImages() {
-            const images = document.querySelectorAll('img');
-            const fallbackImage = 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
             
-            images.forEach(img => {
-                // Add error handling
-                img.addEventListener('error', function() {
-                    console.log(`Image failed to load: ${this.src}`);
-                    this.src = fallbackImage;
-                    this.alt = 'Default service image - Man-lyk-Ernest-hub';
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Remove active class from all links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
                 });
                 
-                // Add loading attribute for better performance
-                img.setAttribute('loading', 'lazy');
-            });
-        }
+                // Add active class to corresponding link
+                const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }
+    
+    // Animate elements on scroll
+    function animateOnScroll() {
+        // Animate cards
+        cards.forEach(card => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (cardPosition < screenPosition) {
+                card.classList.add('visible');
+            }
+        });
         
-        // Initialize contact links with correct URLs
-        function initializeContactLinks() {
-            // Update all email links
-            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-                if (link.href.includes('mailto:')) {
-                    const baseHref = link.getAttribute('href');
-                    if (!baseHref.includes(emailAddress)) {
-                        const url = new URL(baseHref);
-                        url.pathname = emailAddress;
-                        link.href = url.toString();
-                    }
-                }
-            });
+        // Animate about section
+        if (aboutContent && aboutImage) {
+            const aboutPosition = aboutContent.getBoundingClientRect().top;
+            const aboutScreenPosition = window.innerHeight / 1.3;
             
-            // Update all WhatsApp links
-            document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-                if (link.href.includes('wa.me')) {
-                    const url = new URL(link.href);
-                    if (!url.pathname.includes(whatsappNumber)) {
-                        url.pathname = `/${whatsappNumber}`;
-                        link.href = url.toString();
-                    }
-                }
-            });
-            
-            // Update phone links
-            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                link.href = `tel:${phoneNumber}`;
-            });
-            
-            // Add security attributes
-            contactLinks.forEach(link => {
-                if (link.href.includes('wa.me')) {
-                    link.setAttribute('rel', 'noopener noreferrer');
-                }
-            });
+            if (aboutPosition < aboutScreenPosition) {
+                aboutContent.classList.add('visible');
+                aboutImage.classList.add('visible');
+            }
         }
+    }
+    
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+        // Animate floating elements
+        createFloatingElements();
+        
+        // Initial animation check
+        animateOnScroll();
+        
+        // Set initial active nav link
+        updateActiveNavLink();
+        
+        // Initialize images with error handling
+        initializeImages();
         
         // Animate social media icons
-        function animateSocialIcons() {
-            const socialIcons = document.querySelectorAll('.social-icon');
-            socialIcons.forEach((icon, index) => {
-                icon.style.animationDelay = `${index * 0.1}s`;
-                icon.style.animation = 'fadeInUp 0.5s ease forwards';
-                icon.style.opacity = '0';
-            });
-        }
+        animateSocialIcons();
         
-        // Add loading states to buttons
-        function addButtonLoadingStates() {
-            const buttons = document.querySelectorAll('.btn');
-            
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    if (this.href.includes('mailto:') || this.href.includes('wa.me')) {
-                        // Add a small delay to show loading state
-                        const originalHTML = this.innerHTML;
-                        this.classList.add('btn-loading');
-                        this.innerHTML = '<span class="btn-text" style="opacity: 0;">' + originalHTML + '</span>';
-                        
-                        // Remove loading state after navigation
-                        setTimeout(() => {
-                            this.classList.remove('btn-loading');
-                            this.innerHTML = originalHTML;
-                        }, 1500);
-                    }
-                });
-            });
-        }
+        // Initialize contact links
+        initializeContactLinks();
         
-        // Card hover effect
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                const icon = this.querySelector('.card-icon i');
-                if (icon) {
-                    icon.style.transform = 'scale(1.2) rotate(10deg)';
-                }
-            });
+        // Add loading state to buttons
+        addButtonLoadingStates();
+        
+        // Add pricing animation
+        animatePricingSection();
+    });
+    
+    // Create floating elements with random properties
+    function createFloatingElements() {
+        const floatingElements = document.querySelectorAll('.floating-element');
+        
+        floatingElements.forEach((element, index) => {
+            // Random size between 50-150px
+            const size = Math.random() * 100 + 50;
             
-            card.addEventListener('mouseleave', function() {
-                const icon = this.querySelector('.card-icon i');
-                if (icon) {
-                    icon.style.transform = 'scale(1) rotate(0deg)';
-                }
-            });
+            // Random position
+            const posX = Math.random() * 90;
+            const posY = Math.random() * 90;
+            
+            // Random animation delay
+            const delay = Math.random() * 5;
+            
+            // Random animation duration
+            const duration = 15 + Math.random() * 15;
+            
+            // Apply styles
+            element.style.width = `${size}px`;
+            element.style.height = `${size}px`;
+            element.style.left = `${posX}%`;
+            element.style.top = `${posY}%`;
+            element.style.animationDelay = `${delay}s`;
+            element.style.animationDuration = `${duration}s`;
+            
+            // Add pulsing effect to some elements
+            if (index === 0) {
+                element.style.background = 'rgba(0, 201, 255, 0.1)';
+            } else if (index === 1) {
+                element.style.background = 'rgba(255, 107, 107, 0.1)';
+            }
         });
+    }
+    
+    // Initialize images with fallbacks
+    function initializeImages() {
+        const images = document.querySelectorAll('img');
+        const fallbackImage = 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80';
         
-        // Feature list animation
-        document.querySelectorAll('.features-list li').forEach((li, index) => {
-            li.style.animationDelay = `${index * 0.1}s`;
-            li.style.animation = 'fadeInUp 0.5s ease forwards';
-            li.style.opacity = '0';
+        images.forEach(img => {
+            // Add error handling
+            img.addEventListener('error', function() {
+                console.log(`Image failed to load: ${this.src}`);
+                this.src = fallbackImage;
+                this.alt = 'Default service image - Man-lyk-Ernest-hub';
+            });
             
-            // Trigger animation when card is visible
-            const card = li.closest('.card');
-            if (card) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            li.style.animation = `fadeInUp 0.5s ease ${li.style.animationDelay} forwards`;
-                        }
-                    });
-                });
-                
-                observer.observe(card);
+            // Add loading attribute for better performance
+            img.setAttribute('loading', 'lazy');
+        });
+    }
+    
+    // Initialize contact links with correct URLs
+    function initializeContactLinks() {
+        // Update all email links
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            if (link.href.includes('mailto:')) {
+                const baseHref = link.getAttribute('href');
+                if (!baseHref.includes(emailAddress)) {
+                    const url = new URL(baseHref);
+                    url.pathname = emailAddress;
+                    link.href = url.toString();
+                }
             }
         });
         
-        // Floating buttons hover effect
-        const floatingButtons = document.querySelectorAll('.whatsapp-float, .email-float');
-        floatingButtons.forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.1)';
-            });
-            
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
+        // Update all WhatsApp links
+        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+            if (link.href.includes('wa.me')) {
+                const url = new URL(link.href);
+                if (!url.pathname.includes(whatsappNumber)) {
+                    url.pathname = `/${whatsappNumber}`;
+                    link.href = url.toString();
+                }
+            }
         });
         
-        // Back to top button functionality
-        backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        // Update phone links
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.href = `tel:${phoneNumber}`;
         });
         
-        // Performance optimization: Lazy load images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
+        // Add security attributes
+        contactLinks.forEach(link => {
+            if (link.href.includes('wa.me')) {
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    }
+    
+    // Animate social media icons
+    function animateSocialIcons() {
+        const socialIcons = document.querySelectorAll('.social-icon');
+        socialIcons.forEach((icon, index) => {
+            icon.style.animationDelay = `${index * 0.1}s`;
+            icon.style.animation = 'fadeInUp 0.5s ease forwards';
+            icon.style.opacity = '0';
+        });
+    }
+    
+    // Add loading states to buttons
+    function addButtonLoadingStates() {
+        const buttons = document.querySelectorAll('.btn');
+        
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.href.includes('mailto:') || this.href.includes('wa.me')) {
+                    // Add a small delay to show loading state
+                    const originalHTML = this.innerHTML;
+                    this.classList.add('btn-loading');
+                    this.innerHTML = '<span class="btn-text" style="opacity: 0;">' + originalHTML + '</span>';
+                    
+                    // Remove loading state after navigation
+                    setTimeout(() => {
+                        this.classList.remove('btn-loading');
+                        this.innerHTML = originalHTML;
+                    }, 1500);
+                }
+            });
+        });
+    }
+    
+    // Animate pricing section
+    function animatePricingSection() {
+        const pricingSections = document.querySelectorAll('.pricing-section');
+        pricingSections.forEach((section, index) => {
+            section.style.animationDelay = `${index * 0.2}s`;
+            section.style.animation = 'fadeInUp 0.8s ease forwards';
+            section.style.opacity = '0';
+        });
+    }
+    
+    // Card hover effect
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.card-icon i');
+            if (icon) {
+                icon.style.transform = 'scale(1.2) rotate(10deg)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.card-icon i');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+    
+    // Feature list animation
+    document.querySelectorAll('.features-list li').forEach((li, index) => {
+        li.style.animationDelay = `${index * 0.1}s`;
+        li.style.animation = 'fadeInUp 0.5s ease forwards';
+        li.style.opacity = '0';
+        
+        // Trigger animation when card is visible
+        const card = li.closest('.card');
+        if (card) {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        imageObserver.unobserve(img);
+                        li.style.animation = `fadeInUp 0.5s ease ${li.style.animationDelay} forwards`;
                     }
                 });
             });
             
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
+            observer.observe(card);
         }
-        
-        // Analytics simulation (replace with actual analytics code)
-        window.addEventListener('load', () => {
-            console.log('Man-lyk-Ernest-hub website loaded successfully');
-            // Here you would add your Google Analytics or other tracking code
-            /*
-            // Example Google Analytics code:
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'YOUR_GA_ID');
-            */
+    });
+    
+    // Floating buttons hover effect
+    const floatingButtons = document.querySelectorAll('.whatsapp-float, .email-float');
+    floatingButtons.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
         });
-    </script>
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Back to top button functionality
+    backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Performance optimization: Lazy load images
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // Add buy now button animation
+    const buyNowBtn = document.querySelector('.btn-buy-now');
+    if (buyNowBtn) {
+        buyNowBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+        });
+        
+        buyNowBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+        
+        // Add pulse animation
+        setInterval(() => {
+            buyNowBtn.style.boxShadow = '0 5px 15px rgba(255, 215, 0, 0.4)';
+            setTimeout(() => {
+                buyNowBtn.style.boxShadow = '0 5px 20px rgba(255, 215, 0, 0.6)';
+            }, 1000);
+        }, 2000);
+    }
+</script>
 </body>
 </html>
-```
