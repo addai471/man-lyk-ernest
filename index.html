@@ -1,3 +1,8 @@
+Updated Social Media Boost Card with All Platform Logos
+
+Here's the updated code with all social media platform logos in the Social Media Boost card:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -375,10 +380,52 @@
             transition: var(--transition);
         }
 
+        /* WhatsApp Bot specific icon styling */
+        .whatsapp-bot-icon {
+            background: #25D366;
+            color: white;
+            border-color: #25D366;
+        }
+
+        .whatsapp-bot-icon i {
+            color: white;
+        }
+
+        /* WhatsApp Contact Card specific icon styling */
+        .whatsapp-contact-icon {
+            background: #25D366;
+            color: white;
+            border-color: #25D366;
+        }
+
+        .whatsapp-contact-icon i {
+            color: white;
+        }
+
+        /* Social Media Boost Card icon styling */
+        .social-media-icon {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            border-color: #E1306C;
+        }
+
+        .social-media-icon i {
+            color: white;
+        }
+
         .card:hover .card-icon {
             transform: scale(1.1) rotate(10deg);
-            background: var(--secondary-color);
-            color: var(--dark-color);
+        }
+
+        .card:hover .whatsapp-bot-icon,
+        .card:hover .whatsapp-contact-icon {
+            background: #1da851;
+            border-color: #1da851;
+        }
+
+        .card:hover .social-media-icon {
+            background: linear-gradient(45deg, #FD1D1D, #E1306C, #C13584, #833AB4, #5851DB, #405DE6);
+            border-color: #FD1D1D;
         }
 
         .card h3 {
@@ -450,21 +497,74 @@
             font-size: 1.1rem;
         }
 
-        /* Platform List */
-        .platform-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
+        /* Social Media Icons Grid */
+        .social-icons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            text-align: center;
         }
 
-        .platform-tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .social-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icon.facebook {
+            background: #1877F2;
+        }
+
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+
+        .social-icon.twitter {
+            background: #1DA1F2;
+        }
+
+        .social-icon.tiktok {
+            background: #000000;
+        }
+
+        .social-icon.youtube {
+            background: #FF0000;
+        }
+
+        .social-icon.linkedin {
+            background: #0077B5;
+        }
+
+        .social-icon.pinterest {
+            background: #E60023;
+        }
+
+        .social-icon.snapchat {
+            background: #FFFC00;
+            color: #000;
+        }
+
+        .social-icon-name {
+            font-size: 0.7rem;
             color: #ccc;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* About Section */
@@ -809,6 +909,17 @@
             .floating-element {
                 display: none;
             }
+            
+            .social-icons-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.8rem;
+            }
+            
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -903,8 +1014,19 @@
                 font-size: 1.5rem;
             }
             
-            .platform-list {
-                justify-content: center;
+            .social-icons-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.7rem;
+            }
+            
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .social-icon-name {
+                font-size: 0.65rem;
             }
         }
 
@@ -973,6 +1095,21 @@
             .card-actions {
                 flex-direction: column;
             }
+            
+            .social-icons-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .social-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .social-icon-name {
+                font-size: 0.6rem;
+            }
         }
     </style>
 </head>
@@ -1040,7 +1177,7 @@
                         <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
                              alt="WhatsApp Bot Automation">
                     </div>
-                    <div class="card-icon">
+                    <div class="card-icon whatsapp-bot-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="card-content">
@@ -1108,22 +1245,63 @@
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Social Media Boost">
                     </div>
-                    <div class="card-icon">
+                    <div class="card-icon social-media-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <div class="card-content">
                         <h3>Boost All Social Media Accounts</h3>
                         <p>Increase your social media presence with our professional boosting services for all major platforms.</p>
                         
-                        <div class="platform-list">
-                            <span class="platform-tag">Instagram</span>
-                            <span class="platform-tag">Facebook</span>
-                            <span class="platform-tag">Twitter</span>
-                            <span class="platform-tag">TikTok</span>
-                            <span class="platform-tag">YouTube</span>
-                            <span class="platform-tag">LinkedIn</span>
-                            <span class="platform-tag">Pinterest</span>
-                            <span class="platform-tag">Snapchat</span>
+                        <!-- Social Media Icons Grid -->
+                        <div class="social-icons-grid">
+                            <div class="social-icon-item">
+                                <div class="social-icon facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                                <span class="social-icon-name">Facebook</span>
+                            </div>
+                            <div class="social-icon-item">
+                                <div class="social-icon instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <span class="social-icon-name">Instagram</span>
+                            </div>
+                            <div class="social-icon-item">
+                                <div class="social-icon twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                                <span class="social-icon-name">Twitter</span>
+                            </div>
+                            <div class="social-icon-item">
+                                <div class="social-icon tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                </div>
+                                <span class="social-icon-name">TikTok</span>
+                            </div>
+                            <div class="social-icon-item">
+                                <div class="social-icon youtube">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                                <span class="social-icon-name">YouTube</span>
+                            </div>
+                            <div class="social-icon-item">
+                                <div class="social-icon linkedin">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <span class="social-icon-name">LinkedIn</span>
+                            </div>
+                            <div class="social-icon-item">
+                                <div class="social-icon pinterest">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </div>
+                                <span class="social-icon-name">Pinterest</span>
+                            </div>
+                            <div class="social-icon-item">
+                                <div class="social-icon snapchat">
+                                    <i class="fab fa-snapchat-ghost"></i>
+                                </div>
+                                <span class="social-icon-name">Snapchat</span>
+                            </div>
                         </div>
                         
                         <ul class="features-list">
@@ -1243,15 +1421,16 @@
                         <h3>Premium Streaming Accounts</h3>
                         <p>Get access to premium streaming accounts for unlimited entertainment at affordable prices.</p>
                         
-                        <div class="platform-list">
-                            <span class="platform-tag">Netflix</span>
-                            <span class="platform-tag">Prime Video</span>
-                            <span class="platform-tag">Apple TV+</span>
-                            <span class="platform-tag">DSTV</span>
-                            <span class="platform-tag">Hulu</span>
-                            <span class="platform-tag">Disney+</span>
-                            <span class="platform-tag">HBO Max</span>
-                            <span class="platform-tag">Spotify</span>
+                        <div class="service-highlight">
+                            <h4>Available Platforms:</h4>
+                            <p>✅ Netflix<br>
+                               ✅ Prime Video<br>
+                               ✅ Apple TV+<br>
+                               ✅ DSTV<br>
+                               ✅ Hulu<br>
+                               ✅ Disney+<br>
+                               ✅ HBO Max<br>
+                               ✅ Spotify Premium</p>
                         </div>
                         
                         <ul class="features-list">
@@ -1323,7 +1502,7 @@
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="WhatsApp Contact">
                     </div>
-                    <div class="card-icon">
+                    <div class="card-icon whatsapp-contact-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="card-content">
@@ -1624,6 +1803,9 @@
             
             // Initialize images with error handling
             initializeImages();
+            
+            // Animate social media icons
+            animateSocialIcons();
         });
         
         // Create floating elements with random properties
@@ -1675,6 +1857,16 @@
                 
                 // Add loading attribute for better performance
                 img.setAttribute('loading', 'lazy');
+            });
+        }
+        
+        // Animate social media icons
+        function animateSocialIcons() {
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach((icon, index) => {
+                icon.style.animationDelay = `${index * 0.1}s`;
+                icon.style.animation = 'fadeInUp 0.5s ease forwards';
+                icon.style.opacity = '0';
             });
         }
         
@@ -1776,3 +1968,17 @@
     </script>
 </body>
 </html>
+```
+
+Key Updates Made:
+
+1. Social Media Boost Card Enhanced:
+
+· Added a beautiful social media icons grid with all platform logos
+· 8 social media platforms displayed with their official colors:
+  1. Facebook (Blue)
+  2. Instagram (Gradient: Purple to Pink to Orange)
+  3. Twitter (Light Blue)
+  4. TikTok (Black)
+  5. YouTube (Red)
+  6. **Linked
