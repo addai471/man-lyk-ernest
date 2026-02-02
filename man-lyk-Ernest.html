@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyga iPhone Shop - Premium iPhone Retailer & Repair Services</title>
+    <title>Tyga iPhone Shop - All iPhone Models & Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <style>
         * {
             margin: 0;
@@ -14,25 +13,12 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #00d9ff;
-            --secondary: #ff2a6d;
-            --dark: #0a0a1a;
-            --dark-secondary: #1a1a2e;
-            --light: #f0f0f0;
-            --gray: #b0b0d0;
-            --success: #25D366;
-            --warning: #ffaa00;
-            --danger: #ff4757;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--light);
+            color: #f0f0f0;
             overflow-x: hidden;
-            background: var(--dark);
-            scroll-behavior: smooth;
+            background: #0a0a1a;
         }
 
         #particles-js {
@@ -41,59 +27,22 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: -2;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-secondary) 50%, #16213e 100%);
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
         }
 
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(0, 217, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--primary);
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Header & Navigation */
         header {
-            background: rgba(10, 10, 26, 0.95);
+            background: rgba(10, 10, 26, 0.9);
             backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-            position: fixed;
+            padding: 1.5rem 5%;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled {
-            padding: 0.7rem 5%;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -107,50 +56,33 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-family: 'Orbitron', sans-serif;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
+            color: #00d9ff;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
         }
 
         .logo i {
-            color: var(--secondary);
-            font-size: 2rem;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .logo-sub {
-            font-size: 0.7rem;
-            color: var(--gray);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
+            color: #ff2a6d;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
-            align-items: center;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: var(--light);
+            color: #f0f0f0;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1rem;
-            transition: all 0.3s;
+            transition: color 0.3s;
             position: relative;
-            padding: 0.5rem 0;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: #00d9ff;
         }
 
         .nav-links a::after {
@@ -158,284 +90,94 @@
             position: absolute;
             width: 0;
             height: 2px;
-            background: var(--primary);
+            background: #00d9ff;
             left: 0;
-            bottom: 0;
+            bottom: -5px;
             transition: width 0.3s;
         }
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            background: linear-gradient(90deg, var(--primary), #0066ff);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
-            margin-left: 2rem;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 217, 255, 0.4);
-        }
-
-        /* Hero Section */
         .hero {
-            padding: 10rem 5% 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 1200px;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text {
-            animation: fadeInLeft 1s ease;
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .hero h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d9ff, #ff2a6d);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            line-height: 1.2;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
         }
 
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            margin: 2rem 0;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        .hero-visual {
-            position: relative;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .iphone-3d {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            perspective: 1000px;
-        }
-
-        .iphone-model {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            animation: rotate 20s infinite linear;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotateY(0deg); }
-            100% { transform: rotateY(360deg); }
-        }
-
-        .iphone-front, .iphone-back {
-            position: absolute;
-            width: 300px;
-            height: 600px;
-            background: linear-gradient(135deg, #333, #000);
-            border-radius: 40px;
-            backface-visibility: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .iphone-front {
-            transform: translateZ(30px);
-            border: 15px solid #111;
-        }
-
-        .iphone-back {
-            transform: rotateY(180deg) translateZ(30px);
-            background: linear-gradient(135deg, #222, #000);
-        }
-
-        .iphone-screen {
-            width: 90%;
-            height: 95%;
-            background: #000;
-            border-radius: 25px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .screen-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #0a0a1a, #1a1a2e);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .screen-content i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .screen-content h3 {
-            color: var(--light);
+        .hero p {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .screen-content p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* CTA Buttons */
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            color: #b0b0d0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(90deg, var(--primary), #0066ff);
+            display: inline-block;
+            background: linear-gradient(90deg, #00d9ff, #0066ff);
             color: white;
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
+            margin-top: 1rem;
             transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(0, 217, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
             border: none;
             cursor: pointer;
         }
 
-        .cta-button.secondary {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(0, 217, 255, 0.1);
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 6rem 5%;
-            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.5);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin: 4rem 0 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: #00d9ff;
             position: relative;
         }
 
-        .section-title h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #00d9ff, #ff2a6d);
+            margin: 10px auto;
+            border-radius: 2px;
         }
 
-        .section-title p {
-            color: var(--gray);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Services Grid */
-        .services-grid {
+        .services-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5%;
         }
 
         .service-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2.5rem;
+            border-radius: 15px;
+            padding: 2rem;
             transition: all 0.4s;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -450,104 +192,124 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(90deg, #00d9ff, #ff2a6d);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 217, 255, 0.2);
             border-color: rgba(0, 217, 255, 0.3);
         }
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(0, 217, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .card-icon {
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-        }
-
-        .service-icon i {
-            font-size: 2.5rem;
-            color: var(--primary);
+            color: #00d9ff;
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--light);
+            color: #fff;
         }
 
         .service-card p {
-            color: var(--gray);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            color: #b0b0d0;
+            margin-bottom: 1.5rem;
         }
 
-        .service-features {
-            list-style: none;
-            margin-bottom: 2rem;
+        .iphone-models-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 5%;
+            margin: 2rem 0;
         }
 
-        .service-features li {
-            color: var(--gray);
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .service-features li i {
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
-        /* iPhone Models Showcase */
-        .models-showcase {
+        .iphone-model {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
             position: relative;
         }
 
-        .models-filter {
+        .iphone-model:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.2);
+        }
+
+        .iphone-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+
+        .iphone-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #00d9ff;
+        }
+
+        .iphone-year {
+            font-size: 0.8rem;
+            color: #b0b0d0;
+            margin-top: 0.3rem;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: linear-gradient(90deg, #ff2a6d, #ff0055);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* ENHANCED Featured iPhones Section */
+        .featured-iphones {
+            padding: 2rem 5%;
+        }
+
+        .iphone-filter {
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-bottom: 3rem;
             flex-wrap: wrap;
+            margin-bottom: 3rem;
         }
 
         .filter-btn {
             background: rgba(255, 255, 255, 0.05);
-            color: var(--gray);
+            color: #b0b0d0;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 30px;
+            padding: 10px 25px;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 500;
-            font-size: 1rem;
             transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .filter-btn.active, .filter-btn:hover {
-            background: linear-gradient(90deg, var(--primary), #0066ff);
+            background: linear-gradient(90deg, #00d9ff, #0066ff);
             color: white;
-            border-color: var(--primary);
+            border-color: #00d9ff;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3);
         }
 
-        .models-grid {
+        .iphone-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2.5rem;
         }
 
-        .model-card {
+        .iphone-featured-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             overflow: hidden;
@@ -556,114 +318,83 @@
             position: relative;
         }
 
-        .model-card:hover {
+        .iphone-featured-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0, 217, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.25);
             border-color: rgba(0, 217, 255, 0.4);
         }
 
-        .model-badges {
+        .iphone-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .iphone-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .iphone-featured-card:hover .iphone-image {
+            transform: scale(1.1);
+        }
+
+        .iphone-badges {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             display: flex;
-            gap: 10px;
-            z-index: 2;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .badge {
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+        .iphone-badge {
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-        }
-
-        .badge.new {
-            background: linear-gradient(90deg, var(--primary), #0066ff);
             color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
         }
 
-        .badge.hot {
-            background: linear-gradient(90deg, var(--secondary), #ff0055);
-            color: white;
+        .iphone-badge.hot {
+            background: linear-gradient(90deg, #ff2a6d, #ff0055);
         }
 
-        .badge.best {
+        .iphone-badge.new {
+            background: linear-gradient(90deg, #00d9ff, #0066ff);
+        }
+
+        .iphone-badge.best {
             background: linear-gradient(90deg, #ffd700, #ffaa00);
             color: #000;
         }
 
-        .model-image {
-            height: 250px;
-            width: 100%;
-            background: linear-gradient(135deg, #1a1a2e, #0a0a1a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
+        .iphone-content {
+            padding: 1.8rem;
         }
 
-        .model-image img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
-            transition: transform 0.5s;
-        }
-
-        .model-card:hover .model-image img {
-            transform: scale(1.1);
-        }
-
-        .model-content {
-            padding: 2rem;
-        }
-
-        .model-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .model-title h3 {
+        .iphone-title {
             font-size: 1.5rem;
-            color: var(--light);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
         }
 
-        .model-year {
-            color: var(--gray);
-            font-size: 0.9rem;
+        .iphone-description {
+            color: #b0b0d0;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
-        .model-price {
-            text-align: right;
-        }
-
-        .current-price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-        }
-
-        .old-price {
-            color: var(--gray);
-            text-decoration: line-through;
-            font-size: 1rem;
-        }
-
-        .model-specs {
+        .iphone-specs {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-            margin: 1.5rem 0;
-            padding: 1.5rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1.5rem;
         }
 
         .spec-item {
@@ -673,33 +404,79 @@
         }
 
         .spec-icon {
-            width: 30px;
-            height: 30px;
-            background: rgba(0, 217, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .spec-icon i {
-            color: var(--primary);
-            font-size: 0.9rem;
+            color: #00d9ff;
+            font-size: 1rem;
+            width: 20px;
         }
 
         .spec-text {
-            color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            color: #b0b0d0;
         }
 
-        .model-actions {
+        .iphone-pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-tag {
+            color: #00d9ff;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .old-price {
+            color: #ff2a6d;
+            font-size: 1rem;
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+
+        .discount {
+            background: rgba(255, 42, 109, 0.2);
+            color: #ff2a6d;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .storage-options {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .storage-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b0d0;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .storage-btn.active, .storage-btn:hover {
+            background: rgba(0, 217, 255, 0.2);
+            border-color: #00d9ff;
+            color: #00d9ff;
+        }
+
+        .iphone-actions {
             display: flex;
             gap: 1rem;
         }
 
-        .btn-order {
+        .order-now-btn {
             flex: 2;
-            background: linear-gradient(90deg, var(--secondary), #ff0055);
+            background: linear-gradient(90deg, #ff2a6d, #ff0055);
             color: white;
             padding: 12px 25px;
             border-radius: 50px;
@@ -707,7 +484,7 @@
             font-weight: 600;
             font-size: 1rem;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 42, 109, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 42, 109, 0.3);
             border: none;
             cursor: pointer;
             text-align: center;
@@ -717,16 +494,16 @@
             gap: 8px;
         }
 
-        .btn-order:hover {
+        .order-now-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 42, 109, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 42, 109, 0.5);
         }
 
-        .btn-details {
+        .details-btn {
             flex: 1;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--gray);
+            color: #b0b0d0;
             padding: 12px;
             border-radius: 50px;
             text-decoration: none;
@@ -740,432 +517,344 @@
             gap: 8px;
         }
 
-        .btn-details:hover {
-            background: rgba(0, 217, 255, 0.1);
-            border-color: var(--primary);
-            color: var(--primary);
+        .details-btn:hover {
+            background: rgba(0, 217, 255, 0.2);
+            border-color: #00d9ff;
+            color: #00d9ff;
         }
 
-        /* Testimonials */
-        .testimonials {
+        .iphone-features {
+            padding: 3rem 5%;
             background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 4rem;
-            margin-top: 4rem;
+            border-radius: 15px;
+            margin: 3rem auto;
+            max-width: 1200px;
         }
 
-        .testimonials-slider {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 2rem;
-        }
-
-        .testimonial-content {
-            font-size: 1.1rem;
-            color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .testimonial-content::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.3;
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            font-family: serif;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .author-info h4 {
-            color: var(--light);
-            margin-bottom: 0.3rem;
-        }
-
-        .author-info p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .author-rating {
-            color: #ffd700;
-            margin-top: 0.5rem;
-        }
-
-        /* Contact Section */
-        .contact-section {
+        .features-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .contact-info {
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(0, 217, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-icon i {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        .contact-details h4 {
-            color: var(--light);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-details p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--light);
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            color: var(--light);
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.2);
         }
 
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #00d9ff;
+            margin-bottom: 1rem;
         }
 
-        /* WhatsApp Button */
-        .whatsapp-float {
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .feature-desc {
+            color: #b0b0d0;
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--success);
+            background: #25D366;
             color: white;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
             z-index: 1000;
             transition: all 0.3s;
             text-decoration: none;
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        .whatsapp-float:hover {
+        .whatsapp-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.7);
         }
 
-        .whatsapp-tooltip {
-            position: absolute;
-            right: 85px;
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            opacity: 0;
-            transform: translateX(10px);
-            transition: all 0.3s;
-            pointer-events: none;
-        }
-
-        .whatsapp-float:hover .whatsapp-tooltip {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Footer */
         footer {
-            background: rgba(10, 10, 26, 0.98);
-            padding: 4rem 5% 2rem;
+            background: rgba(10, 10, 26, 0.95);
+            margin-top: 5rem;
+            padding: 3rem 5% 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
-        .footer-column h3 {
-            color: var(--light);
-            font-size: 1.3rem;
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            color: #ff2a6d;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: #00d9ff;
+        }
+
+        .footer-about p {
+            max-width: 300px;
+            color: #b0b0d0;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: #fff;
             margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.8rem;
+            font-size: 1.2rem;
         }
 
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-        }
-
-        .footer-links {
+        .footer-links ul, .footer-contact ul {
             list-style: none;
         }
 
-        .footer-links li {
+        .footer-links li, .footer-contact li {
             margin-bottom: 0.8rem;
         }
 
-        .footer-links a {
-            color: var(--gray);
+        .footer-links a, .footer-contact li {
+            color: #b0b0d0;
             text-decoration: none;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--primary);
-            transform: translateX(5px);
+            color: #00d9ff;
         }
 
-        .footer-links a i {
-            font-size: 0.8rem;
-        }
-
-        .social-links {
+        .social-icons {
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
         }
 
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
+        .social-icons a {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
             font-size: 1.2rem;
+            transition: all 0.3s;
         }
 
-        .social-link:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
+        .social-icons a:hover {
+            background: #00d9ff;
+            transform: translateY(-5px);
         }
 
-        .footer-bottom {
+        .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--gray);
+            color: #b0b0d0;
             font-size: 0.9rem;
         }
 
-        .footer-bottom a {
-            color: var(--primary);
-            text-decoration: none;
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .iphone-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
         }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-container, .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .iphone-models-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .iphone-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .iphone-actions {
+                flex-direction: column;
+            }
         }
 
-        .modal.active {
+        @media (max-width: 576px) {
+            .hero {
+                padding: 4rem 5% 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .iphone-models-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .iphone-specs {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .stats-container {
             display: flex;
-            animation: fadeIn 0.3s ease;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 3rem 5%;
+            background: rgba(255, 255, 255, 0.03);
+            margin: 3rem 0;
+            border-radius: 15px;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background: var(--dark);
-            border-radius: 20px;
-            max-width: 800px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: var(--light);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s;
-        }
-
-        .modal-close:hover {
-            background: var(--danger);
-            transform: rotate(90deg);
-        }
-
-        .modal-header {
-            padding: 3rem 3rem 0;
+        
+        .stat-item {
             text-align: center;
+            flex: 1;
+            min-width: 200px;
         }
-
-        .modal-header h3 {
-            font-size: 2rem;
-            color: var(--light);
-            margin-bottom: 1rem;
+        
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: #00d9ff;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
-
-        .modal-header p {
-            color: var(--gray);
+        
+        .stat-label {
+            color: #b0b0d0;
             font-size: 1.1rem;
         }
-
-        .modal-body {
-            padding: 2rem 3rem 3rem;
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
-            }
-            
-            .hero-visual {
-                order: -1;
-            }
-            
-            .contact-section {
-                grid-template-columns: 1fr;
-            }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
         }
-
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #00d9ff;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #ff2a6d, #ff0055);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 42, 109, 0.4);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #00d9ff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
         @media (max-width: 992px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 80px;
                 left: 0;
                 width: 100%;
-                background: rgba(10, 10, 26, 0.98);
+                background: rgba(10, 10, 26, 0.95);
                 backdrop-filter: blur(10px);
                 flex-direction: column;
                 padding: 2rem;
@@ -1173,7 +862,6 @@
                 opacity: 0;
                 transition: all 0.3s;
                 z-index: 999;
-                gap: 0;
             }
             
             .nav-links.active {
@@ -1183,1097 +871,1032 @@
             
             .nav-links a {
                 padding: 1rem 0;
-                width: 100%;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            .nav-links a:last-child {
-                border-bottom: none;
-            }
-            
-            .nav-cta {
-                margin: 1rem 0 0;
                 width: 100%;
-                text-align: center;
             }
             
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                color: var(--primary);
-                font-size: 1.8rem;
-                cursor: pointer;
-                padding: 0.5rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.5rem;
+            .nav-links a::after {
+                display: none;
             }
         }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 8rem 5% 3rem;
-            }
-            
-            .hero-stats {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 2rem;
-            }
-            
-            .cta-buttons {
-                justify-content: center;
-            }
-            
-            .services-grid,
-            .models-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .testimonials {
-                padding: 2rem;
-            }
-            
-            .testimonial-card {
-                padding: 2rem;
-                margin: 1rem;
-            }
-            
-            .contact-info,
-            .contact-form {
-                padding: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section {
-                padding: 4rem 5%;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .model-actions {
-                flex-direction: column;
-            }
-            
-            .modal-header,
-            .modal-body {
-                padding: 2rem;
-            }
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary);
-        }
-
-        /* Utilities */
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-1 { margin-bottom: 1rem; }
-        .mb-2 { margin-bottom: 2rem; }
-        .mb-3 { margin-bottom: 3rem; }
-        .mt-1 { margin-top: 1rem; }
-        .mt-2 { margin-top: 2rem; }
-        .mt-3 { margin-top: 3rem; }
-
-        .gradient-text {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .highlight {
-            color: var(--primary);
+        
+        .deal-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(90deg, #ff2a6d, #ff0055);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
+        }
+        
+        .contact-number {
+            background: linear-gradient(90deg, #00d9ff, #0066ff);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
+        }
+        
+        .contact-number:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.5);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item i {
+            color: #00d9ff;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item span {
+            font-weight: 500;
+        }
+        
+        .iphone-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .category-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .category-tag:hover {
+            background: rgba(0, 217, 255, 0.2);
+            border-color: #00d9ff;
+            transform: translateY(-3px);
+        }
+        
+        .condition-badge {
+            display: inline-block;
+            background: rgba(255, 42, 109, 0.2);
+            color: #ff2a6d;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loader"></div>
-    </div>
+    <div id="particles-js"></div>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container">
-            <div class="navbar">
-                <a href="#home" class="logo">
-                    <i class="fab fa-apple"></i>
-                    <div class="logo-text">
-                        <span>Tyga iPhone Shop</span>
-                        <span class="logo-sub">Premium iPhone Retailer</span>
-                    </div>
-                </a>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <nav class="nav-links" id="navLinks">
-                    <a href="#home" class="active">Home</a>
-                    <a href="#models">iPhone Models</a>
-                    <a href="#services">Services</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#contact">Contact</a>
-                    <a href="tel:233549767033" class="nav-cta">
-                        <i class="fas fa-phone-alt"></i> Call Now
-                    </a>
-                </nav>
+    <header>
+        <div class="navbar container">
+            <div class="logo">
+                <i class="fab fa-apple"></i>
+                <span>Tyga iPhone Shop</span>
             </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#models">iPhone Models</a>
+                <a href="#services">Services</a>
+                <a href="#featured">Featured iPhones</a>
+                <a href="#stats">Stats</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Premium iPhone Experience Awaits</h1>
-                    <p class="hero-subtitle">
-                        Welcome to Tyga iPhone Shop - Your trusted destination for ALL iPhone models, from iPhone 6 to the latest iPhone 17 Pro Max. We specialize in genuine iPhones, professional repairs, and premium services.
-                    </p>
+        <h1>ALL iPhone Models & Premium Tech Services</h1>
+        <p>Welcome to Tyga iPhone Shop, your one-stop destination for ALL iPhone models - from iPhone 6 to iPhone 17 Pro Max! We specialize exclusively in iPhones - selling, repairing, swapping, and providing all iPhone services.</p>
+        
+        <div class="iphone-categories">
+            <div class="category-tag">iPhone 6 - 8 Series</div>
+            <div class="category-tag">iPhone X - XS</div>
+            <div class="category-tag">iPhone 11 Series</div>
+            <div class="category-tag">iPhone 12 Series</div>
+            <div class="category-tag">iPhone 13 Series</div>
+            <div class="category-tag">iPhone 14 Series</div>
+            <div class="category-tag">iPhone 15 Series</div>
+            <div class="category-tag">iPhone 16 Series</div>
+            <div class="category-tag">iPhone 17 Series</div>
+        </div>
+        
+        <a href="tel:233549767033" class="cta-button">
+            <i class="fas fa-phone-alt"></i> Call Now: 233 549 767 033
+        </a>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>233 549 767 033</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp: 233 549 767 033</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Sat: 9AM-8PM</span>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="section-title" id="models">ALL iPhone Models Available</h2>
+    <div class="iphone-models-container">
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 6 - 8 Series</div>
+            <div class="iphone-year">Classic Models</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone X - XS</div>
+            <div class="iphone-year">OLED Display</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 11 Series</div>
+            <div class="iphone-year">Dual & Triple Cameras</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 12 Series</div>
+            <div class="iphone-year">5G & MagSafe</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 13 Series</div>
+            <div class="iphone-year">Cinematic Mode</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 14 Series</div>
+            <div class="iphone-year">Dynamic Island</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 15 Series</div>
+            <div class="iphone-year">USB-C & Titanium</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 16 Series</div>
+            <div class="iphone-year">2024 Models</div>
+            <div class="new-badge">NEW</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 16 Pro Max</div>
+            <div class="iphone-year">Pro Features</div>
+            <div class="new-badge">HOT</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 16 E</div>
+            <div class="iphone-year">Economy Model</div>
+            <div class="new-badge">BEST</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 17 Series</div>
+            <div class="iphone-year">2025 Models</div>
+            <div class="new-badge">FUTURE</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone 17 Pro Max</div>
+            <div class="iphone-year">Latest Tech</div>
+            <div class="new-badge">TOP</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone SE Series</div>
+            <div class="iphone-year">Budget Friendly</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone Mini Series</div>
+            <div class="iphone-year">Compact Size</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone Plus Series</div>
+            <div class="iphone-year">Large Display</div>
+        </div>
+        <div class="iphone-model">
+            <div class="iphone-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="iphone-name">iPhone Pro Series</div>
+            <div class="iphone-year">Professional</div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="services">Our iPhone Services</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <div class="card-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <h3>ALL iPhone Models</h3>
+            <p>We sell ALL iPhone models - from iPhone 6 to iPhone 17 Pro Max. New, used, refurbished - all conditions available.</p>
+            <div class="deal-badge">All Models</div>
+            <a href="tel:233549767033" class="order-now-btn">
+                <i class="fas fa-shopping-cart"></i> ORDER NOW
+            </a>
+            <span class="service-phone">Call: 233 549 767 033</span>
+        </div>
+        
+        <div class="service-card">
+            <div class="card-icon">
+                <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>iPhone Swapping</h3>
+            <p>Upgrade your old iPhone to a newer model with our convenient swapping service. Trade-in your old iPhone!</p>
+            <a href="tel:233549767033" class="order-now-btn">
+                <i class="fas fa-exchange-alt"></i> ORDER SWAP NOW
+            </a>
+            <span class="service-phone">Call: 233 549 767 033</span>
+        </div>
+        
+        <div class="service-card">
+            <div class="card-icon">
+                <i class="fas fa-battery-full"></i>
+            </div>
+            <h3>iPhone Battery Replacement</h3>
+            <p>Professional battery replacement for ALL iPhone models with genuine or high-quality Apple parts.</p>
+            <div class="deal-badge">24H Service</div>
+            <a href="tel:233549767033" class="order-now-btn">
+                <i class="fas fa-tools"></i> ORDER REPAIR NOW
+            </a>
+            <span class="service-phone">Call: 233 549 767 033</span>
+        </div>
+        
+        <div class="service-card">
+            <div class="card-icon">
+                <i class="fas fa-unlock"></i>
+            </div>
+            <h3>iPhone Unlocking</h3>
+            <p>Carrier unlocking services for ALL iPhone models. Use your iPhone with any network provider worldwide.</p>
+            <a href="tel:233549767033" class="order-now-btn">
+                <i class="fas fa-key"></i> ORDER UNLOCK NOW
+            </a>
+            <span class="service-phone">Call: 233 549 767 033</span>
+        </div>
+        
+        <div class="service-card">
+            <div class="card-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <h3>iPhone Update & Backup</h3>
+            <p>iOS updates and secure iCloud backup services to protect your valuable data on any iPhone.</p>
+            <a href="tel:233549767033" class="order-now-btn">
+                <i class="fas fa-cloud-download-alt"></i> ORDER SERVICE NOW
+            </a>
+            <span class="service-phone">Call: 233 549 767 033</span>
+        </div>
+        
+        <div class="service-card">
+            <div class="card-icon">
+                <i class="fas fa-wrench"></i>
+            </div>
+            <h3>iPhone Repairs</h3>
+            <p>Screen replacement, camera repair, charging port fixes, and all other iPhone repair services.</p>
+            <a href="tel:233549767033" class="order-now-btn">
+                <i class="fas fa-tools"></i> ORDER REPAIR NOW
+            </a>
+            <span class="service-phone">Call: 233 549 767 033</span>
+        </div>
+    </div>
+
+    <!-- ENHANCED Featured iPhones Section -->
+    <h2 class="section-title" id="featured">Featured iPhones</h2>
+    
+    <div class="iphone-filter">
+        <button class="filter-btn active" data-filter="all">All Models</button>
+        <button class="filter-btn" data-filter="new">New Releases</button>
+        <button class="filter-btn" data-filter="pro">Pro Models</button>
+        <button class="filter-btn" data-filter="budget">Budget Friendly</button>
+        <button class="filter-btn" data-filter="best">Best Sellers</button>
+    </div>
+
+    <div class="featured-iphones">
+        <div class="iphone-grid">
+            <!-- iPhone 17 Pro Max -->
+            <div class="iphone-featured-card" data-category="new pro best">
+                <div class="iphone-header">
+                    <img src="https://images.unsplash.com/photo-1592910147752-5b3a6a4f3e32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="iPhone 17 Pro Max" class="iphone-image">
+                    <div class="iphone-badges">
+                        <span class="iphone-badge hot">HOT</span>
+                        <span class="iphone-badge new">NEW</span>
+                        <span class="iphone-badge best">BEST</span>
+                    </div>
+                </div>
+                <div class="iphone-content">
+                    <h3 class="iphone-title">iPhone 17 Pro Max</h3>
+                    <p class="iphone-description">2025 Flagship with A19 Pro chip, foldable OLED display, 200MP camera system, and all-day battery life.</p>
                     
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="25">0</span>
-                            <span class="stat-label">iPhone Models</span>
+                    <div class="iphone-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-microchip spec-icon"></i>
+                            <span class="spec-text">A19 Pro Chip</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="3500">0</span>
-                            <span class="stat-label">Happy Customers</span>
+                        <div class="spec-item">
+                            <i class="fas fa-camera spec-icon"></i>
+                            <span class="spec-text">200MP Camera</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="99">0</span>
-                            <span class="stat-label">% Satisfaction</span>
+                        <div class="spec-item">
+                            <i class="fas fa-battery-full spec-icon"></i>
+                            <span class="spec-text">48H Battery</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-mobile-alt spec-icon"></i>
+                            <span class="spec-text">6.9" Display</span>
                         </div>
                     </div>
                     
-                    <div class="cta-buttons">
-                        <a href="#models" class="cta-button">
-                            <i class="fas fa-mobile-alt"></i> Browse iPhones
+                    <div class="storage-options">
+                        <button class="storage-btn active" data-price="1499">128GB</button>
+                        <button class="storage-btn" data-price="1699">256GB</button>
+                        <button class="storage-btn" data-price="1899">512GB</button>
+                        <button class="storage-btn" data-price="2199">1TB</button>
+                    </div>
+                    
+                    <div class="iphone-pricing">
+                        <div>
+                            <span class="price-tag">$<span id="price-iphone17">1499</span></span>
+                            <span class="old-price">$1699</span>
+                            <span class="discount">Save $200</span>
+                        </div>
+                        <div class="condition-badge">In Stock</div>
+                    </div>
+                    
+                    <div class="iphone-actions">
+                        <a href="tel:233549767033" class="order-now-btn">
+                            <i class="fas fa-shopping-cart"></i> ORDER NOW
                         </a>
-                        <a href="tel:233549767033" class="cta-button secondary">
-                            <i class="fas fa-phone-alt"></i> 233 549 767 033
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero-visual">
-                    <div class="iphone-3d">
-                        <div class="iphone-model">
-                            <div class="iphone-front">
-                                <div class="iphone-screen">
-                                    <div class="screen-content">
-                                        <i class="fab fa-apple"></i>
-                                        <h3>iPhone 17 Pro Max</h3>
-                                        <p>Latest 2025 Model</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="iphone-back">
-                                <div class="screen-content">
-                                    <i class="fas fa-camera"></i>
-                                    <h3>Pro Camera System</h3>
-                                    <p>200MP Main Camera</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- iPhone Models Section -->
-    <section class="section" id="models">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured iPhone Models</h2>
-                <p>Discover our premium collection of iPhones, from the latest models to classic favorites</p>
-            </div>
-            
-            <div class="models-filter">
-                <button class="filter-btn active" data-filter="all">
-                    <i class="fas fa-th"></i> All Models
-                </button>
-                <button class="filter-btn" data-filter="new">
-                    <i class="fas fa-star"></i> New Releases
-                </button>
-                <button class="filter-btn" data-filter="pro">
-                    <i class="fas fa-crown"></i> Pro Models
-                </button>
-                <button class="filter-btn" data-filter="budget">
-                    <i class="fas fa-wallet"></i> Budget Friendly
-                </button>
-                <button class="filter-btn" data-filter="best">
-                    <i class="fas fa-fire"></i> Best Sellers
-                </button>
-            </div>
-            
-            <div class="models-grid" id="modelsGrid">
-                <!-- Models will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Premium Services</h2>
-                <p>Comprehensive iPhone services to keep your device in perfect condition</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>iPhone Sales</h3>
-                    <p>Wide selection of genuine iPhones from iPhone 6 to iPhone 17 Pro Max. All conditions available.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Genuine Apple Products</li>
-                        <li><i class="fas fa-check"></i> 1-Year Warranty</li>
-                        <li><i class="fas fa-check"></i> Free Setup Assistance</li>
-                        <li><i class="fas fa-check"></i> Trade-in Options</li>
-                    </ul>
-                    <a href="tel:233549767033" class="btn-order">
-                        <i class="fas fa-shopping-cart"></i> Order Now
-                    </a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Professional Repairs</h3>
-                    <p>Expert iPhone repairs using genuine parts. Fast turnaround with quality guarantee.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Screen Replacement</li>
-                        <li><i class="fas fa-check"></i> Battery Service</li>
-                        <li><i class="fas fa-check"></i> Camera Repair</li>
-                        <li><i class="fas fa-check"></i> Water Damage</li>
-                    </ul>
-                    <a href="tel:233549767033" class="btn-order">
-                        <i class="fas fa-wrench"></i> Repair Now
-                    </a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Phone Swapping</h3>
-                    <p>Upgrade to newer models by swapping your old iPhone. Get the best value for your device.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Free Valuation</li>
-                        <li><i class="fas fa-check"></i> Instant Credit</li>
-                        <li><i class="fas fa-check"></i> Data Transfer</li>
-                        <li><i class="fas fa-check"></i> All Models Accepted</li>
-                    </ul>
-                    <a href="tel:233549767033" class="btn-order">
-                        <i class="fas fa-exchange-alt"></i> Swap Now
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section" id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Customer Testimonials</h2>
-                <p>See what our satisfied customers have to say about their experience</p>
-            </div>
-            
-            <div class="testimonials">
-                <div class="testimonials-slider" id="testimonialsSlider">
-                    <!-- Testimonials will be loaded dynamically -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Contact us for any inquiries, purchases, or service requests</p>
-            </div>
-            
-            <div class="contact-section">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Visit Our Shop</h4>
-                            <p>123 Tech Street, Accra, Ghana<br>Open: Mon-Sat 9AM-8PM, Sun 10AM-6PM</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Call Us Now</h4>
-                            <p><strong>+233 549 767 033</strong><br>For immediate assistance and orders</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>WhatsApp Business</h4>
-                            <p><strong>+233 549 767 033</strong><br>Chat with us for quick responses</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Us</h4>
-                            <p>info@tygaiphoneshop.com<br>sales@tygaiphoneshop.com</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" class="form-control">
-                                <option value="">Select Service</option>
-                                <option value="buy">Buy iPhone</option>
-                                <option value="repair">iPhone Repair</option>
-                                <option value="swap">Phone Swapping</option>
-                                <option value="unlock">Unlocking Service</option>
-                                <option value="other">Other Inquiry</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="model">iPhone Model (if applicable)</label>
-                            <input type="text" id="model" class="form-control" placeholder="e.g., iPhone 17 Pro Max">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-order" style="width: 100%;">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                        <button class="details-btn" data-model="iphone17">
+                            <i class="fas fa-info-circle"></i> Details
                         </button>
-                    </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- iPhone 16 Pro Max -->
+            <div class="iphone-featured-card" data-category="new pro best">
+                <div class="iphone-header">
+                    <img src="https://images.unsplash.com/photo-1607936854279-55e8a4c64888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="iPhone 16 Pro Max" class="iphone-image">
+                    <div class="iphone-badges">
+                        <span class="iphone-badge hot">HOT</span>
+                        <span class="iphone-badge new">NEW</span>
+                    </div>
+                </div>
+                <div class="iphone-content">
+                    <h3 class="iphone-title">iPhone 16 Pro Max</h3>
+                    <p class="iphone-description">2024 Pro model with A18 chip, under-display camera, 8K video recording, and enhanced AI features.</p>
+                    
+                    <div class="iphone-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-microchip spec-icon"></i>
+                            <span class="spec-text">A18 Chip</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-camera spec-icon"></i>
+                            <span class="spec-text">48MP Camera</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-bolt spec-icon"></i>
+                            <span class="spec-text">Fast Charging</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-shield-alt spec-icon"></i>
+                            <span class="spec-text">Titanium</span>
+                        </div>
+                    </div>
+                    
+                    <div class="storage-options">
+                        <button class="storage-btn active" data-price="1299">128GB</button>
+                        <button class="storage-btn" data-price="1499">256GB</button>
+                        <button class="storage-btn" data-price="1699">512GB</button>
+                    </div>
+                    
+                    <div class="iphone-pricing">
+                        <div>
+                            <span class="price-tag">$<span id="price-iphone16">1299</span></span>
+                            <span class="old-price">$1499</span>
+                            <span class="discount">Save $200</span>
+                        </div>
+                        <div class="condition-badge">Limited Stock</div>
+                    </div>
+                    
+                    <div class="iphone-actions">
+                        <a href="tel:233549767033" class="order-now-btn">
+                            <i class="fas fa-shopping-cart"></i> ORDER NOW
+                        </a>
+                        <button class="details-btn" data-model="iphone16">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- iPhone 16 E -->
+            <div class="iphone-featured-card" data-category="new budget">
+                <div class="iphone-header">
+                    <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="iPhone 16 E" class="iphone-image">
+                    <div class="iphone-badges">
+                        <span class="iphone-badge best">BEST VALUE</span>
+                        <span class="iphone-badge new">NEW</span>
+                    </div>
+                </div>
+                <div class="iphone-content">
+                    <h3 class="iphone-title">iPhone 16 E</h3>
+                    <p class="iphone-description">Affordable 2024 model with premium features. Perfect balance of performance and price.</p>
+                    
+                    <div class="iphone-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-microchip spec-icon"></i>
+                            <span class="spec-text">A17 Chip</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-camera spec-icon"></i>
+                            <span class="spec-text">Dual Camera</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-battery-three-quarters spec-icon"></i>
+                            <span class="spec-text">All Day Battery</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-tint spec-icon"></i>
+                            <span class="spec-text">Water Resistant</span>
+                        </div>
+                    </div>
+                    
+                    <div class="storage-options">
+                        <button class="storage-btn active" data-price="699">64GB</button>
+                        <button class="storage-btn" data-price="799">128GB</button>
+                        <button class="storage-btn" data-price="899">256GB</button>
+                    </div>
+                    
+                    <div class="iphone-pricing">
+                        <div>
+                            <span class="price-tag">$<span id="price-iphone16e">699</span></span>
+                            <span class="old-price">$849</span>
+                            <span class="discount">Save $150</span>
+                        </div>
+                        <div class="condition-badge">Best Seller</div>
+                    </div>
+                    
+                    <div class="iphone-actions">
+                        <a href="tel:233549767033" class="order-now-btn">
+                            <i class="fas fa-shopping-cart"></i> ORDER NOW
+                        </a>
+                        <button class="details-btn" data-model="iphone16e">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- iPhone 15 Pro -->
+            <div class="iphone-featured-card" data-category="pro best">
+                <div class="iphone-header">
+                    <img src="https://images.unsplash.com/photo-1591303593883-6bcd1c23f3d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="iPhone 15 Pro" class="iphone-image">
+                    <div class="iphone-badges">
+                        <span class="iphone-badge hot">POPULAR</span>
+                    </div>
+                </div>
+                <div class="iphone-content">
+                    <h3 class="iphone-title">iPhone 15 Pro</h3>
+                    <p class="iphone-description">Titanium design, A17 Pro chip, Action button, and USB-C connectivity. Still a powerhouse.</p>
+                    
+                    <div class="iphone-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-microchip spec-icon"></i>
+                            <span class="spec-text">A17 Pro</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-camera spec-icon"></i>
+                            <span class="spec-text">Pro Camera</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-bolt spec-icon"></i>
+                            <span class="spec-text">USB-C</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-gamepad spec-icon"></i>
+                            <span class="spec-text">Gaming Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="storage-options">
+                        <button class="storage-btn active" data-price="999">128GB</button>
+                        <button class="storage-btn" data-price="1149">256GB</button>
+                        <button class="storage-btn" data-price="1349">512GB</button>
+                    </div>
+                    
+                    <div class="iphone-pricing">
+                        <div>
+                            <span class="price-tag">$<span id="price-iphone15">999</span></span>
+                            <span class="old-price">$1199</span>
+                            <span class="discount">Save $200</span>
+                        </div>
+                        <div class="condition-badge">Refurb Available</div>
+                    </div>
+                    
+                    <div class="iphone-actions">
+                        <a href="tel:233549767033" class="order-now-btn">
+                            <i class="fas fa-shopping-cart"></i> ORDER NOW
+                        </a>
+                        <button class="details-btn" data-model="iphone15">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/233549767033?text=Hi%20Tyga%20iPhone%20Shop,%20I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank">
+    <!-- iPhone Features Section -->
+    <div class="iphone-features">
+        <h2 class="section-title">Why Choose Our iPhones?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">Genuine Warranty</h3>
+                <p class="feature-desc">All iPhones come with 1-year warranty and genuine Apple parts guarantee.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3 class="feature-title">Fast Delivery</h3>
+                <p class="feature-desc">Same-day delivery available in city. Nationwide shipping within 48 hours.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3 class="feature-title">Easy Returns</h3>
+                <p class="feature-desc">14-day return policy if you're not completely satisfied with your iPhone.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="feature-title">24/7 Support</h3>
+                <p class="feature-desc">Technical support available round the clock for all your iPhone queries.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-container" id="stats">
+        <div class="stat-item">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">iPhone Series</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3,000+</div>
+            <div class="stat-label">iPhones Sold</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">iPhone Support</div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="contact">Contact Us</h2>
+    <div class="contact-form container">
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="iphone-model">iPhone Model Interested In</label>
+                <select id="iphone-model" name="iphone-model">
+                    <option value="iphone17pro">iPhone 17 Pro Max</option>
+                    <option value="iphone16pro">iPhone 16 Pro Max</option>
+                    <option value="iphone16e">iPhone 16 E</option>
+                    <option value="iphone15pro">iPhone 15 Pro</option>
+                    <option value="iphone6">iPhone 6 Series</option>
+                    <option value="iphone7">iPhone 7 Series</option>
+                    <option value="iphone8">iPhone 8 Series</option>
+                    <option value="iphonex">iPhone X Series</option>
+                    <option value="iphone11">iPhone 11 Series</option>
+                    <option value="iphone12">iPhone 12 Series</option>
+                    <option value="iphone13">iPhone 13 Series</option>
+                    <option value="iphone14">iPhone 14 Series</option>
+                    <option value="iphone15">iPhone 15 Series</option>
+                    <option value="iphone16">iPhone 16 Series</option>
+                    <option value="iphonese">iPhone SE Series</option>
+                    <option value="notsure">Not Sure - Need Advice</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="condition">Preferred Condition</label>
+                <select id="condition" name="condition">
+                    <option value="new">Brand New</option>
+                    <option value="used">Used - Good Condition</option>
+                    <option value="refurbished">Refurbished</option>
+                    <option value="any">Any Condition - Best Price</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service">
+                    <option value="buy">Buy iPhone</option>
+                    <option value="swap">iPhone Swapping</option>
+                    <option value="repair">iPhone Repair</option>
+                    <option value="battery">Battery Replacement</option>
+                    <option value="unlock">iPhone Unlocking</option>
+                    <option value="update">iOS Update</option>
+                    <option value="backup">Data Backup</option>
+                    <option value="other">Other iPhone Service</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <h3 style="color: #00d9ff; margin-bottom: 1rem;">Direct iPhone Contact</h3>
+            <a href="tel:233549767033" class="contact-number" style="font-size: 1.2rem;">
+                <i class="fas fa-phone-alt"></i> ORDER BY PHONE: 233 549 767 033
+            </a>
+            <p style="margin-top: 1rem; color: #b0b0d0;">We sell ALL iPhone models up to iPhone 17 Pro Max! Call or WhatsApp to order any iPhone</p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/233549767033?text=Hi%20Tyga%20iPhone%20Shop,%20I%20want%20to%20order%20an%20iPhone%2017%20Pro%20Max" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
-        <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
     </a>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Tyga iPhone Shop</h3>
-                    <p>Your trusted destination for premium iPhones and professional repair services in Ghana.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <div class="footer-about">
+                    <div class="footer-logo">Tyga <span>iPhone Shop</span></div>
+                    <p>Your exclusive iPhone specialist. We sell ALL iPhone models - from iPhone 6 to iPhone 17 Pro Max. New, used, refurbished - all conditions available.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#models"><i class="fas fa-chevron-right"></i> iPhone Models</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Our Services</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#models">iPhone Models</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#featured">Featured iPhones</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> iPhone Sales</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Phone Repairs</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Battery Replacement</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Unlocking Services</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><a href="tel:233549767033"><i class="fas fa-phone-alt"></i> +233 549 767 033</a></li>
-                        <li><a href="mailto:info@tygaiphoneshop.com"><i class="fas fa-envelope"></i> info@tygaiphoneshop.com</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Accra</a></li>
-                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Sat: 9AM-8PM</a></li>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> ORDER: +233 549 767 033</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp ORDER: +233 549 767 033</li>
+                        <li><i class="fas fa-envelope"></i> info@tygaiphoneshop.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM, Sun: 10AM - 6PM</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2023 Tyga iPhone Shop. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> for iPhone enthusiasts</p>
-                <p class="mt-1">Call us anytime: <a href="tel:233549767033">+233 549 767 033</a></p>
+            <div class="copyright">
+                <p>&copy; 2023 Tyga iPhone Shop. We sell ALL iPhone models up to iPhone 17 Pro Max! | ORDER NOW: +233 549 767 033 | Designed with <i class="fas fa-heart" style="color:#ff2a6d;"></i> for Apple enthusiasts</p>
             </div>
         </div>
     </footer>
 
-    <!-- iPhone Details Modal -->
-    <div class="modal" id="iphoneModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-header">
-                <h3 id="modalTitle">iPhone Details</h3>
-                <p id="modalSubtitle">Detailed specifications and pricing</p>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Content loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
     <script>
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Remove loading screen
-            setTimeout(() => {
-                document.getElementById('loadingScreen').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loadingScreen').style.display = 'none';
-                }, 500);
-            }, 1000);
-
-            // Initialize Particles.js
-            particlesJS("particles-js", {
-                particles: {
-                    number: { value: 100, density: { enable: true, value_area: 800 } },
-                    color: { value: "#00d9ff" },
-                    shape: { type: "circle" },
-                    opacity: { value: 0.5, random: true },
-                    size: { value: 3, random: true, anim: { enable: true, speed: 3 } },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: "#00d9ff",
-                        opacity: 0.2,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 3,
-                        direction: "none",
-                        random: true,
-                        straight: false,
-                        out_mode: "out",
-                        bounce: false
-                    }
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#00d9ff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#00d9ff",
+                    opacity: 0.2,
+                    width: 1
                 },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: { enable: true, mode: "repulse" },
-                        onclick: { enable: true, mode: "push" },
-                        resize: true
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    const navLinks = document.getElementById('navLinks');
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
                     }
-                },
-                retina_detect: true
-            });
-
-            // Header scroll effect
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
                 }
             });
-
-            // Mobile menu toggle
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            mobileMenuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            });
-
-            // Close mobile menu when clicking links
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+        });
+        
+        // Filter functionality for featured iPhones
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const iphoneCards = document.querySelectorAll('.iphone-featured-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                iphoneCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        if (categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                    
+                    // Add animation when showing
+                    if (card.style.display === 'block') {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.5s';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    }
                 });
             });
-
-            // Animate stats counter
-            const stats = document.querySelectorAll('.stat-number');
+        });
+        
+        // Storage options functionality
+        document.querySelectorAll('.storage-options').forEach(storageContainer => {
+            const storageButtons = storageContainer.querySelectorAll('.storage-btn');
+            storageButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons in this container
+                    storageButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Update price
+                    const price = button.getAttribute('data-price');
+                    const card = button.closest('.iphone-featured-card');
+                    const priceElement = card.querySelector('.price-tag span');
+                    if (priceElement) {
+                        priceElement.textContent = price;
+                    }
+                });
+            });
+        });
+        
+        // Details button functionality
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const model = button.getAttribute('data-model');
+                const modelNames = {
+                    'iphone17': 'iPhone 17 Pro Max',
+                    'iphone16': 'iPhone 16 Pro Max',
+                    'iphone16e': 'iPhone 16 E',
+                    'iphone15': 'iPhone 15 Pro'
+                };
+                
+                const card = button.closest('.iphone-featured-card');
+                const title = card.querySelector('.iphone-title').textContent;
+                const price = card.querySelector('.price-tag span').textContent;
+                
+                alert(`📱 ${title}\n💰 Price: $${price}\n📞 Call 233 549 767 033 to order now!\n\nFeatures:\n• Latest A-series chip\n• Professional camera system\n• All-day battery life\n• Premium build quality\n• iOS with latest features`);
+            });
+        });
+        
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const iphoneModel = formData.get('iphone-model');
+            const condition = formData.get('condition');
+            
+            const modelNames = {
+                'iphone17pro': 'iPhone 17 Pro Max',
+                'iphone16pro': 'iPhone 16 Pro Max',
+                'iphone16e': 'iPhone 16 E',
+                'iphone15pro': 'iPhone 15 Pro',
+                'iphone6': 'iPhone 6 Series',
+                'iphone7': 'iPhone 7 Series',
+                'iphone8': 'iPhone 8 Series',
+                'iphonex': 'iPhone X Series',
+                'iphone11': 'iPhone 11 Series',
+                'iphone12': 'iPhone 12 Series',
+                'iphone13': 'iPhone 13 Series',
+                'iphone14': 'iPhone 14 Series',
+                'iphone15': 'iPhone 15 Series',
+                'iphone16': 'iPhone 16 Series',
+                'iphonese': 'iPhone SE Series',
+                'notsure': 'iPhone - Need Advice'
+            };
+            
+            const conditionNames = {
+                'new': 'Brand New',
+                'used': 'Used - Good Condition',
+                'refurbished': 'Refurbished',
+                'any': 'Any Condition - Best Price'
+            };
+            
+            alert(`Thank you ${name}! We have received your ORDER for ${modelNames[iphoneModel]} (${conditionNames[condition]}). We will contact you shortly at your provided number or you can call us directly at 233 549 767 033 to complete your order.`);
+            
+            this.reset();
+        });
+        
+        const stats = document.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+            const target = parseInt(stat.textContent);
+            let current = 0;
+            const increment = target / 50;
+            
+            const updateStat = () => {
+                if(current < target) {
+                    current += increment;
+                    stat.textContent = Math.floor(current) + (stat.textContent.includes('%') ? '%' : '+');
+                    setTimeout(updateStat, 30);
+                } else {
+                    stat.textContent = stat.textContent.includes('%') ? target + '%' : target + '+';
+                }
+            };
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = parseInt(entry.target.getAttribute('data-target'));
-                        const increment = target / 100;
-                        let current = 0;
-                        
-                        const updateCounter = () => {
-                            if (current < target) {
-                                current += increment;
-                                entry.target.textContent = Math.floor(current);
-                                setTimeout(updateCounter, 20);
-                            } else {
-                                entry.target.textContent = target + (entry.target.getAttribute('data-target') === '99' ? '%' : '+');
-                            }
-                        };
-                        
-                        updateCounter();
+                    if(entry.isIntersecting) {
+                        updateStat();
                         observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.5 });
             
-            stats.forEach(stat => observer.observe(stat));
-
-            // iPhone Models Data
-            const iphoneModels = [
-                {
-                    id: 1,
-                    name: "iPhone 17 Pro Max",
-                    year: "2025",
-                    price: 1499,
-                    oldPrice: 1699,
-                    category: ["new", "pro", "best"],
-                    badges: ["new", "hot", "best"],
-                    specs: {
-                        chip: "A19 Pro",
-                        camera: "200MP Triple",
-                        battery: "48 Hours",
-                        display: "6.9\" ProMotion",
-                        storage: "128GB/256GB/512GB/1TB",
-                        colors: "Space Black, Silver, Gold, Deep Purple"
-                    },
-                    description: "The future of iPhone is here. Experience revolutionary foldable display technology, unprecedented camera capabilities, and all-day battery life."
-                },
-                {
-                    id: 2,
-                    name: "iPhone 16 Pro Max",
-                    year: "2024",
-                    price: 1299,
-                    oldPrice: 1499,
-                    category: ["new", "pro", "best"],
-                    badges: ["new", "hot"],
-                    specs: {
-                        chip: "A18 Pro",
-                        camera: "48MP Pro System",
-                        battery: "36 Hours",
-                        display: "6.7\" Super Retina",
-                        storage: "128GB/256GB/512GB",
-                        colors: "Titanium, Blue Titanium, White Titanium, Black Titanium"
-                    },
-                    description: "Professional-grade iPhone with under-display Face ID, enhanced AI capabilities, and titanium construction."
-                },
-                {
-                    id: 3,
-                    name: "iPhone 16 E",
-                    year: "2024",
-                    price: 699,
-                    oldPrice: 849,
-                    category: ["new", "budget", "best"],
-                    badges: ["new", "best"],
-                    specs: {
-                        chip: "A17",
-                        camera: "Dual 12MP",
-                        battery: "24 Hours",
-                        display: "6.1\" OLED",
-                        storage: "64GB/128GB/256GB",
-                        colors: "Midnight, Starlight, Blue, Pink"
-                    },
-                    description: "Premium features at an accessible price. Perfect balance of performance and value."
-                },
-                {
-                    id: 4,
-                    name: "iPhone 15 Pro",
-                    year: "2023",
-                    price: 999,
-                    oldPrice: 1199,
-                    category: ["pro", "best"],
-                    badges: ["hot"],
-                    specs: {
-                        chip: "A17 Pro",
-                        camera: "48MP Pro",
-                        battery: "30 Hours",
-                        display: "6.1\" ProMotion",
-                        storage: "128GB/256GB/512GB",
-                        colors: "Titanium, Blue Titanium, Natural Titanium"
-                    },
-                    description: "Titanium design meets pro performance. Action button and USB-C connectivity."
-                },
-                {
-                    id: 5,
-                    name: "iPhone 14 Pro",
-                    year: "2022",
-                    price: 899,
-                    oldPrice: 1099,
-                    category: ["pro"],
-                    badges: [],
-                    specs: {
-                        chip: "A16 Bionic",
-                        camera: "48MP Main",
-                        battery: "28 Hours",
-                        display: "6.1\" Dynamic Island",
-                        storage: "128GB/256GB/512GB/1TB",
-                        colors: "Deep Purple, Gold, Silver, Space Black"
-                    },
-                    description: "Dynamic Island and Always-On display. Professional photography capabilities."
-                },
-                {
-                    id: 6,
-                    name: "iPhone SE (3rd Gen)",
-                    year: "2022",
-                    price: 429,
-                    oldPrice: 499,
-                    category: ["budget"],
-                    badges: ["best"],
-                    specs: {
-                        chip: "A15 Bionic",
-                        camera: "12MP Single",
-                        battery: "15 Hours",
-                        display: "4.7\" Retina HD",
-                        storage: "64GB/128GB/256GB",
-                        colors: "Midnight, Starlight, Red"
-                    },
-                    description: "Classic design with modern A15 Bionic chip. Most affordable iPhone experience."
-                }
-            ];
-
-            // Render iPhone Models
-            const modelsGrid = document.getElementById('modelsGrid');
-            const filterButtons = document.querySelectorAll('.filter-btn');
-
-            function renderModels(filter = 'all') {
-                modelsGrid.innerHTML = '';
-                
-                const filteredModels = filter === 'all' 
-                    ? iphoneModels 
-                    : iphoneModels.filter(model => model.category.includes(filter));
-                
-                filteredModels.forEach(model => {
-                    const modelCard = document.createElement('div');
-                    modelCard.className = 'model-card';
-                    modelCard.setAttribute('data-category', model.category.join(' '));
-                    modelCard.innerHTML = `
-                        <div class="model-badges">
-                            ${model.badges.map(badge => `<span class="badge ${badge}">${badge.toUpperCase()}</span>`).join('')}
-                        </div>
-                        <div class="model-image">
-                            <img src="https://images.unsplash.com/photo-1592910147752-5b3a6a4f3e32?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="${model.name}">
-                        </div>
-                        <div class="model-content">
-                            <div class="model-header">
-                                <div class="model-title">
-                                    <h3>${model.name}</h3>
-                                    <span class="model-year">${model.year} Model</span>
-                                </div>
-                                <div class="model-price">
-                                    <span class="current-price">$${model.price}</span>
-                                    <span class="old-price">$${model.oldPrice}</span>
-                                </div>
-                            </div>
-                            <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">${model.description}</p>
-                            <div class="model-specs">
-                                <div class="spec-item">
-                                    <div class="spec-icon">
-                                        <i class="fas fa-microchip"></i>
-                                    </div>
-                                    <span class="spec-text">${model.specs.chip}</span>
-                                </div>
-                                <div class="spec-item">
-                                    <div class="spec-icon">
-                                        <i class="fas fa-camera"></i>
-                                    </div>
-                                    <span class="spec-text">${model.specs.camera}</span>
-                                </div>
-                                <div class="spec-item">
-                                    <div class="spec-icon">
-                                        <i class="fas fa-battery-full"></i>
-                                    </div>
-                                    <span class="spec-text">${model.specs.battery}</span>
-                                </div>
-                                <div class="spec-item">
-                                    <div class="spec-icon">
-                                        <i class="fas fa-mobile-alt"></i>
-                                    </div>
-                                    <span class="spec-text">${model.specs.display}</span>
-                                </div>
-                            </div>
-                            <div class="model-actions">
-                                <a href="tel:233549767033" class="btn-order" data-model="${model.id}">
-                                    <i class="fas fa-shopping-cart"></i> Order Now
-                                </a>
-                                <button class="btn-details" data-model="${model.id}">
-                                    <i class="fas fa-info-circle"></i> Details
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                    modelsGrid.appendChild(modelCard);
-                });
-
-                // Add event listeners to detail buttons
-                document.querySelectorAll('.btn-details').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const modelId = parseInt(this.getAttribute('data-model'));
-                        const model = iphoneModels.find(m => m.id === modelId);
-                        if (model) {
-                            showModelDetails(model);
-                        }
-                    });
-                });
-            }
-
-            // Filter functionality
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Get filter value
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Render filtered models with animation
-                    modelsGrid.style.opacity = '0';
-                    setTimeout(() => {
-                        renderModels(filterValue);
-                        modelsGrid.style.opacity = '1';
-                        modelsGrid.style.transition = 'opacity 0.3s';
-                    }, 300);
-                });
+            observer.observe(stat.parentElement);
+        });
+        
+        // Animate iPhone cards on hover
+        document.querySelectorAll('.iphone-featured-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const image = this.querySelector('.iphone-image');
+                image.style.transform = 'scale(1.1)';
+                image.style.transition = 'transform 0.5s ease';
             });
-
-            // Initial render
-            renderModels();
-
-            // Model Details Modal
-            const modal = document.getElementById('iphoneModal');
-            const modalClose = document.getElementById('modalClose');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalSubtitle = document.getElementById('modalSubtitle');
-            const modalBody = document.getElementById('modalBody');
-
-            function showModelDetails(model) {
-                modalTitle.textContent = model.name;
-                modalSubtitle.textContent = `${model.year} Model - Detailed Specifications`;
-                
-                modalBody.innerHTML = `
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                        <div>
-                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Key Features</h4>
-                            <ul style="color: var(--gray); list-style: none; line-height: 2;">
-                                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ${model.specs.chip} Chip</li>
-                                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ${model.specs.camera} Camera</li>
-                                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ${model.specs.battery} Battery Life</li>
-                                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ${model.specs.display} Display</li>
-                                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ${model.specs.storage} Storage Options</li>
-                                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Available in ${model.specs.colors}</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Pricing Options</h4>
-                            <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 10px;">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                                    <span style="color: var(--gray);">Current Price:</span>
-                                    <span style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$${model.price}</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
-                                    <span style="color: var(--gray); text-decoration: line-through;">Original Price:</span>
-                                    <span style="color: var(--gray); text-decoration: line-through;">$${model.oldPrice}</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 2rem;">
-                                    <span style="color: var(--secondary);">You Save:</span>
-                                    <span style="color: var(--secondary); font-weight: 600;">$${model.oldPrice - model.price}</span>
-                                </div>
-                                <a href="tel:233549767033" class="btn-order" style="width: 100%; text-align: center;">
-                                    <i class="fas fa-phone-alt"></i> Call to Order: 233 549 767 033
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
-                        <h4 style="color: var(--primary); margin-bottom: 1rem;">What's Included</h4>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                            <div style="text-align: center;">
-                                <div style="width: 60px; height: 60px; background: rgba(0, 217, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i class="fas fa-shield-alt" style="color: var(--primary); font-size: 1.5rem;"></i>
-                                </div>
-                                <span style="color: var(--gray); font-size: 0.9rem;">1-Year Warranty</span>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="width: 60px; height: 60px; background: rgba(0, 217, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i class="fas fa-shipping-fast" style="color: var(--primary); font-size: 1.5rem;"></i>
-                                </div>
-                                <span style="color: var(--gray); font-size: 0.9rem;">Free Delivery</span>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="width: 60px; height: 60px; background: rgba(0, 217, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i class="fas fa-headset" style="color: var(--primary); font-size: 1.5rem;"></i>
-                                </div>
-                                <span style="color: var(--gray); font-size: 0.9rem;">24/7 Support</span>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="width: 60px; height: 60px; background: rgba(0, 217, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i class="fas fa-exchange-alt" style="color: var(--primary); font-size: 1.5rem;"></i>
-                                </div>
-                                <span style="color: var(--gray); font-size: 0.9rem;">Easy Returns</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem; text-align: center;">
-                        <p style="color: var(--gray); font-size: 0.9rem;">
-                            <i class="fas fa-info-circle" style="color: var(--primary);"></i> 
-                            All prices are in USD. Contact us for current exchange rates and availability.
-                        </p>
-                    </div>
-                `;
-                
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            // Close modal
-            modalClose.addEventListener('click', () => {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-
-            // Close modal when clicking outside
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-            // Testimonials Data
-            const testimonials = [
-                {
-                    name: "Kwame Asante",
-                    role: "Business Owner",
-                    content: "Purchased iPhone 16 Pro Max from Tyga iPhone Shop. Genuine product, excellent service, and fast delivery. Will definitely recommend!",
-                    rating: 5
-                },
-                {
-                    name: "Ama Serwaa",
-                    role: "University Student",
-                    content: "Got my iPhone 15 at a great price. The swapping service was seamless and the staff was very professional. Thank you!",
-                    rating: 5
-                },
-                {
-                    name: "David Osei",
-                    role: "Photographer",
-                    content: "Professional repair service for my iPhone camera. Quick turnaround and reasonable pricing. My go-to iPhone shop now.",
-                    rating: 4
-                },
-                {
-                    name: "Grace Mensah",
-                    role: "Banker",
-                    content: "Bought iPhone 14 Pro for my daughter's birthday. Authentic product with warranty. Very satisfied with the purchase.",
-                    rating: 5
-                }
-            ];
-
-            // Render Testimonials
-            const testimonialsSlider = document.getElementById('testimonialsSlider');
-            testimonials.forEach(testimonial => {
-                const testimonialCard = document.createElement('div');
-                testimonialCard.className = 'testimonial-card';
-                testimonialCard.innerHTML = `
-                    <div class="testimonial-content">
-                        ${testimonial.content}
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            ${testimonial.name.charAt(0)}
-                        </div>
-                        <div class="author-info">
-                            <h4>${testimonial.name}</h4>
-                            <p>${testimonial.role}</p>
-                            <div class="author-rating">
-                                ${'★'.repeat(testimonial.rating)}${'☆'.repeat(5 - testimonial.rating)}
-                            </div>
-                        </div>
-                    </div>
-                `;
-                testimonialsSlider.appendChild(testimonialCard);
-            });
-
-            // Contact Form Submission
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const name = document.getElementById('name').value;
-                const phone = document.getElementById('phone').value;
-                const service = document.getElementById('service').value;
-                const model = document.getElementById('model').value;
-                const message = document.getElementById('message').value;
-                
-                // Show success message
-                alert(`Thank you ${name}! We have received your inquiry about ${service}${model ? ' for ' + model : ''}. We will contact you shortly at ${phone} or you can call us now at 233 549 767 033.`);
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Send WhatsApp notification (simulated)
-                const whatsappMessage = `New inquiry from ${name} (${phone}): ${message} - Service: ${service}${model ? ', Model: ' + model : ''}`;
-                console.log('WhatsApp message:', whatsappMessage);
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Update active nav link
-                        document.querySelectorAll('.nav-links a').forEach(link => {
-                            link.classList.remove('active');
-                        });
-                        this.classList.add('active');
-                        
-                        // Scroll to target
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Update active nav link on scroll
-            const sections = document.querySelectorAll('section[id]');
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (scrollY >= sectionTop - 100) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            // Add hover effects to all order buttons
-            document.addEventListener('mouseover', function(e) {
-                if (e.target.classList.contains('btn-order') || e.target.closest('.btn-order')) {
-                    const btn = e.target.classList.contains('btn-order') ? e.target : e.target.closest('.btn-order');
-                    btn.style.transform = 'translateY(-3px) scale(1.05)';
-                    btn.style.boxShadow = '0 10px 25px rgba(255, 42, 109, 0.5)';
-                }
-            });
-
-            document.addEventListener('mouseout', function(e) {
-                if (e.target.classList.contains('btn-order') || e.target.closest('.btn-order')) {
-                    const btn = e.target.classList.contains('btn-order') ? e.target : e.target.closest('.btn-order');
-                    btn.style.transform = 'translateY(-3px)';
-                    btn.style.boxShadow = '0 8px 20px rgba(255, 42, 109, 0.4)';
-                }
-            });
-
-            // Initialize 3D iPhone rotation
-            const iphoneModel = document.querySelector('.iphone-model');
-            let rotation = 0;
             
-            function animateiPhone() {
-                rotation += 0.5;
-                iphoneModel.style.transform = `rotateY(${rotation}deg)`;
-                requestAnimationFrame(animateiPhone);
-            }
+            card.addEventListener('mouseleave', function() {
+                const image = this.querySelector('.iphone-image');
+                image.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Add animation to ORDER NOW buttons
+        document.querySelectorAll('.order-now-btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+                this.style.boxShadow = '0 10px 25px rgba(255, 42, 109, 0.5)';
+            });
             
-            animateiPhone();
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 8px 20px rgba(255, 42, 109, 0.5)';
+            });
         });
     </script>
 </body>
