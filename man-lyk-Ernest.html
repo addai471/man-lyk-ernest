@@ -220,7 +220,7 @@
 
         .iphone-models-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 1.5rem;
             padding: 2rem 5%;
             margin: 2rem 0;
@@ -229,11 +229,10 @@
         .iphone-model {
             text-align: center;
             background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem 1rem;
+            padding: 1.5rem;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
-            position: relative;
         }
 
         .iphone-model:hover {
@@ -243,329 +242,62 @@
         }
 
         .iphone-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.8rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
             color: #fff;
         }
 
         .iphone-name {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: #00d9ff;
         }
 
         .iphone-year {
-            font-size: 0.8rem;
-            color: #b0b0d0;
-            margin-top: 0.3rem;
-        }
-
-        .new-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: linear-gradient(90deg, #ff2a6d, #ff0055);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        /* ENHANCED Featured iPhones Section */
-        .featured-iphones {
-            padding: 2rem 5%;
-        }
-
-        .iphone-filter {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .filter-btn {
-            background: rgba(255, 255, 255, 0.05);
-            color: #b0b0d0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: linear-gradient(90deg, #00d9ff, #0066ff);
-            color: white;
-            border-color: #00d9ff;
-            transform: translateY(-3px);
-        }
-
-        .iphone-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .iphone-featured-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
-
-        .iphone-featured-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.25);
-            border-color: rgba(0, 217, 255, 0.4);
-        }
-
-        .iphone-header {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .iphone-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .iphone-featured-card:hover .iphone-image {
-            transform: scale(1.1);
-        }
-
-        .iphone-badges {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .iphone-badge {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .iphone-badge.hot {
-            background: linear-gradient(90deg, #ff2a6d, #ff0055);
-        }
-
-        .iphone-badge.new {
-            background: linear-gradient(90deg, #00d9ff, #0066ff);
-        }
-
-        .iphone-badge.best {
-            background: linear-gradient(90deg, #ffd700, #ffaa00);
-            color: #000;
-        }
-
-        .iphone-content {
-            padding: 1.8rem;
-        }
-
-        .iphone-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-            color: #fff;
-        }
-
-        .iphone-description {
-            color: #b0b0d0;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .iphone-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .spec-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .spec-icon {
-            color: #00d9ff;
-            font-size: 1rem;
-            width: 20px;
-        }
-
-        .spec-text {
-            font-size: 0.85rem;
-            color: #b0b0d0;
-        }
-
-        .iphone-pricing {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .price-tag {
-            color: #00d9ff;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .old-price {
-            color: #ff2a6d;
-            font-size: 1rem;
-            text-decoration: line-through;
-            margin-left: 5px;
-        }
-
-        .discount {
-            background: rgba(255, 42, 109, 0.2);
-            color: #ff2a6d;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .storage-options {
-            display: flex;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .storage-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #b0b0d0;
-            padding: 8px 15px;
-            border-radius: 8px;
-            cursor: pointer;
             font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .storage-btn.active, .storage-btn:hover {
-            background: rgba(0, 217, 255, 0.2);
-            border-color: #00d9ff;
-            color: #00d9ff;
-        }
-
-        .iphone-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .order-now-btn {
-            flex: 2;
-            background: linear-gradient(90deg, #ff2a6d, #ff0055);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(255, 42, 109, 0.3);
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .order-now-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 42, 109, 0.5);
-        }
-
-        .details-btn {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #b0b0d0;
-            padding: 12px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            margin-top: 0.5rem;
         }
 
-        .details-btn:hover {
-            background: rgba(0, 217, 255, 0.2);
-            border-color: #00d9ff;
-            color: #00d9ff;
-        }
-
-        .iphone-features {
-            padding: 3rem 5%;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            margin: 3rem auto;
-            max-width: 1200px;
-        }
-
-        .features-grid {
+        .products-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            padding: 2rem 5%;
         }
 
-        .feature-item {
-            text-align: center;
-            padding: 1.5rem;
+        .product-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
         }
 
-        .feature-item:hover {
-            transform: translateY(-5px);
-            border-color: #00d9ff;
-            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.2);
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 42, 109, 0.2);
+            border-color: rgba(255, 42, 109, 0.3);
         }
 
-        .feature-icon {
-            font-size: 2.5rem;
-            color: #00d9ff;
-            margin-bottom: 1rem;
+        .product-img {
+            height: 180px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
         }
 
-        .feature-title {
-            font-size: 1.2rem;
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
             color: #fff;
         }
 
-        .feature-desc {
+        .product-content p {
             color: #b0b0d0;
             font-size: 0.9rem;
         }
@@ -693,10 +425,6 @@
             .footer-content {
                 flex-direction: column;
             }
-            
-            .iphone-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
         }
 
         @media (max-width: 768px) {
@@ -708,20 +436,12 @@
                 font-size: 2rem;
             }
             
-            .services-container, .features-grid {
+            .services-container, .products-container {
                 grid-template-columns: 1fr;
             }
             
             .iphone-models-container {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .iphone-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .iphone-actions {
-                flex-direction: column;
             }
         }
 
@@ -740,10 +460,6 @@
             }
             
             .iphone-models-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .iphone-specs {
                 grid-template-columns: 1fr;
             }
         }
@@ -892,6 +608,13 @@
             font-weight: 600;
         }
         
+        .price-tag {
+            color: #00d9ff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+        
         .contact-number {
             background: linear-gradient(90deg, #00d9ff, #0066ff);
             color: white;
@@ -969,28 +692,71 @@
             font-weight: 600;
             margin-top: 0.5rem;
         }
+        
+        /* ORDER NOW Button Styles */
+        .order-now-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff2a6d, #ff0055);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 42, 109, 0.3);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .order-now-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 42, 109, 0.5);
+        }
+        
+        .order-now-btn i {
+            margin-right: 8px;
+        }
+        
+        .service-phone {
+            display: block;
+            background: rgba(0, 217, 255, 0.1);
+            color: #00d9ff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
 
     <header>
-        <div class="navbar container">
-            <div class="logo">
-                <i class="fab fa-apple"></i>
-                <span>Tyga iPhone Shop</span>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <i class="fab fa-apple"></i>
+                    <span>Tyga iPhone Shop</span>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-links" id="navLinks">
+                    <a href="#home">Home</a>
+                    <a href="#models">iPhone Models</a>
+                    <a href="#services">Services</a>
+                    <a href="#products">Products</a>
+                    <a href="#stats">Stats</a>
+                    <a href="#contact">Contact</a>
+                </nav>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#models">iPhone Models</a>
-                <a href="#services">Services</a>
-                <a href="#featured">Featured iPhones</a>
-                <a href="#stats">Stats</a>
-                <a href="#contact">Contact</a>
-            </nav>
         </div>
     </header>
 
@@ -1087,23 +853,6 @@
             </div>
             <div class="iphone-name">iPhone 16 Series</div>
             <div class="iphone-year">2024 Models</div>
-            <div class="new-badge">NEW</div>
-        </div>
-        <div class="iphone-model">
-            <div class="iphone-icon">
-                <i class="fab fa-apple"></i>
-            </div>
-            <div class="iphone-name">iPhone 16 Pro Max</div>
-            <div class="iphone-year">Pro Features</div>
-            <div class="new-badge">HOT</div>
-        </div>
-        <div class="iphone-model">
-            <div class="iphone-icon">
-                <i class="fab fa-apple"></i>
-            </div>
-            <div class="iphone-name">iPhone 16 E</div>
-            <div class="iphone-year">Economy Model</div>
-            <div class="new-badge">BEST</div>
         </div>
         <div class="iphone-model">
             <div class="iphone-icon">
@@ -1111,15 +860,6 @@
             </div>
             <div class="iphone-name">iPhone 17 Series</div>
             <div class="iphone-year">2025 Models</div>
-            <div class="new-badge">FUTURE</div>
-        </div>
-        <div class="iphone-model">
-            <div class="iphone-icon">
-                <i class="fab fa-apple"></i>
-            </div>
-            <div class="iphone-name">iPhone 17 Pro Max</div>
-            <div class="iphone-year">Latest Tech</div>
-            <div class="new-badge">TOP</div>
         </div>
         <div class="iphone-model">
             <div class="iphone-icon">
@@ -1127,27 +867,6 @@
             </div>
             <div class="iphone-name">iPhone SE Series</div>
             <div class="iphone-year">Budget Friendly</div>
-        </div>
-        <div class="iphone-model">
-            <div class="iphone-icon">
-                <i class="fab fa-apple"></i>
-            </div>
-            <div class="iphone-name">iPhone Mini Series</div>
-            <div class="iphone-year">Compact Size</div>
-        </div>
-        <div class="iphone-model">
-            <div class="iphone-icon">
-                <i class="fab fa-apple"></i>
-            </div>
-            <div class="iphone-name">iPhone Plus Series</div>
-            <div class="iphone-year">Large Display</div>
-        </div>
-        <div class="iphone-model">
-            <div class="iphone-icon">
-                <i class="fab fa-apple"></i>
-            </div>
-            <div class="iphone-name">iPhone Pro Series</div>
-            <div class="iphone-year">Professional</div>
         </div>
     </div>
 
@@ -1228,285 +947,61 @@
         </div>
     </div>
 
-    <!-- ENHANCED Featured iPhones Section -->
-    <h2 class="section-title" id="featured">Featured iPhones</h2>
-    
-    <div class="iphone-filter">
-        <button class="filter-btn active" data-filter="all">All Models</button>
-        <button class="filter-btn" data-filter="new">New Releases</button>
-        <button class="filter-btn" data-filter="pro">Pro Models</button>
-        <button class="filter-btn" data-filter="budget">Budget Friendly</button>
-        <button class="filter-btn" data-filter="best">Best Sellers</button>
-    </div>
-
-    <div class="featured-iphones">
-        <div class="iphone-grid">
-            <!-- iPhone 17 Pro Max -->
-            <div class="iphone-featured-card" data-category="new pro best">
-                <div class="iphone-header">
-                    <img src="https://images.unsplash.com/photo-1592910147752-5b3a6a4f3e32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="iPhone 17 Pro Max" class="iphone-image">
-                    <div class="iphone-badges">
-                        <span class="iphone-badge hot">HOT</span>
-                        <span class="iphone-badge new">NEW</span>
-                        <span class="iphone-badge best">BEST</span>
-                    </div>
-                </div>
-                <div class="iphone-content">
-                    <h3 class="iphone-title">iPhone 17 Pro Max</h3>
-                    <p class="iphone-description">2025 Flagship with A19 Pro chip, foldable OLED display, 200MP camera system, and all-day battery life.</p>
-                    
-                    <div class="iphone-specs">
-                        <div class="spec-item">
-                            <i class="fas fa-microchip spec-icon"></i>
-                            <span class="spec-text">A19 Pro Chip</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-camera spec-icon"></i>
-                            <span class="spec-text">200MP Camera</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-battery-full spec-icon"></i>
-                            <span class="spec-text">48H Battery</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-mobile-alt spec-icon"></i>
-                            <span class="spec-text">6.9" Display</span>
-                        </div>
-                    </div>
-                    
-                    <div class="storage-options">
-                        <button class="storage-btn active" data-price="1499">128GB</button>
-                        <button class="storage-btn" data-price="1699">256GB</button>
-                        <button class="storage-btn" data-price="1899">512GB</button>
-                        <button class="storage-btn" data-price="2199">1TB</button>
-                    </div>
-                    
-                    <div class="iphone-pricing">
-                        <div>
-                            <span class="price-tag">$<span id="price-iphone17">1499</span></span>
-                            <span class="old-price">$1699</span>
-                            <span class="discount">Save $200</span>
-                        </div>
-                        <div class="condition-badge">In Stock</div>
-                    </div>
-                    
-                    <div class="iphone-actions">
-                        <a href="tel:233549767033" class="order-now-btn">
-                            <i class="fas fa-shopping-cart"></i> ORDER NOW
-                        </a>
-                        <button class="details-btn" data-model="iphone17">
-                            <i class="fas fa-info-circle"></i> Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- iPhone 16 Pro Max -->
-            <div class="iphone-featured-card" data-category="new pro best">
-                <div class="iphone-header">
-                    <img src="https://images.unsplash.com/photo-1607936854279-55e8a4c64888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="iPhone 16 Pro Max" class="iphone-image">
-                    <div class="iphone-badges">
-                        <span class="iphone-badge hot">HOT</span>
-                        <span class="iphone-badge new">NEW</span>
-                    </div>
-                </div>
-                <div class="iphone-content">
-                    <h3 class="iphone-title">iPhone 16 Pro Max</h3>
-                    <p class="iphone-description">2024 Pro model with A18 chip, under-display camera, 8K video recording, and enhanced AI features.</p>
-                    
-                    <div class="iphone-specs">
-                        <div class="spec-item">
-                            <i class="fas fa-microchip spec-icon"></i>
-                            <span class="spec-text">A18 Chip</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-camera spec-icon"></i>
-                            <span class="spec-text">48MP Camera</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-bolt spec-icon"></i>
-                            <span class="spec-text">Fast Charging</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-shield-alt spec-icon"></i>
-                            <span class="spec-text">Titanium</span>
-                        </div>
-                    </div>
-                    
-                    <div class="storage-options">
-                        <button class="storage-btn active" data-price="1299">128GB</button>
-                        <button class="storage-btn" data-price="1499">256GB</button>
-                        <button class="storage-btn" data-price="1699">512GB</button>
-                    </div>
-                    
-                    <div class="iphone-pricing">
-                        <div>
-                            <span class="price-tag">$<span id="price-iphone16">1299</span></span>
-                            <span class="old-price">$1499</span>
-                            <span class="discount">Save $200</span>
-                        </div>
-                        <div class="condition-badge">Limited Stock</div>
-                    </div>
-                    
-                    <div class="iphone-actions">
-                        <a href="tel:233549767033" class="order-now-btn">
-                            <i class="fas fa-shopping-cart"></i> ORDER NOW
-                        </a>
-                        <button class="details-btn" data-model="iphone16">
-                            <i class="fas fa-info-circle"></i> Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- iPhone 16 E -->
-            <div class="iphone-featured-card" data-category="new budget">
-                <div class="iphone-header">
-                    <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="iPhone 16 E" class="iphone-image">
-                    <div class="iphone-badges">
-                        <span class="iphone-badge best">BEST VALUE</span>
-                        <span class="iphone-badge new">NEW</span>
-                    </div>
-                </div>
-                <div class="iphone-content">
-                    <h3 class="iphone-title">iPhone 16 E</h3>
-                    <p class="iphone-description">Affordable 2024 model with premium features. Perfect balance of performance and price.</p>
-                    
-                    <div class="iphone-specs">
-                        <div class="spec-item">
-                            <i class="fas fa-microchip spec-icon"></i>
-                            <span class="spec-text">A17 Chip</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-camera spec-icon"></i>
-                            <span class="spec-text">Dual Camera</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-battery-three-quarters spec-icon"></i>
-                            <span class="spec-text">All Day Battery</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-tint spec-icon"></i>
-                            <span class="spec-text">Water Resistant</span>
-                        </div>
-                    </div>
-                    
-                    <div class="storage-options">
-                        <button class="storage-btn active" data-price="699">64GB</button>
-                        <button class="storage-btn" data-price="799">128GB</button>
-                        <button class="storage-btn" data-price="899">256GB</button>
-                    </div>
-                    
-                    <div class="iphone-pricing">
-                        <div>
-                            <span class="price-tag">$<span id="price-iphone16e">699</span></span>
-                            <span class="old-price">$849</span>
-                            <span class="discount">Save $150</span>
-                        </div>
-                        <div class="condition-badge">Best Seller</div>
-                    </div>
-                    
-                    <div class="iphone-actions">
-                        <a href="tel:233549767033" class="order-now-btn">
-                            <i class="fas fa-shopping-cart"></i> ORDER NOW
-                        </a>
-                        <button class="details-btn" data-model="iphone16e">
-                            <i class="fas fa-info-circle"></i> Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- iPhone 15 Pro -->
-            <div class="iphone-featured-card" data-category="pro best">
-                <div class="iphone-header">
-                    <img src="https://images.unsplash.com/photo-1591303593883-6bcd1c23f3d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="iPhone 15 Pro" class="iphone-image">
-                    <div class="iphone-badges">
-                        <span class="iphone-badge hot">POPULAR</span>
-                    </div>
-                </div>
-                <div class="iphone-content">
-                    <h3 class="iphone-title">iPhone 15 Pro</h3>
-                    <p class="iphone-description">Titanium design, A17 Pro chip, Action button, and USB-C connectivity. Still a powerhouse.</p>
-                    
-                    <div class="iphone-specs">
-                        <div class="spec-item">
-                            <i class="fas fa-microchip spec-icon"></i>
-                            <span class="spec-text">A17 Pro</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-camera spec-icon"></i>
-                            <span class="spec-text">Pro Camera</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-bolt spec-icon"></i>
-                            <span class="spec-text">USB-C</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-gamepad spec-icon"></i>
-                            <span class="spec-text">Gaming Ready</span>
-                        </div>
-                    </div>
-                    
-                    <div class="storage-options">
-                        <button class="storage-btn active" data-price="999">128GB</button>
-                        <button class="storage-btn" data-price="1149">256GB</button>
-                        <button class="storage-btn" data-price="1349">512GB</button>
-                    </div>
-                    
-                    <div class="iphone-pricing">
-                        <div>
-                            <span class="price-tag">$<span id="price-iphone15">999</span></span>
-                            <span class="old-price">$1199</span>
-                            <span class="discount">Save $200</span>
-                        </div>
-                        <div class="condition-badge">Refurb Available</div>
-                    </div>
-                    
-                    <div class="iphone-actions">
-                        <a href="tel:233549767033" class="order-now-btn">
-                            <i class="fas fa-shopping-cart"></i> ORDER NOW
-                        </a>
-                        <button class="details-btn" data-model="iphone15">
-                            <i class="fas fa-info-circle"></i> Details
-                        </button>
-                    </div>
-                </div>
+    <h2 class="section-title" id="products">Featured iPhones</h2>
+    <div class="products-container">
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1592910147752-5b3a6a4f3e32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="product-content">
+                <h3>iPhone 17 Pro Max</h3>
+                <p>Latest model with A19 chip, foldable display, and revolutionary camera technology.</p>
+                <div class="price-tag">From $1,499</div>
+                <div class="condition-badge">NEWEST MODEL</div>
+                <a href="tel:233549767033" class="order-now-btn">
+                    <i class="fas fa-shopping-cart"></i> ORDER THIS IPHONE
+                </a>
+                <span class="service-phone">Call: 233 549 767 033</span>
             </div>
         </div>
-    </div>
-
-    <!-- iPhone Features Section -->
-    <div class="iphone-features">
-        <h2 class="section-title">Why Choose Our iPhones?</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3 class="feature-title">Genuine Warranty</h3>
-                <p class="feature-desc">All iPhones come with 1-year warranty and genuine Apple parts guarantee.</p>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607936854279-55e8a4c64888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="product-content">
+                <h3>iPhone 16 Pro Max</h3>
+                <p>2024 flagship with A18 chip, under-display camera, and enhanced AI features.</p>
+                <div class="price-tag">From $1,299</div>
+                <div class="condition-badge">2024 FLAGSHIP</div>
+                <a href="tel:233549767033" class="order-now-btn">
+                    <i class="fas fa-shopping-cart"></i> ORDER THIS IPHONE
+                </a>
+                <span class="service-phone">Call: 233 549 767 033</span>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-shipping-fast"></i>
-                </div>
-                <h3 class="feature-title">Fast Delivery</h3>
-                <p class="feature-desc">Same-day delivery available in city. Nationwide shipping within 48 hours.</p>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="product-content">
+                <h3>iPhone 16 E</h3>
+                <p>Budget-friendly 2024 model with premium features at an affordable price point.</p>
+                <div class="price-tag">From $699</div>
+                <div class="condition-badge">BEST VALUE</div>
+                <a href="tel:233549767033" class="order-now-btn">
+                    <i class="fas fa-shopping-cart"></i> ORDER THIS IPHONE
+                </a>
+                <span class="service-phone">Call: 233 549 767 033</span>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-exchange-alt"></i>
-                </div>
-                <h3 class="feature-title">Easy Returns</h3>
-                <p class="feature-desc">14-day return policy if you're not completely satisfied with your iPhone.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h3 class="feature-title">24/7 Support</h3>
-                <p class="feature-desc">Technical support available round the clock for all your iPhone queries.</p>
+        </div>
+        
+        <div class="product-card">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1591303593883-6bcd1c23f3d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="product-content">
+                <h3>AirPods Pro (3rd Gen)</h3>
+                <p>Latest AirPods with health monitoring, lossless audio, and extended battery life.</p>
+                <div class="price-tag">From $299</div>
+                <div class="condition-badge">NEWEST</div>
+                <a href="tel:233549767033" class="order-now-btn">
+                    <i class="fas fa-shopping-cart"></i> ORDER NOW
+                </a>
+                <span class="service-phone">Call: 233 549 767 033</span>
             </div>
         </div>
     </div>
@@ -1548,10 +1043,6 @@
             <div class="form-group">
                 <label for="iphone-model">iPhone Model Interested In</label>
                 <select id="iphone-model" name="iphone-model">
-                    <option value="iphone17pro">iPhone 17 Pro Max</option>
-                    <option value="iphone16pro">iPhone 16 Pro Max</option>
-                    <option value="iphone16e">iPhone 16 E</option>
-                    <option value="iphone15pro">iPhone 15 Pro</option>
                     <option value="iphone6">iPhone 6 Series</option>
                     <option value="iphone7">iPhone 7 Series</option>
                     <option value="iphone8">iPhone 8 Series</option>
@@ -1562,6 +1053,7 @@
                     <option value="iphone14">iPhone 14 Series</option>
                     <option value="iphone15">iPhone 15 Series</option>
                     <option value="iphone16">iPhone 16 Series</option>
+                    <option value="iphone17">iPhone 17 Series</option>
                     <option value="iphonese">iPhone SE Series</option>
                     <option value="notsure">Not Sure - Need Advice</option>
                 </select>
@@ -1628,7 +1120,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#models">iPhone Models</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#featured">Featured iPhones</a></li>
+                        <li><a href="#products">Products</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1710,82 +1202,16 @@
             });
         });
         
-        // Filter functionality for featured iPhones
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const iphoneCards = document.querySelectorAll('.iphone-featured-card');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                const filterValue = button.getAttribute('data-filter');
-                
-                iphoneCards.forEach(card => {
-                    if (filterValue === 'all') {
-                        card.style.display = 'block';
-                    } else {
-                        const categories = card.getAttribute('data-category').split(' ');
-                        if (categories.includes(filterValue)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    }
-                    
-                    // Add animation when showing
-                    if (card.style.display === 'block') {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.transition = 'all 0.5s';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 100);
-                    }
-                });
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.card-icon i');
+                icon.style.transform = 'scale(1.2) rotate(5deg)';
+                icon.style.transition = 'transform 0.3s ease';
             });
-        });
-        
-        // Storage options functionality
-        document.querySelectorAll('.storage-options').forEach(storageContainer => {
-            const storageButtons = storageContainer.querySelectorAll('.storage-btn');
-            storageButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons in this container
-                    storageButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    // Update price
-                    const price = button.getAttribute('data-price');
-                    const card = button.closest('.iphone-featured-card');
-                    const priceElement = card.querySelector('.price-tag span');
-                    if (priceElement) {
-                        priceElement.textContent = price;
-                    }
-                });
-            });
-        });
-        
-        // Details button functionality
-        document.querySelectorAll('.details-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const model = button.getAttribute('data-model');
-                const modelNames = {
-                    'iphone17': 'iPhone 17 Pro Max',
-                    'iphone16': 'iPhone 16 Pro Max',
-                    'iphone16e': 'iPhone 16 E',
-                    'iphone15': 'iPhone 15 Pro'
-                };
-                
-                const card = button.closest('.iphone-featured-card');
-                const title = card.querySelector('.iphone-title').textContent;
-                const price = card.querySelector('.price-tag span').textContent;
-                
-                alert(`📱 ${title}\n💰 Price: $${price}\n📞 Call 233 549 767 033 to order now!\n\nFeatures:\n• Latest A-series chip\n• Professional camera system\n• All-day battery life\n• Premium build quality\n• iOS with latest features`);
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.card-icon i');
+                icon.style.transform = 'scale(1) rotate(0deg)';
             });
         });
         
@@ -1814,10 +1240,6 @@
             const condition = formData.get('condition');
             
             const modelNames = {
-                'iphone17pro': 'iPhone 17 Pro Max',
-                'iphone16pro': 'iPhone 16 Pro Max',
-                'iphone16e': 'iPhone 16 E',
-                'iphone15pro': 'iPhone 15 Pro',
                 'iphone6': 'iPhone 6 Series',
                 'iphone7': 'iPhone 7 Series',
                 'iphone8': 'iPhone 8 Series',
@@ -1828,6 +1250,7 @@
                 'iphone14': 'iPhone 14 Series',
                 'iphone15': 'iPhone 15 Series',
                 'iphone16': 'iPhone 16 Series',
+                'iphone17': 'iPhone 17 Series',
                 'iphonese': 'iPhone SE Series',
                 'notsure': 'iPhone - Need Advice'
             };
@@ -1872,17 +1295,38 @@
             observer.observe(stat.parentElement);
         });
         
-        // Animate iPhone cards on hover
-        document.querySelectorAll('.iphone-featured-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                const image = this.querySelector('.iphone-image');
-                image.style.transform = 'scale(1.1)';
-                image.style.transition = 'transform 0.5s ease';
-            });
+        setInterval(() => {
+            const serviceCards = document.querySelectorAll('.service-card');
+            const randomCard = serviceCards[Math.floor(Math.random() * serviceCards.length)];
             
-            card.addEventListener('mouseleave', function() {
-                const image = this.querySelector('.iphone-image');
-                image.style.transform = 'scale(1)';
+            randomCard.style.transform = 'translateY(-10px) scale(1.02)';
+            randomCard.style.boxShadow = '0 20px 40px rgba(0, 217, 255, 0.3)';
+            
+            setTimeout(() => {
+                randomCard.style.transform = 'translateY(-10px)';
+                randomCard.style.boxShadow = '0 15px 30px rgba(0, 217, 255, 0.2)';
+            }, 500);
+        }, 5000);
+        
+        // Animate iPhone model icons
+        const iphoneModels = document.querySelectorAll('.iphone-model');
+        setInterval(() => {
+            const randomModel = iphoneModels[Math.floor(Math.random() * iphoneModels.length)];
+            randomModel.style.borderColor = '#ff2a6d';
+            randomModel.style.transform = 'translateY(-5px) scale(1.05)';
+            randomModel.style.boxShadow = '0 15px 30px rgba(255, 42, 109, 0.3)';
+            
+            setTimeout(() => {
+                randomModel.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                randomModel.style.transform = 'translateY(-5px)';
+                randomModel.style.boxShadow = '0 10px 20px rgba(0, 217, 255, 0.2)';
+            }, 1000);
+        }, 3000);
+        
+        // Add click to call functionality to all phone numbers
+        document.querySelectorAll('.order-now-btn, .contact-number, [href^="tel:"]').forEach(element => {
+            element.addEventListener('click', function() {
+                console.log('Calling iPhone Specialist to ORDER: 233 549 767 033');
             });
         });
         
