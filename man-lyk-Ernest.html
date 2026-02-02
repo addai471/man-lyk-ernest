@@ -1,3 +1,6 @@
+I'll update the contact information throughout the website to include your phone number 233549767033.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -565,6 +568,50 @@
             font-weight: 700;
             margin-top: 0.5rem;
         }
+        
+        .contact-number {
+            background: linear-gradient(90deg, #00d9ff, #0066ff);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
+        }
+        
+        .contact-number:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.5);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item i {
+            color: #00d9ff;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item span {
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -592,7 +639,24 @@
     <section class="hero" id="home">
         <h1>Premium Phone Services & Tech Solutions</h1>
         <p>Welcome to Tyga Apple Shop, your one-stop destination for all Apple devices, repairs, swaps, and tech services. We specialize in iPhone repairs, battery replacements, unlocking, updates, backups, Apple Watch services and more.</p>
-        <a href="#contact" class="cta-button">Get In Touch</a>
+        <a href="tel:233549767033" class="cta-button">
+            <i class="fas fa-phone-alt"></i> Call Now: 233 549 767 033
+        </a>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>233 549 767 033</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp: 233 549 767 033</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Sat: 9AM-8PM</span>
+            </div>
+        </div>
     </section>
 
     <h2 class="section-title" id="services">Our Services</h2>
@@ -656,6 +720,7 @@
                 <h3>iPhone 15 Pro Max</h3>
                 <p>Latest model with titanium design, A17 Pro chip, and advanced camera system.</p>
                 <div class="price-tag">$1,199</div>
+                <a href="tel:233549767033" class="contact-number">Call to Order</a>
             </div>
         </div>
         
@@ -665,6 +730,7 @@
                 <h3>Apple Watch Series 9</h3>
                 <p>Advanced health monitoring, fitness tracking, and seamless iPhone integration.</p>
                 <div class="price-tag">$429</div>
+                <a href="tel:233549767033" class="contact-number">Call to Order</a>
             </div>
         </div>
         
@@ -674,6 +740,7 @@
                 <h3>iPhone 14 Pro</h3>
                 <p>Dynamic Island, Always-On display, and pro-level camera capabilities.</p>
                 <div class="price-tag">$999</div>
+                <a href="tel:233549767033" class="contact-number">Call to Order</a>
             </div>
         </div>
         
@@ -683,6 +750,7 @@
                 <h3>AirPods Pro (2nd Gen)</h3>
                 <p>Active Noise Cancellation, Adaptive Transparency, and personalized spatial audio.</p>
                 <div class="price-tag">$249</div>
+                <a href="tel:233549767033" class="contact-number">Call to Order</a>
             </div>
         </div>
     </div>
@@ -739,9 +807,18 @@
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <h3 style="color: #00d9ff; margin-bottom: 1rem;">Direct Contact</h3>
+            <a href="tel:233549767033" class="contact-number" style="font-size: 1.2rem;">
+                <i class="fas fa-phone-alt"></i> Call: 233 549 767 033
+            </a>
+            <p style="margin-top: 1rem; color: #b0b0d0;">Or click the WhatsApp button below for instant chat</p>
+        </div>
     </div>
 
-    <a href="https://wa.me/1234567890?text=Hi,%20I'm%20interested%20in%20your%20services" class="whatsapp-btn" target="_blank">
+    <!-- Updated WhatsApp button with your number -->
+    <a href="https://wa.me/233549767033?text=Hi%20Tyga%20Apple%20Shop,%20I'm%20interested%20in%20your%20services" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -774,7 +851,8 @@
                     <h4>Contact Us</h4>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 (234) 567-8900</li>
+                        <li><i class="fas fa-phone"></i> +233 549 767 033</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +233 549 767 033</li>
                         <li><i class="fas fa-envelope"></i> info@tygaappleshop.com</li>
                         <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM, Sun: 10AM - 6PM</li>
                     </ul>
@@ -782,7 +860,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Tyga Apple Shop. All rights reserved. | Designed with <i class="fas fa-heart" style="color:#ff2a6d;"></i> for tech enthusiasts</p>
+                <p>&copy; 2023 Tyga Apple Shop. All rights reserved. | Call us: +233 549 767 033 | Designed with <i class="fas fa-heart" style="color:#ff2a6d;"></i> for tech enthusiasts</p>
             </div>
         </div>
     </footer>
@@ -882,7 +960,7 @@
             const name = formData.get('name');
             const service = formData.get('service');
             
-            alert(`Thank you ${name}! We have received your inquiry about ${service}. We will contact you shortly.`);
+            alert(`Thank you ${name}! We have received your inquiry about ${service}. We will contact you shortly at your provided number or you can call us directly at 233 549 767 033.`);
             
             this.reset();
         });
@@ -927,6 +1005,14 @@
                 randomCard.style.boxShadow = '0 15px 30px rgba(0, 217, 255, 0.2)';
             }, 500);
         }, 5000);
+        
+        // Add click to call functionality to all phone numbers
+        document.querySelectorAll('.contact-number, [href^="tel:"]').forEach(element => {
+            element.addEventListener('click', function() {
+                console.log('Calling: 233 549 767 033');
+            });
+        });
     </script>
 </body>
 </html>
+```
