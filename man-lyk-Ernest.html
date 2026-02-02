@@ -1,12 +1,9 @@
-I'll update the contact information throughout the website to include your phone number 233549767033.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyga Apple Shop - Premium Phone Services</title>
+    <title>Tyga Phone Shop - All Phones & Tech Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap">
     <style>
@@ -221,6 +218,34 @@ I'll update the contact information throughout the website to include your phone
             margin-bottom: 1.5rem;
         }
 
+        .brands-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            padding: 2rem 5%;
+            margin: 2rem 0;
+        }
+
+        .brand-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+        }
+
+        .brand-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .brand-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00d9ff;
+        }
+
         .products-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -400,6 +425,10 @@ I'll update the contact information throughout the website to include your phone
             
             .services-container, .products-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .brands-container {
+                gap: 1.5rem;
             }
         }
 
@@ -612,6 +641,29 @@ I'll update the contact information throughout the website to include your phone
         .contact-item span {
             font-weight: 500;
         }
+        
+        .phone-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .category-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .category-tag:hover {
+            background: rgba(0, 217, 255, 0.2);
+            border-color: #00d9ff;
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 <body>
@@ -621,13 +673,14 @@ I'll update the contact information throughout the website to include your phone
         <div class="navbar container">
             <div class="logo">
                 <i class="fas fa-mobile-alt"></i>
-                <span>Tyga Apple Shop</span>
+                <span>Tyga Phone Shop</span>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             <nav class="nav-links" id="navLinks">
                 <a href="#home">Home</a>
+                <a href="#brands">Phone Brands</a>
                 <a href="#services">Services</a>
                 <a href="#products">Products</a>
                 <a href="#stats">Stats</a>
@@ -637,8 +690,22 @@ I'll update the contact information throughout the website to include your phone
     </header>
 
     <section class="hero" id="home">
-        <h1>Premium Phone Services & Tech Solutions</h1>
-        <p>Welcome to Tyga Apple Shop, your one-stop destination for all Apple devices, repairs, swaps, and tech services. We specialize in iPhone repairs, battery replacements, unlocking, updates, backups, Apple Watch services and more.</p>
+        <h1>All Phones & Premium Tech Services</h1>
+        <p>Welcome to Tyga Phone Shop, your one-stop destination for ALL phone brands, repairs, swaps, and tech services. We sell Apple, Samsung, Google, Huawei, Xiaomi, Oppo, Vivo, Nokia, Tecno, Infinix and more!</p>
+        
+        <div class="phone-categories">
+            <div class="category-tag">Apple</div>
+            <div class="category-tag">Samsung</div>
+            <div class="category-tag">Google</div>
+            <div class="category-tag">Huawei</div>
+            <div class="category-tag">Xiaomi</div>
+            <div class="category-tag">Oppo</div>
+            <div class="category-tag">Vivo</div>
+            <div class="category-tag">Tecno</div>
+            <div class="category-tag">Infinix</div>
+            <div class="category-tag">Nokia</div>
+        </div>
+        
         <a href="tel:233549767033" class="cta-button">
             <i class="fas fa-phone-alt"></i> Call Now: 233 549 767 033
         </a>
@@ -659,15 +726,79 @@ I'll update the contact information throughout the website to include your phone
         </div>
     </section>
 
+    <h2 class="section-title" id="brands">Phone Brands We Sell</h2>
+    <div class="brands-container">
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fab fa-apple"></i>
+            </div>
+            <div class="brand-name">Apple</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="brand-name">Samsung</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fab fa-google"></i>
+            </div>
+            <div class="brand-name">Google</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fas fa-signal"></i>
+            </div>
+            <div class="brand-name">Huawei</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div class="brand-name">Xiaomi</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fas fa-camera"></i>
+            </div>
+            <div class="brand-name">Oppo</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fas fa-music"></i>
+            </div>
+            <div class="brand-name">Vivo</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fas fa-mobile"></i>
+            </div>
+            <div class="brand-name">Tecno</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fas fa-infinity"></i>
+            </div>
+            <div class="brand-name">Infinix</div>
+        </div>
+        <div class="brand-item">
+            <div class="brand-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="brand-name">Nokia</div>
+        </div>
+    </div>
+
     <h2 class="section-title" id="services">Our Services</h2>
     <div class="services-container">
         <div class="service-card">
             <div class="card-icon">
-                <i class="fas fa-apple-alt"></i>
+                <i class="fas fa-mobile-alt"></i>
             </div>
-            <h3>Apple Phones</h3>
-            <p>Latest iPhone models available for purchase. All variants, colors, and storage options in stock.</p>
-            <div class="deal-badge">Top Seller</div>
+            <h3>All Phone Brands</h3>
+            <p>We sell ALL kinds of phones - Apple, Samsung, Google, Huawei, Xiaomi, Oppo, Vivo, Tecno, Infinix, Nokia and more!</p>
+            <div class="deal-badge">All Brands</div>
         </div>
         
         <div class="service-card">
@@ -675,7 +806,7 @@ I'll update the contact information throughout the website to include your phone
                 <i class="fas fa-sync-alt"></i>
             </div>
             <h3>Phone Swapping</h3>
-            <p>Upgrade your old device to a newer model with our convenient swapping service.</p>
+            <p>Upgrade your old device to a newer model with our convenient swapping service for any brand.</p>
         </div>
         
         <div class="service-card">
@@ -683,7 +814,7 @@ I'll update the contact information throughout the website to include your phone
                 <i class="fas fa-battery-full"></i>
             </div>
             <h3>Battery Replacement</h3>
-            <p>Professional battery replacement for all iPhone models with genuine or high-quality parts.</p>
+            <p>Professional battery replacement for all phone models with genuine or high-quality parts.</p>
             <div class="deal-badge">24H Service</div>
         </div>
         
@@ -692,7 +823,7 @@ I'll update the contact information throughout the website to include your phone
                 <i class="fas fa-unlock"></i>
             </div>
             <h3>Phone Unlocking</h3>
-            <p>Carrier unlocking services for all iPhone models. Use your phone with any network provider.</p>
+            <p>Carrier unlocking services for all phone brands and models. Use your phone with any network provider.</p>
         </div>
         
         <div class="service-card">
@@ -700,15 +831,15 @@ I'll update the contact information throughout the website to include your phone
                 <i class="fas fa-cloud-upload-alt"></i>
             </div>
             <h3>Phone Update & Backup</h3>
-            <p>Software updates and secure backup services to protect your valuable data.</p>
+            <p>Software updates and secure backup services to protect your valuable data on any device.</p>
         </div>
         
         <div class="service-card">
             <div class="card-icon">
                 <i class="fas fa-clock"></i>
             </div>
-            <h3>Apple Watch Restore</h3>
-            <p>Comprehensive Apple Watch services including restoration, repair, and band replacements.</p>
+            <h3>Smartwatch Services</h3>
+            <p>Apple Watch, Samsung Galaxy Watch, and other smartwatch services including restoration and repair.</p>
         </div>
     </div>
 
@@ -718,28 +849,28 @@ I'll update the contact information throughout the website to include your phone
             <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1592910147752-5b3a6a4f3e32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
             <div class="product-content">
                 <h3>iPhone 15 Pro Max</h3>
-                <p>Latest model with titanium design, A17 Pro chip, and advanced camera system.</p>
-                <div class="price-tag">$1,199</div>
+                <p>Latest Apple model with titanium design, A17 Pro chip, and advanced camera system.</p>
+                <div class="price-tag">From $1,199</div>
                 <a href="tel:233549767033" class="contact-number">Call to Order</a>
             </div>
         </div>
         
         <div class="product-card">
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
             <div class="product-content">
-                <h3>Apple Watch Series 9</h3>
-                <p>Advanced health monitoring, fitness tracking, and seamless iPhone integration.</p>
-                <div class="price-tag">$429</div>
+                <h3>Samsung Galaxy S23</h3>
+                <p>Powerful Android phone with Snapdragon processor and professional-grade cameras.</p>
+                <div class="price-tag">From $849</div>
                 <a href="tel:233549767033" class="contact-number">Call to Order</a>
             </div>
         </div>
         
         <div class="product-card">
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1607936854279-55e8a4c64888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80');"></div>
             <div class="product-content">
-                <h3>iPhone 14 Pro</h3>
-                <p>Dynamic Island, Always-On display, and pro-level camera capabilities.</p>
-                <div class="price-tag">$999</div>
+                <h3>Google Pixel 8 Pro</h3>
+                <p>Best camera phone with Google AI features and pure Android experience.</p>
+                <div class="price-tag">From $999</div>
                 <a href="tel:233549767033" class="contact-number">Call to Order</a>
             </div>
         </div>
@@ -749,7 +880,7 @@ I'll update the contact information throughout the website to include your phone
             <div class="product-content">
                 <h3>AirPods Pro (2nd Gen)</h3>
                 <p>Active Noise Cancellation, Adaptive Transparency, and personalized spatial audio.</p>
-                <div class="price-tag">$249</div>
+                <div class="price-tag">From $249</div>
                 <a href="tel:233549767033" class="contact-number">Call to Order</a>
             </div>
         </div>
@@ -757,16 +888,16 @@ I'll update the contact information throughout the website to include your phone
 
     <div class="stats-container" id="stats">
         <div class="stat-item">
-            <div class="stat-number">2,500+</div>
-            <div class="stat-label">Phones Repaired</div>
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Phone Brands</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3,000+</div>
+            <div class="stat-label">Phones Sold</div>
         </div>
         <div class="stat-item">
             <div class="stat-number">98%</div>
             <div class="stat-label">Satisfaction Rate</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Happy Clients</div>
         </div>
         <div class="stat-item">
             <div class="stat-number">24/7</div>
@@ -790,15 +921,32 @@ I'll update the contact information throughout the website to include your phone
                 <input type="tel" id="phone" name="phone" required>
             </div>
             <div class="form-group">
-                <label for="service">Service Interested In</label>
+                <label for="brand">Phone Brand Interested In</label>
+                <select id="brand" name="brand">
+                    <option value="apple">Apple iPhone</option>
+                    <option value="samsung">Samsung</option>
+                    <option value="google">Google Pixel</option>
+                    <option value="huawei">Huawei</option>
+                    <option value="xiaomi">Xiaomi</option>
+                    <option value="oppo">Oppo</option>
+                    <option value="vivo">Vivo</option>
+                    <option value="tecno">Tecno</option>
+                    <option value="infinix">Infinix</option>
+                    <option value="nokia">Nokia</option>
+                    <option value="other">Other Brand</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="service">Service Needed</label>
                 <select id="service" name="service">
-                    <option value="apple-phones">Apple Phones</option>
-                    <option value="swapping">Swapping</option>
+                    <option value="buy">Buy New Phone</option>
+                    <option value="swap">Phone Swapping</option>
+                    <option value="repair">Phone Repair</option>
                     <option value="battery">Battery Replacement</option>
-                    <option value="unlocking">Unlocking</option>
-                    <option value="update">Phone Update</option>
-                    <option value="backup">Backup</option>
-                    <option value="watch">Apple Watch Restore</option>
+                    <option value="unlock">Unlocking</option>
+                    <option value="update">Software Update</option>
+                    <option value="backup">Data Backup</option>
+                    <option value="watch">Smartwatch Service</option>
                 </select>
             </div>
             <div class="form-group">
@@ -813,12 +961,11 @@ I'll update the contact information throughout the website to include your phone
             <a href="tel:233549767033" class="contact-number" style="font-size: 1.2rem;">
                 <i class="fas fa-phone-alt"></i> Call: 233 549 767 033
             </a>
-            <p style="margin-top: 1rem; color: #b0b0d0;">Or click the WhatsApp button below for instant chat</p>
+            <p style="margin-top: 1rem; color: #b0b0d0;">We sell ALL phone brands! Call or WhatsApp for any phone model</p>
         </div>
     </div>
 
-    <!-- Updated WhatsApp button with your number -->
-    <a href="https://wa.me/233549767033?text=Hi%20Tyga%20Apple%20Shop,%20I'm%20interested%20in%20your%20services" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/233549767033?text=Hi%20Tyga%20Phone%20Shop,%20I'm%20interested%20in%20buying%20a%20phone" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -826,8 +973,8 @@ I'll update the contact information throughout the website to include your phone
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <div class="footer-logo">Tyga <span>Apple Shop</span></div>
-                    <p>Your trusted partner for all Apple products and tech services. Quality repairs, genuine products, and professional service since 2015.</p>
+                    <div class="footer-logo">Tyga <span>Phone Shop</span></div>
+                    <p>Your trusted partner for ALL phone brands and tech services. We sell Apple, Samsung, Google, Huawei, Xiaomi, Oppo, Vivo, Tecno, Infinix, Nokia and more!</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -840,9 +987,9 @@ I'll update the contact information throughout the website to include your phone
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
+                        <li><a href="#brands">Phone Brands</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#products">Products</a></li>
-                        <li><a href="#stats">Stats</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -853,14 +1000,14 @@ I'll update the contact information throughout the website to include your phone
                         <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, City, Country</li>
                         <li><i class="fas fa-phone"></i> +233 549 767 033</li>
                         <li><i class="fab fa-whatsapp"></i> WhatsApp: +233 549 767 033</li>
-                        <li><i class="fas fa-envelope"></i> info@tygaappleshop.com</li>
+                        <li><i class="fas fa-envelope"></i> info@tygaphoneshop.com</li>
                         <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM, Sun: 10AM - 6PM</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Tyga Apple Shop. All rights reserved. | Call us: +233 549 767 033 | Designed with <i class="fas fa-heart" style="color:#ff2a6d;"></i> for tech enthusiasts</p>
+                <p>&copy; 2023 Tyga Phone Shop. We sell ALL phone brands! | Call us: +233 549 767 033 | Designed with <i class="fas fa-heart" style="color:#ff2a6d;"></i> for tech enthusiasts</p>
             </div>
         </div>
     </footer>
@@ -958,9 +1105,23 @@ I'll update the contact information throughout the website to include your phone
             
             const formData = new FormData(this);
             const name = formData.get('name');
-            const service = formData.get('service');
+            const brand = formData.get('brand');
             
-            alert(`Thank you ${name}! We have received your inquiry about ${service}. We will contact you shortly at your provided number or you can call us directly at 233 549 767 033.`);
+            const brandNames = {
+                'apple': 'Apple iPhone',
+                'samsung': 'Samsung',
+                'google': 'Google Pixel',
+                'huawei': 'Huawei',
+                'xiaomi': 'Xiaomi',
+                'oppo': 'Oppo',
+                'vivo': 'Vivo',
+                'tecno': 'Tecno',
+                'infinix': 'Infinix',
+                'nokia': 'Nokia',
+                'other': 'Other Brand'
+            };
+            
+            alert(`Thank you ${name}! We have received your inquiry about ${brandNames[brand]}. We will contact you shortly at your provided number or you can call us directly at 233 549 767 033.`);
             
             this.reset();
         });
@@ -1006,6 +1167,20 @@ I'll update the contact information throughout the website to include your phone
             }, 500);
         }, 5000);
         
+        // Animate phone brand icons
+        const brandIcons = document.querySelectorAll('.brand-icon i');
+        setInterval(() => {
+            const randomIcon = brandIcons[Math.floor(Math.random() * brandIcons.length)];
+            randomIcon.style.color = '#ff2a6d';
+            randomIcon.style.transform = 'scale(1.2)';
+            randomIcon.style.transition = 'all 0.3s';
+            
+            setTimeout(() => {
+                randomIcon.style.color = '#fff';
+                randomIcon.style.transform = 'scale(1)';
+            }, 1000);
+        }, 2000);
+        
         // Add click to call functionality to all phone numbers
         document.querySelectorAll('.contact-number, [href^="tel:"]').forEach(element => {
             element.addEventListener('click', function() {
@@ -1015,4 +1190,3 @@ I'll update the contact information throughout the website to include your phone
     </script>
 </body>
 </html>
-```
